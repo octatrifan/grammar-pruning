@@ -1,0 +1,2116 @@
+[
+    {
+        "SRC": "i would like a vegan burger with lettuce tomatoes and onions and a large order of sweet potato fries",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='vegan_burger', toppings=[Topping(name='lettuce'), Topping(name='tomato'), Topping(name='onion')]), SideOrder(number=1, side_type='sweet_potato_fries', size='large')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(vegan_burger)",
+            "TOPPING(lettuce)",
+            "TOPPING(tomato)",
+            "TOPPING(onion)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "SIDE_TYPE(sweet_potato_fries)"
+        ]
+    },
+    {
+        "SRC": "i would also like an iced tea",
+        "TOPALIAS": "[DrinkOrder(number=1, drink_type='iced_tea')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "DRINK_TYPE(iced_tea)"
+        ]
+    },
+    {
+        "SRC": "i'll have a cheeseburger with lettuce large french fries and a large diet coke",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='lettuce')]), SideOrder(number=1, side_type='french_fries', size='large'), DrinkOrder(number=1, drink_type='diet_coke', size='large')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(cheese_burger)",
+            "TOPPING(lettuce)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "SIDE_TYPE(french_fries)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "DRINK_TYPE(diet_coke)"
+        ]
+    },
+    {
+        "SRC": "i'd like a double cheeseburger with onions pickles bacon ketchup and mustard",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='onion'), Topping(name='pickle'), Topping(name='bacon'), Topping(name='ketchup'), Topping(name='mustard')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(double_cheese_burger)",
+            "TOPPING(onion)",
+            "TOPPING(pickle)",
+            "TOPPING(bacon)",
+            "TOPPING(ketchup)",
+            "TOPPING(mustard)"
+        ]
+    },
+    {
+        "SRC": "for my drink i'd like an extra large sugar free lemonade and i'll take a large curly fries on the side",
+        "TOPALIAS": "[DrinkOrder(number=1, drink_type='zero_sugar_lemonade', size='extra_large'), SideOrder(number=1, side_type='curly_fries', size='large')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIZE(extra_large)",
+            "DRINK_TYPE(zero_sugar_lemonade)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "SIDE_TYPE(curly_fries)"
+        ]
+    },
+    {
+        "SRC": "hi can i have the double cheeseburger with ketchup and onions and french fries on the side",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='ketchup'), Topping(name='onion')]), SideOrder(number=1, side_type='french_fries')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(double_cheese_burger)",
+            "TOPPING(ketchup)",
+            "TOPPING(onion)",
+            "NUMBER(1)",
+            "SIDE_TYPE(french_fries)"
+        ]
+    },
+    {
+        "SRC": "can i also have a medium diet coke",
+        "TOPALIAS": "[DrinkOrder(number=1, drink_type='diet_coke', size='medium')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIZE(medium)",
+            "DRINK_TYPE(diet_coke)"
+        ]
+    },
+    {
+        "SRC": "can i have a chicken sandwich with lettuce and tomatoes a small curly fries and a small chocolate shake",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='chicken_sandwich', toppings=[Topping(name='lettuce'), Topping(name='tomato')]), SideOrder(number=1, side_type='curly_fries', size='small'), DrinkOrder(number=1, drink_type='chocolate_shake', size='small')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(chicken_sandwich)",
+            "TOPPING(lettuce)",
+            "TOPPING(tomato)",
+            "NUMBER(1)",
+            "SIZE(small)",
+            "SIDE_TYPE(curly_fries)",
+            "NUMBER(1)",
+            "SIZE(small)",
+            "DRINK_TYPE(chocolate_shake)"
+        ]
+    },
+    {
+        "SRC": "hi could i please have a cheeseburger with cheddar cheese onions pickles lettuce ketchup mustard and a little mayo",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='mayonnaise', qualifier='light'), Topping(name='cheddar'), Topping(name='onion'), Topping(name='pickle'), Topping(name='lettuce'), Topping(name='ketchup'), Topping(name='mustard')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(cheese_burger)",
+            "TOPPING(mayonnaise)",
+            "QUANTITY(light)",
+            "TOPPING(cheddar)",
+            "TOPPING(onion)",
+            "TOPPING(pickle)",
+            "TOPPING(lettuce)",
+            "TOPPING(ketchup)",
+            "TOPPING(mustard)"
+        ]
+    },
+    {
+        "SRC": "i would also like a small garlic fry and a medium diet coke",
+        "TOPALIAS": "[SideOrder(number=1, side_type='garlic_fries', size='small'), DrinkOrder(number=1, drink_type='diet_coke', size='medium')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIZE(small)",
+            "SIDE_TYPE(garlic_fries)",
+            "NUMBER(1)",
+            "SIZE(medium)",
+            "DRINK_TYPE(diet_coke)"
+        ]
+    },
+    {
+        "SRC": "today i'd like to try your double cheese burger plain with just ketchup and cheddar cheese on it",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='ketchup'), Topping(name='cheddar')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(double_cheese_burger)",
+            "TOPPING(ketchup)",
+            "TOPPING(cheddar)"
+        ]
+    },
+    {
+        "SRC": "to drink i'd like a root beer and for my side i want a large curly fries",
+        "TOPALIAS": "[DrinkOrder(number=1, drink_type='root_beer'), SideOrder(number=1, side_type='curly_fries', size='large')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "DRINK_TYPE(root_beer)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "SIDE_TYPE(curly_fries)"
+        ]
+    },
+    {
+        "SRC": "we also need a small fry a side of apple slices a medium diet coke and a small chocolate shake",
+        "TOPALIAS": "[SideOrder(number=1, side_type='french_fries', size='small'), SideOrder(number=1, side_type='apple_slices'), DrinkOrder(number=1, drink_type='diet_coke', size='medium'), DrinkOrder(number=1, drink_type='chocolate_shake', size='small')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIZE(small)",
+            "SIDE_TYPE(french_fries)",
+            "NUMBER(1)",
+            "SIDE_TYPE(apple_slices)",
+            "NUMBER(1)",
+            "SIZE(medium)",
+            "DRINK_TYPE(diet_coke)",
+            "NUMBER(1)",
+            "SIZE(small)",
+            "DRINK_TYPE(chocolate_shake)"
+        ]
+    },
+    {
+        "SRC": "i would like two cheeseburgers with lettuce pickles and mustard",
+        "TOPALIAS": "[BurgerOrder(number=2, main_dish_type='cheese_burger', toppings=[Topping(name='lettuce'), Topping(name='pickle'), Topping(name='mustard')])]",
+        "USED_ITEMS": [
+            "NUMBER(2)",
+            "MAIN_DISH_TYPE(cheese_burger)",
+            "TOPPING(lettuce)",
+            "TOPPING(pickle)",
+            "TOPPING(mustard)"
+        ]
+    },
+    {
+        "SRC": "i would also like a large sugar free lemonade a small root beer and and two orders of fries",
+        "TOPALIAS": "[DrinkOrder(number=1, drink_type='zero_sugar_lemonade', size='large'), DrinkOrder(number=1, drink_type='root_beer', size='small'), SideOrder(number=2, side_type='french_fries')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIZE(large)",
+            "DRINK_TYPE(zero_sugar_lemonade)",
+            "NUMBER(1)",
+            "SIZE(small)",
+            "DRINK_TYPE(root_beer)",
+            "NUMBER(2)",
+            "SIDE_TYPE(french_fries)"
+        ]
+    },
+    {
+        "SRC": "hi i want a vegan burger with extra onions lettuce pickles and mustard",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='vegan_burger', toppings=[Topping(name='onion', qualifier='extra'), Topping(name='lettuce'), Topping(name='pickle'), Topping(name='mustard')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(vegan_burger)",
+            "TOPPING(onion)",
+            "QUANTITY(extra)",
+            "TOPPING(lettuce)",
+            "TOPPING(pickle)",
+            "TOPPING(mustard)"
+        ]
+    },
+    {
+        "SRC": "i'd also like a side of baby carrots and a sugar free lemonade please",
+        "TOPALIAS": "[SideOrder(number=1, side_type='baby_carrots'), DrinkOrder(number=1, drink_type='zero_sugar_lemonade')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIDE_TYPE(baby_carrots)",
+            "NUMBER(1)",
+            "DRINK_TYPE(zero_sugar_lemonade)"
+        ]
+    },
+    {
+        "SRC": "can i get a double cheese burger with onions cheddar cheese lettuce pickles bacon tomatoes and mustard",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='onion'), Topping(name='cheddar'), Topping(name='lettuce'), Topping(name='pickle'), Topping(name='bacon'), Topping(name='tomato'), Topping(name='mustard')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(double_cheese_burger)",
+            "TOPPING(onion)",
+            "TOPPING(cheddar)",
+            "TOPPING(lettuce)",
+            "TOPPING(pickle)",
+            "TOPPING(bacon)",
+            "TOPPING(tomato)",
+            "TOPPING(mustard)"
+        ]
+    },
+    {
+        "SRC": "a large side of fries with a coke",
+        "TOPALIAS": "[SideOrder(number=1, side_type='french_fries', size='large'), DrinkOrder(number=1, drink_type='coca_cola')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIZE(large)",
+            "SIDE_TYPE(french_fries)",
+            "NUMBER(1)",
+            "DRINK_TYPE(coca_cola)"
+        ]
+    },
+    {
+        "SRC": "and two plain chicken sandwiches with iced tea and small curly fries on the side",
+        "TOPALIAS": "[BurgerOrder(number=2, main_dish_type='chicken_sandwich'), DrinkOrder(number=1, drink_type='iced_tea'), SideOrder(number=1, side_type='curly_fries', size='small')]",
+        "USED_ITEMS": [
+            "NUMBER(2)",
+            "MAIN_DISH_TYPE(chicken_sandwich)",
+            "NUMBER(1)",
+            "DRINK_TYPE(iced_tea)",
+            "NUMBER(1)",
+            "SIZE(small)",
+            "SIDE_TYPE(curly_fries)"
+        ]
+    },
+    {
+        "SRC": "hi i'd like a double cheeseburger with bacon and jalapenos a medium dr pepper and a small order of sweet potato fries",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='bacon'), Topping(name='jalapenos')]), DrinkOrder(number=1, drink_type='dr_pepper', size='medium'), SideOrder(number=1, side_type='sweet_potato_fries', size='small')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(double_cheese_burger)",
+            "TOPPING(bacon)",
+            "TOPPING(jalapenos)",
+            "NUMBER(1)",
+            "SIZE(medium)",
+            "DRINK_TYPE(dr_pepper)",
+            "NUMBER(1)",
+            "SIZE(small)",
+            "SIDE_TYPE(sweet_potato_fries)"
+        ]
+    },
+    {
+        "SRC": "i want two chicken sandwich with bacon lettuce tomatoes onions jalapenos and mustard and mayo",
+        "TOPALIAS": "[BurgerOrder(number=2, main_dish_type='chicken_sandwich', toppings=[Topping(name='bacon'), Topping(name='lettuce'), Topping(name='tomato'), Topping(name='onion'), Topping(name='jalapenos'), Topping(name='mustard'), Topping(name='mayonnaise')])]",
+        "USED_ITEMS": [
+            "NUMBER(2)",
+            "MAIN_DISH_TYPE(chicken_sandwich)",
+            "TOPPING(bacon)",
+            "TOPPING(lettuce)",
+            "TOPPING(tomato)",
+            "TOPPING(onion)",
+            "TOPPING(jalapenos)",
+            "TOPPING(mustard)",
+            "TOPPING(mayonnaise)"
+        ]
+    },
+    {
+        "SRC": "to drink i want a large pink lemonade as well as a side order of large garlic fries",
+        "TOPALIAS": "[DrinkOrder(number=1, drink_type='pink_lemonade', size='large'), SideOrder(number=1, side_type='garlic_fries', size='large')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIZE(large)",
+            "DRINK_TYPE(pink_lemonade)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "SIDE_TYPE(garlic_fries)"
+        ]
+    },
+    {
+        "SRC": "can i get a double cheeseburger with bacon jalapenos lettuce onions mayo and mustard",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='bacon'), Topping(name='jalapenos'), Topping(name='lettuce'), Topping(name='onion'), Topping(name='mayonnaise'), Topping(name='mustard')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(double_cheese_burger)",
+            "TOPPING(bacon)",
+            "TOPPING(jalapenos)",
+            "TOPPING(lettuce)",
+            "TOPPING(onion)",
+            "TOPPING(mayonnaise)",
+            "TOPPING(mustard)"
+        ]
+    },
+    {
+        "SRC": "also a large vanilla shake",
+        "TOPALIAS": "[DrinkOrder(number=1, drink_type='vanilla_shake', size='large')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIZE(large)",
+            "DRINK_TYPE(vanilla_shake)"
+        ]
+    },
+    {
+        "SRC": "i'll have a double cheeseburger with cheddar cheese onions bacon lettuce mustard and ketchup",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='cheddar'), Topping(name='onion'), Topping(name='bacon'), Topping(name='lettuce'), Topping(name='mustard'), Topping(name='ketchup')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(double_cheese_burger)",
+            "TOPPING(cheddar)",
+            "TOPPING(onion)",
+            "TOPPING(bacon)",
+            "TOPPING(lettuce)",
+            "TOPPING(mustard)",
+            "TOPPING(ketchup)"
+        ]
+    },
+    {
+        "SRC": "also a large fry and a medium coke",
+        "TOPALIAS": "[SideOrder(number=1, side_type='french_fries', size='large'), DrinkOrder(number=1, drink_type='coca_cola', size='medium')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIZE(large)",
+            "SIDE_TYPE(french_fries)",
+            "NUMBER(1)",
+            "SIZE(medium)",
+            "DRINK_TYPE(coca_cola)"
+        ]
+    },
+    {
+        "SRC": "i would like to order a chicken sandwich with lettuce tomatoes mayonnaise and a medium pink lemonade large curly fries on the side",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='chicken_sandwich', toppings=[Topping(name='lettuce'), Topping(name='tomato'), Topping(name='mayonnaise')]), DrinkOrder(number=1, drink_type='pink_lemonade', size='medium'), SideOrder(number=1, side_type='curly_fries', size='large')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(chicken_sandwich)",
+            "TOPPING(lettuce)",
+            "TOPPING(tomato)",
+            "TOPPING(mayonnaise)",
+            "NUMBER(1)",
+            "SIZE(medium)",
+            "DRINK_TYPE(pink_lemonade)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "SIDE_TYPE(curly_fries)"
+        ]
+    },
+    {
+        "SRC": "i'll have a cheeseburger with ketchup mustard onions and pickles a large order of garlic fries a small chocolate shake and i need a large dr pepper",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='ketchup'), Topping(name='mustard'), Topping(name='onion'), Topping(name='pickle')]), SideOrder(number=1, side_type='garlic_fries', size='large'), DrinkOrder(number=1, drink_type='chocolate_shake', size='small'), DrinkOrder(number=1, drink_type='dr_pepper', size='large')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(cheese_burger)",
+            "TOPPING(ketchup)",
+            "TOPPING(mustard)",
+            "TOPPING(onion)",
+            "TOPPING(pickle)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "SIDE_TYPE(garlic_fries)",
+            "NUMBER(1)",
+            "SIZE(small)",
+            "DRINK_TYPE(chocolate_shake)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "DRINK_TYPE(dr_pepper)"
+        ]
+    },
+    {
+        "SRC": "double bacon cheeseburger with mustard and lettuce large curly fry and a milk",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='bacon'), Topping(name='mustard'), Topping(name='lettuce')]), SideOrder(number=1, side_type='french_fries', size='large'), DrinkOrder(number=1, drink_type='milk')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(double_cheese_burger)",
+            "TOPPING(bacon)",
+            "TOPPING(mustard)",
+            "TOPPING(lettuce)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "SIDE_TYPE(french_fries)",
+            "NUMBER(1)",
+            "DRINK_TYPE(milk)"
+        ]
+    },
+    {
+        "SRC": "i'll have a cheeseburger with lettuce onions pickles tomatoes bacon ketchup mustard and mayo",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='lettuce'), Topping(name='onion'), Topping(name='pickle'), Topping(name='tomato'), Topping(name='bacon'), Topping(name='ketchup'), Topping(name='mustard'), Topping(name='mayonnaise')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(cheese_burger)",
+            "TOPPING(lettuce)",
+            "TOPPING(onion)",
+            "TOPPING(pickle)",
+            "TOPPING(tomato)",
+            "TOPPING(bacon)",
+            "TOPPING(ketchup)",
+            "TOPPING(mustard)",
+            "TOPPING(mayonnaise)"
+        ]
+    },
+    {
+        "SRC": "give me a medium coke and a large side of french fries",
+        "TOPALIAS": "[DrinkOrder(number=1, drink_type='coca_cola', size='medium'), SideOrder(number=1, side_type='french_fries', size='large')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIZE(medium)",
+            "DRINK_TYPE(coca_cola)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "SIDE_TYPE(french_fries)"
+        ]
+    },
+    {
+        "SRC": "hi i'd like a cheeseburger with mustard and ketchup no mayo",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='mustard'), Topping(name='ketchup'), Topping(name='mayonnaise', negation=True)])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(cheese_burger)",
+            "TOPPING(mustard)",
+            "TOPPING(ketchup)",
+            "NOT(not)",
+            "TOPPING(mayonnaise)"
+        ]
+    },
+    {
+        "SRC": "i'd also like a side of large fries and a medium coke",
+        "TOPALIAS": "[SideOrder(number=1, side_type='french_fries', size='large'), DrinkOrder(number=1, drink_type='coca_cola', size='medium')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIZE(large)",
+            "SIDE_TYPE(french_fries)",
+            "NUMBER(1)",
+            "SIZE(medium)",
+            "DRINK_TYPE(coca_cola)"
+        ]
+    },
+    {
+        "SRC": "i'll have a hamburger topped with bacon and ketchup along with a large coke and large order of french fries",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='ham_burger', toppings=[Topping(name='bacon'), Topping(name='ketchup')]), DrinkOrder(number=1, drink_type='coca_cola', size='large'), SideOrder(number=1, side_type='french_fries', size='large')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(ham_burger)",
+            "TOPPING(bacon)",
+            "TOPPING(ketchup)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "DRINK_TYPE(coca_cola)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "SIDE_TYPE(french_fries)"
+        ]
+    },
+    {
+        "SRC": "i'll have a chicken sandwich can you put lettuce and onions on that",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='chicken_sandwich', toppings=[Topping(name='lettuce'), Topping(name='onion')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(chicken_sandwich)",
+            "TOPPING(lettuce)",
+            "TOPPING(onion)"
+        ]
+    },
+    {
+        "SRC": "also a large order of curly fries and a large root beer",
+        "TOPALIAS": "[SideOrder(number=1, side_type='curly_fries', size='large'), DrinkOrder(number=1, drink_type='root_beer', size='large')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIZE(large)",
+            "SIDE_TYPE(curly_fries)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "DRINK_TYPE(root_beer)"
+        ]
+    },
+    {
+        "SRC": "hi can i get a double cheeseburger with bacon ketchup and mayonnaise a large diet coke and a large curly fries",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='bacon'), Topping(name='ketchup'), Topping(name='mayonnaise')]), DrinkOrder(number=1, drink_type='diet_coke', size='large'), SideOrder(number=1, side_type='curly_fries', size='large')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(double_cheese_burger)",
+            "TOPPING(bacon)",
+            "TOPPING(ketchup)",
+            "TOPPING(mayonnaise)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "DRINK_TYPE(diet_coke)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "SIDE_TYPE(curly_fries)"
+        ]
+    },
+    {
+        "SRC": "i'll take a cheeseburger with onions and pickles and ketchup and one large coke please",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='onion'), Topping(name='pickle'), Topping(name='ketchup')]), DrinkOrder(number=1, drink_type='coca_cola', size='large')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(cheese_burger)",
+            "TOPPING(onion)",
+            "TOPPING(pickle)",
+            "TOPPING(ketchup)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "DRINK_TYPE(coca_cola)"
+        ]
+    },
+    {
+        "SRC": "can i get a cheeseburger with mayo and pickle only a small fry and chocolate shake please",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='mayonnaise'), Topping(name='pickle')]), SideOrder(number=1, side_type='french_fries', size='small'), DrinkOrder(number=1, drink_type='chocolate_shake')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(cheese_burger)",
+            "TOPPING(mayonnaise)",
+            "TOPPING(pickle)",
+            "NUMBER(1)",
+            "SIZE(small)",
+            "SIDE_TYPE(french_fries)",
+            "NUMBER(1)",
+            "DRINK_TYPE(chocolate_shake)"
+        ]
+    },
+    {
+        "SRC": "i'd like a double cheeseburger with onions and mustard large garlic fries and a strawberry shake",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='onion'), Topping(name='mustard')]), SideOrder(number=1, side_type='garlic_fries', size='large'), DrinkOrder(number=1, drink_type='strawberry_shake')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(double_cheese_burger)",
+            "TOPPING(onion)",
+            "TOPPING(mustard)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "SIDE_TYPE(garlic_fries)",
+            "NUMBER(1)",
+            "DRINK_TYPE(strawberry_shake)"
+        ]
+    },
+    {
+        "SRC": "i would like a chicken sandwich with lettuce mayo and tomatoes",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='chicken_sandwich', toppings=[Topping(name='lettuce'), Topping(name='mayonnaise'), Topping(name='tomato')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(chicken_sandwich)",
+            "TOPPING(lettuce)",
+            "TOPPING(mayonnaise)",
+            "TOPPING(tomato)"
+        ]
+    },
+    {
+        "SRC": "i would also like a small seven up",
+        "TOPALIAS": "[DrinkOrder(number=1, drink_type='seven_up', size='small')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIZE(small)",
+            "DRINK_TYPE(seven_up)"
+        ]
+    },
+    {
+        "SRC": "add a large order of curly fries too",
+        "TOPALIAS": "[SideOrder(number=1, side_type='curly_fries', size='large')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIZE(large)",
+            "SIDE_TYPE(curly_fries)"
+        ]
+    },
+    {
+        "SRC": "can i have two cheeseburgers onions only a chicken sandwich two large french fries and two medium pink lemonades",
+        "TOPALIAS": "[BurgerOrder(number=2, main_dish_type='cheese_burger', toppings=[Topping(name='onion')]), BurgerOrder(number=1, main_dish_type='chicken_sandwich'), SideOrder(number=2, side_type='french_fries', size='large'), DrinkOrder(number=2, drink_type='pink_lemonade', size='medium')]",
+        "USED_ITEMS": [
+            "NUMBER(2)",
+            "MAIN_DISH_TYPE(cheese_burger)",
+            "TOPPING(onion)",
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(chicken_sandwich)",
+            "NUMBER(2)",
+            "SIZE(large)",
+            "SIDE_TYPE(french_fries)",
+            "NUMBER(2)",
+            "SIZE(medium)",
+            "DRINK_TYPE(pink_lemonade)"
+        ]
+    },
+    {
+        "SRC": "can i have a chicken sandwich with a side of large curly fries and a medium pink lemonade",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='chicken_sandwich'), SideOrder(number=1, side_type='curly_fries', size='large'), DrinkOrder(number=1, drink_type='pink_lemonade', size='medium')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(chicken_sandwich)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "SIDE_TYPE(curly_fries)",
+            "NUMBER(1)",
+            "SIZE(medium)",
+            "DRINK_TYPE(pink_lemonade)"
+        ]
+    },
+    {
+        "SRC": "could i get a cheeseburger with cheddar cheese lettuce tomato pickles and ketchup and a side of small fries and a medium coke",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='cheddar'), Topping(name='lettuce'), Topping(name='tomato'), Topping(name='pickle'), Topping(name='ketchup')]), SideOrder(number=1, side_type='french_fries', size='small'), DrinkOrder(number=1, drink_type='coca_cola', size='medium')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(cheese_burger)",
+            "TOPPING(cheddar)",
+            "TOPPING(lettuce)",
+            "TOPPING(tomato)",
+            "TOPPING(pickle)",
+            "TOPPING(ketchup)",
+            "NUMBER(1)",
+            "SIZE(small)",
+            "SIDE_TYPE(french_fries)",
+            "NUMBER(1)",
+            "SIZE(medium)",
+            "DRINK_TYPE(coca_cola)"
+        ]
+    },
+    {
+        "SRC": "for my main dish i'll have a chicken sandwich with lettuce ketchup and mayo",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='chicken_sandwich', toppings=[Topping(name='lettuce'), Topping(name='ketchup'), Topping(name='mayonnaise')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(chicken_sandwich)",
+            "TOPPING(lettuce)",
+            "TOPPING(ketchup)",
+            "TOPPING(mayonnaise)"
+        ]
+    },
+    {
+        "SRC": "i want fries for a side and for my drink can i get a coke please",
+        "TOPALIAS": "[SideOrder(number=1, side_type='french_fries'), DrinkOrder(number=1, drink_type='coca_cola')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIDE_TYPE(french_fries)",
+            "NUMBER(1)",
+            "DRINK_TYPE(coca_cola)"
+        ]
+    },
+    {
+        "SRC": "i'd like a cheeseburger with mayonnaise lettuce and tomato small fries and a medium dr pepper",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='mayonnaise'), Topping(name='lettuce'), Topping(name='tomato')]), SideOrder(number=1, side_type='french_fries', size='small'), DrinkOrder(number=1, drink_type='dr_pepper', size='medium')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(cheese_burger)",
+            "TOPPING(mayonnaise)",
+            "TOPPING(lettuce)",
+            "TOPPING(tomato)",
+            "NUMBER(1)",
+            "SIZE(small)",
+            "SIDE_TYPE(french_fries)",
+            "NUMBER(1)",
+            "SIZE(medium)",
+            "DRINK_TYPE(dr_pepper)"
+        ]
+    },
+    {
+        "SRC": "vegan burger topping tomato mustard lettuce pickle",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='vegan_burger', toppings=[Topping(name='tomato'), Topping(name='mustard'), Topping(name='lettuce'), Topping(name='pickle')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(vegan_burger)",
+            "TOPPING(tomato)",
+            "TOPPING(mustard)",
+            "TOPPING(lettuce)",
+            "TOPPING(pickle)"
+        ]
+    },
+    {
+        "SRC": "side curly fries small",
+        "TOPALIAS": "[SideOrder(number=1, side_type='curly_fries', size='small')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIZE(small)",
+            "SIDE_TYPE(curly_fries)"
+        ]
+    },
+    {
+        "SRC": "drink seven up",
+        "TOPALIAS": "[DrinkOrder(number=1, drink_type='seven_up')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "DRINK_TYPE(seven_up)"
+        ]
+    },
+    {
+        "SRC": "can i get a plain chicken sandwich small curly fries and a medium dr pepper",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='chicken_sandwich'), SideOrder(number=1, side_type='curly_fries', size='small'), DrinkOrder(number=1, drink_type='dr_pepper', size='medium')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(chicken_sandwich)",
+            "NUMBER(1)",
+            "SIZE(small)",
+            "SIDE_TYPE(curly_fries)",
+            "NUMBER(1)",
+            "SIZE(medium)",
+            "DRINK_TYPE(dr_pepper)"
+        ]
+    },
+    {
+        "SRC": "let me have a cheeseburger with lettuce tomatoes onions pickles ketchup and mustard",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='lettuce'), Topping(name='tomato'), Topping(name='onion'), Topping(name='pickle'), Topping(name='ketchup'), Topping(name='mustard')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(cheese_burger)",
+            "TOPPING(lettuce)",
+            "TOPPING(tomato)",
+            "TOPPING(onion)",
+            "TOPPING(pickle)",
+            "TOPPING(ketchup)",
+            "TOPPING(mustard)"
+        ]
+    },
+    {
+        "SRC": "also let me have a large curly fry with a large sweet tea",
+        "TOPALIAS": "[SideOrder(number=1, side_type='curly_fries', size='large'), DrinkOrder(number=1, drink_type='iced_tea', size='large')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIZE(large)",
+            "SIDE_TYPE(curly_fries)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "DRINK_TYPE(iced_tea)"
+        ]
+    },
+    {
+        "SRC": "let me get a double cheeseburger with blue cheese lettuce and mustard",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='blue_cheese'), Topping(name='lettuce'), Topping(name='mustard')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(double_cheese_burger)",
+            "TOPPING(blue_cheese)",
+            "TOPPING(lettuce)",
+            "TOPPING(mustard)"
+        ]
+    },
+    {
+        "SRC": "no drinks for me today but i'll take a small order of french fries",
+        "TOPALIAS": "[SideOrder(number=1, side_type='french_fries', size='small')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIZE(small)",
+            "SIDE_TYPE(french_fries)"
+        ]
+    },
+    {
+        "SRC": "i'd like to order a double cheeseburger",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(double_cheese_burger)"
+        ]
+    },
+    {
+        "SRC": "i'd also like to get an order of large curly fries and a large pink lemonade with that",
+        "TOPALIAS": "[SideOrder(number=1, side_type='curly_fries', size='large'), DrinkOrder(number=1, drink_type='pink_lemonade', size='large')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIZE(large)",
+            "SIDE_TYPE(curly_fries)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "DRINK_TYPE(pink_lemonade)"
+        ]
+    },
+    {
+        "SRC": "for the burger i want mustard and mayo lettuce tomatoes onions bacon jalapenos",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='ham_burger', toppings=[Topping(name='mustard'), Topping(name='mayonnaise'), Topping(name='lettuce'), Topping(name='tomato'), Topping(name='onion'), Topping(name='bacon'), Topping(name='jalapenos')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(ham_burger)",
+            "TOPPING(mustard)",
+            "TOPPING(mayonnaise)",
+            "TOPPING(lettuce)",
+            "TOPPING(tomato)",
+            "TOPPING(onion)",
+            "TOPPING(bacon)",
+            "TOPPING(jalapenos)"
+        ]
+    },
+    {
+        "SRC": "i would like a double cheeseburger with lettuce ketchup onions and bacon",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='lettuce'), Topping(name='ketchup'), Topping(name='onion'), Topping(name='bacon')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(double_cheese_burger)",
+            "TOPPING(lettuce)",
+            "TOPPING(ketchup)",
+            "TOPPING(onion)",
+            "TOPPING(bacon)"
+        ]
+    },
+    {
+        "SRC": "i would also like a small curly fries and a medium diet coke",
+        "TOPALIAS": "[SideOrder(number=1, side_type='curly_fries', size='small'), DrinkOrder(number=1, drink_type='diet_coke', size='medium')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIZE(small)",
+            "SIDE_TYPE(curly_fries)",
+            "NUMBER(1)",
+            "SIZE(medium)",
+            "DRINK_TYPE(diet_coke)"
+        ]
+    },
+    {
+        "SRC": "i'd like a chicken sandwich with pickles tomatoes lettuce and mayo",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='chicken_sandwich', toppings=[Topping(name='pickle'), Topping(name='tomato'), Topping(name='lettuce'), Topping(name='mayonnaise')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(chicken_sandwich)",
+            "TOPPING(pickle)",
+            "TOPPING(tomato)",
+            "TOPPING(lettuce)",
+            "TOPPING(mayonnaise)"
+        ]
+    },
+    {
+        "SRC": "with small garlic fries and a small seven up",
+        "TOPALIAS": "[SideOrder(number=1, side_type='garlic_fries', size='small'), DrinkOrder(number=1, drink_type='seven_up', size='small')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIZE(small)",
+            "SIDE_TYPE(garlic_fries)",
+            "NUMBER(1)",
+            "SIZE(small)",
+            "DRINK_TYPE(seven_up)"
+        ]
+    },
+    {
+        "SRC": "can i have a cheeseburger with ketchup and onions small fries and a small diet coke",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='ketchup'), Topping(name='onion')]), SideOrder(number=1, side_type='french_fries', size='small'), DrinkOrder(number=1, drink_type='diet_coke', size='small')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(cheese_burger)",
+            "TOPPING(ketchup)",
+            "TOPPING(onion)",
+            "NUMBER(1)",
+            "SIZE(small)",
+            "SIDE_TYPE(french_fries)",
+            "NUMBER(1)",
+            "SIZE(small)",
+            "DRINK_TYPE(diet_coke)"
+        ]
+    },
+    {
+        "SRC": "hey i would like a double cheeseburger with onions ketchup mayo and bacon",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='onion'), Topping(name='ketchup'), Topping(name='mayonnaise'), Topping(name='bacon')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(double_cheese_burger)",
+            "TOPPING(onion)",
+            "TOPPING(ketchup)",
+            "TOPPING(mayonnaise)",
+            "TOPPING(bacon)"
+        ]
+    },
+    {
+        "SRC": "also french fries and a large diet coke",
+        "TOPALIAS": "[SideOrder(number=1, side_type='french_fries'), DrinkOrder(number=1, drink_type='diet_coke', size='large')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIDE_TYPE(french_fries)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "DRINK_TYPE(diet_coke)"
+        ]
+    },
+    {
+        "SRC": "i need four cheeseburgers with lettuce and tomato",
+        "TOPALIAS": "[BurgerOrder(number=4, main_dish_type='cheese_burger', toppings=[Topping(name='lettuce'), Topping(name='tomato')])]",
+        "USED_ITEMS": [
+            "NUMBER(4)",
+            "MAIN_DISH_TYPE(cheese_burger)",
+            "TOPPING(lettuce)",
+            "TOPPING(tomato)"
+        ]
+    },
+    {
+        "SRC": "one hamburger plain just the meat and bun and five orders of fries",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='ham_burger'), SideOrder(number=5, side_type='french_fries')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(ham_burger)",
+            "NUMBER(5)",
+            "SIDE_TYPE(french_fries)"
+        ]
+    },
+    {
+        "SRC": "i also need three small cokes and two small coffees thank you",
+        "TOPALIAS": "[DrinkOrder(number=3, drink_type='coca_cola', size='small'), DrinkOrder(number=2, drink_type='coffee', size='small')]",
+        "USED_ITEMS": [
+            "NUMBER(3)",
+            "SIZE(small)",
+            "DRINK_TYPE(coca_cola)",
+            "NUMBER(2)",
+            "SIZE(small)",
+            "DRINK_TYPE(coffee)"
+        ]
+    },
+    {
+        "SRC": "can i get a hamburger with onions",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='ham_burger', toppings=[Topping(name='onion')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(ham_burger)",
+            "TOPPING(onion)"
+        ]
+    },
+    {
+        "SRC": "and a small order of french fries",
+        "TOPALIAS": "[SideOrder(number=1, side_type='french_fries', size='small')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIZE(small)",
+            "SIDE_TYPE(french_fries)"
+        ]
+    },
+    {
+        "SRC": "give me a bacon cheeseburger with mustard ketchup and extra onions",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='onion', qualifier='extra'), Topping(name='bacon'), Topping(name='mustard'), Topping(name='ketchup')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(cheese_burger)",
+            "TOPPING(onion)",
+            "QUANTITY(extra)",
+            "TOPPING(bacon)",
+            "TOPPING(mustard)",
+            "TOPPING(ketchup)"
+        ]
+    },
+    {
+        "SRC": "then i'll take an order of large curly fries and one large seven up",
+        "TOPALIAS": "[SideOrder(number=1, side_type='curly_fries', size='large'), DrinkOrder(number=1, drink_type='seven_up', size='large')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIZE(large)",
+            "SIDE_TYPE(curly_fries)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "DRINK_TYPE(seven_up)"
+        ]
+    },
+    {
+        "SRC": "hi i want two hamburgers cheddar cheese lettuce tomatoes ketchup onions pickles and mustard on them two french fries and two medium cokes please",
+        "TOPALIAS": "[BurgerOrder(number=2, main_dish_type='ham_burger', toppings=[Topping(name='cheddar'), Topping(name='lettuce'), Topping(name='tomato'), Topping(name='ketchup'), Topping(name='onion'), Topping(name='pickle'), Topping(name='mustard')]), SideOrder(number=2, side_type='french_fries'), DrinkOrder(number=2, drink_type='coca_cola', size='medium')]",
+        "USED_ITEMS": [
+            "NUMBER(2)",
+            "MAIN_DISH_TYPE(ham_burger)",
+            "TOPPING(cheddar)",
+            "TOPPING(lettuce)",
+            "TOPPING(tomato)",
+            "TOPPING(ketchup)",
+            "TOPPING(onion)",
+            "TOPPING(pickle)",
+            "TOPPING(mustard)",
+            "NUMBER(2)",
+            "SIDE_TYPE(french_fries)",
+            "NUMBER(2)",
+            "SIZE(medium)",
+            "DRINK_TYPE(coca_cola)"
+        ]
+    },
+    {
+        "SRC": "i just want a vegan burger topped with jalapenos onions and mustard a side of apple slices and a small sugar free lemonade",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='vegan_burger', toppings=[Topping(name='jalapenos'), Topping(name='onion'), Topping(name='mustard')]), SideOrder(number=1, side_type='apple_slices'), DrinkOrder(number=1, drink_type='zero_sugar_lemonade', size='small')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(vegan_burger)",
+            "TOPPING(jalapenos)",
+            "TOPPING(onion)",
+            "TOPPING(mustard)",
+            "NUMBER(1)",
+            "SIDE_TYPE(apple_slices)",
+            "NUMBER(1)",
+            "SIZE(small)",
+            "DRINK_TYPE(zero_sugar_lemonade)"
+        ]
+    },
+    {
+        "SRC": "i'd like a double cheeseburger with ketchup and mayo a small curly fry and a large coke please",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='ketchup'), Topping(name='mayonnaise')]), SideOrder(number=1, side_type='curly_fries', size='small'), DrinkOrder(number=1, drink_type='coca_cola', size='large')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(double_cheese_burger)",
+            "TOPPING(ketchup)",
+            "TOPPING(mayonnaise)",
+            "NUMBER(1)",
+            "SIZE(small)",
+            "SIDE_TYPE(curly_fries)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "DRINK_TYPE(coca_cola)"
+        ]
+    },
+    {
+        "SRC": "can i get a vegan burger with cheddar cheese pickles lettuce tomatoes ketchup mustard and mayonnaise",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='vegan_burger', toppings=[Topping(name='cheddar'), Topping(name='pickle'), Topping(name='lettuce'), Topping(name='tomato'), Topping(name='ketchup'), Topping(name='mustard'), Topping(name='mayonnaise')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(vegan_burger)",
+            "TOPPING(cheddar)",
+            "TOPPING(pickle)",
+            "TOPPING(lettuce)",
+            "TOPPING(tomato)",
+            "TOPPING(ketchup)",
+            "TOPPING(mustard)",
+            "TOPPING(mayonnaise)"
+        ]
+    },
+    {
+        "SRC": "i would also like a large diet coke and a small order of french fries",
+        "TOPALIAS": "[DrinkOrder(number=1, drink_type='diet_coke', size='large'), SideOrder(number=1, side_type='french_fries', size='small')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIZE(large)",
+            "DRINK_TYPE(diet_coke)",
+            "NUMBER(1)",
+            "SIZE(small)",
+            "SIDE_TYPE(french_fries)"
+        ]
+    },
+    {
+        "SRC": "double cheeseburger onions bacon and lettuce",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='onion'), Topping(name='bacon'), Topping(name='lettuce')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(double_cheese_burger)",
+            "TOPPING(onion)",
+            "TOPPING(bacon)",
+            "TOPPING(lettuce)"
+        ]
+    },
+    {
+        "SRC": "large curly fries and a diet coke",
+        "TOPALIAS": "[SideOrder(number=1, side_type='curly_fries', size='large'), DrinkOrder(number=1, drink_type='diet_coke')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIZE(large)",
+            "SIDE_TYPE(curly_fries)",
+            "NUMBER(1)",
+            "DRINK_TYPE(diet_coke)"
+        ]
+    },
+    {
+        "SRC": "i would like a chicken sandwich with cheddar cheese tomatoes lettuce and mayonnaise only",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='chicken_sandwich', toppings=[Topping(name='cheddar'), Topping(name='tomato'), Topping(name='lettuce'), Topping(name='mayonnaise')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(chicken_sandwich)",
+            "TOPPING(cheddar)",
+            "TOPPING(tomato)",
+            "TOPPING(lettuce)",
+            "TOPPING(mayonnaise)"
+        ]
+    },
+    {
+        "SRC": "also an order of regular sweet potato fries and regular iced tea",
+        "TOPALIAS": "[SideOrder(number=1, side_type='sweet_potato_fries'), DrinkOrder(number=1, drink_type='iced_tea')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIDE_TYPE(sweet_potato_fries)",
+            "NUMBER(1)",
+            "DRINK_TYPE(iced_tea)"
+        ]
+    },
+    {
+        "SRC": "chicken sandwich with lettuce and bacon large french fry and a small chocolate shake",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='chicken_sandwich', toppings=[Topping(name='lettuce'), Topping(name='bacon')]), SideOrder(number=1, side_type='french_fries', size='large'), DrinkOrder(number=1, drink_type='chocolate_shake', size='small')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(chicken_sandwich)",
+            "TOPPING(lettuce)",
+            "TOPPING(bacon)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "SIDE_TYPE(french_fries)",
+            "NUMBER(1)",
+            "SIZE(small)",
+            "DRINK_TYPE(chocolate_shake)"
+        ]
+    },
+    {
+        "SRC": "i'd like a double cheeseburger with jalapenos onions and pickles",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='jalapenos'), Topping(name='onion'), Topping(name='pickle')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(double_cheese_burger)",
+            "TOPPING(jalapenos)",
+            "TOPPING(onion)",
+            "TOPPING(pickle)"
+        ]
+    },
+    {
+        "SRC": "can i also please have a small dr pepper and a side of small sweet potato fries",
+        "TOPALIAS": "[DrinkOrder(number=1, drink_type='dr_pepper', size='small'), SideOrder(number=1, side_type='sweet_potato_fries', size='small')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIZE(small)",
+            "DRINK_TYPE(dr_pepper)",
+            "NUMBER(1)",
+            "SIZE(small)",
+            "SIDE_TYPE(sweet_potato_fries)"
+        ]
+    },
+    {
+        "SRC": "can you get me a hamburger with pickles and mayo only a small order of fries and a small seven up please",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='ham_burger', toppings=[Topping(name='pickle'), Topping(name='mayonnaise')]), SideOrder(number=1, side_type='french_fries', size='small'), DrinkOrder(number=1, drink_type='seven_up', size='small')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(ham_burger)",
+            "TOPPING(pickle)",
+            "TOPPING(mayonnaise)",
+            "NUMBER(1)",
+            "SIZE(small)",
+            "SIDE_TYPE(french_fries)",
+            "NUMBER(1)",
+            "SIZE(small)",
+            "DRINK_TYPE(seven_up)"
+        ]
+    },
+    {
+        "SRC": "i'd like a hamburger with ketchup mustard and pickles with a medium strawberry shake and small curly fries",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='ham_burger', toppings=[Topping(name='ketchup'), Topping(name='mustard'), Topping(name='pickle')]), DrinkOrder(number=1, drink_type='strawberry_shake', size='medium'), SideOrder(number=1, side_type='curly_fries', size='small')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(ham_burger)",
+            "TOPPING(ketchup)",
+            "TOPPING(mustard)",
+            "TOPPING(pickle)",
+            "NUMBER(1)",
+            "SIZE(medium)",
+            "DRINK_TYPE(strawberry_shake)",
+            "NUMBER(1)",
+            "SIZE(small)",
+            "SIDE_TYPE(curly_fries)"
+        ]
+    },
+    {
+        "SRC": "i'd also like a vegan burger with lettuce onions and ketchup a large diet coke and large curly fries",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='vegan_burger', toppings=[Topping(name='lettuce'), Topping(name='onion'), Topping(name='ketchup')]), DrinkOrder(number=1, drink_type='diet_coke', size='large'), SideOrder(number=1, side_type='curly_fries', size='large')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(vegan_burger)",
+            "TOPPING(lettuce)",
+            "TOPPING(onion)",
+            "TOPPING(ketchup)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "DRINK_TYPE(diet_coke)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "SIDE_TYPE(curly_fries)"
+        ]
+    },
+    {
+        "SRC": "the last combo i'll need is a cheeseburger with only ketchup on it a medium vanilla shake and small french fries",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='ketchup')]), DrinkOrder(number=1, drink_type='vanilla_shake', size='medium'), SideOrder(number=1, side_type='french_fries', size='small')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(cheese_burger)",
+            "TOPPING(ketchup)",
+            "NUMBER(1)",
+            "SIZE(medium)",
+            "DRINK_TYPE(vanilla_shake)",
+            "NUMBER(1)",
+            "SIZE(small)",
+            "SIDE_TYPE(french_fries)"
+        ]
+    },
+    {
+        "SRC": "i would like to order a cheeseburger with lettuce tomatoes ketchup and a medium coke small garlic fries on the side",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='lettuce'), Topping(name='tomato'), Topping(name='ketchup')]), DrinkOrder(number=1, drink_type='coca_cola', size='medium'), SideOrder(number=1, side_type='garlic_fries', size='small')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(cheese_burger)",
+            "TOPPING(lettuce)",
+            "TOPPING(tomato)",
+            "TOPPING(ketchup)",
+            "NUMBER(1)",
+            "SIZE(medium)",
+            "DRINK_TYPE(coca_cola)",
+            "NUMBER(1)",
+            "SIZE(small)",
+            "SIDE_TYPE(garlic_fries)"
+        ]
+    },
+    {
+        "SRC": "i would like one cheeseburger toppings should include cheddar cheese lettuce tomatoes ketchup mustard and pickles",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='cheddar'), Topping(name='lettuce'), Topping(name='tomato'), Topping(name='ketchup'), Topping(name='mustard'), Topping(name='pickle')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(cheese_burger)",
+            "TOPPING(cheddar)",
+            "TOPPING(lettuce)",
+            "TOPPING(tomato)",
+            "TOPPING(ketchup)",
+            "TOPPING(mustard)",
+            "TOPPING(pickle)"
+        ]
+    },
+    {
+        "SRC": "i'd like so like one medium sized diet coke with a side of sweet potato fries small",
+        "TOPALIAS": "[DrinkOrder(number=1, drink_type='diet_coke', size='medium'), SideOrder(number=1, side_type='sweet_potato_fries', size='small')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIZE(medium)",
+            "DRINK_TYPE(diet_coke)",
+            "NUMBER(1)",
+            "SIZE(small)",
+            "SIDE_TYPE(sweet_potato_fries)"
+        ]
+    },
+    {
+        "SRC": "i'll have a cheeseburger with ketchup onions lettuce and bacon",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='ketchup'), Topping(name='onion'), Topping(name='lettuce'), Topping(name='bacon')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(cheese_burger)",
+            "TOPPING(ketchup)",
+            "TOPPING(onion)",
+            "TOPPING(lettuce)",
+            "TOPPING(bacon)"
+        ]
+    },
+    {
+        "SRC": "i'd also like a small order of garlic fries and a medium iced tea",
+        "TOPALIAS": "[SideOrder(number=1, side_type='garlic_fries', size='small'), DrinkOrder(number=1, drink_type='iced_tea', size='medium')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIZE(small)",
+            "SIDE_TYPE(garlic_fries)",
+            "NUMBER(1)",
+            "SIZE(medium)",
+            "DRINK_TYPE(iced_tea)"
+        ]
+    },
+    {
+        "SRC": "i'll take a double cheeseburger with onions mustard and ketchup",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='onion'), Topping(name='mustard'), Topping(name='ketchup')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(double_cheese_burger)",
+            "TOPPING(onion)",
+            "TOPPING(mustard)",
+            "TOPPING(ketchup)"
+        ]
+    },
+    {
+        "SRC": "also an order of fries with a large diet coke",
+        "TOPALIAS": "[SideOrder(number=1, side_type='french_fries'), DrinkOrder(number=1, drink_type='diet_coke', size='large')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIDE_TYPE(french_fries)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "DRINK_TYPE(diet_coke)"
+        ]
+    },
+    {
+        "SRC": "i would like a hamburger with tomatoes pickle lettuce ketchup large coke and a side of small fries",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='ham_burger', toppings=[Topping(name='tomato'), Topping(name='pickle'), Topping(name='lettuce'), Topping(name='ketchup')]), DrinkOrder(number=1, drink_type='coca_cola', size='large'), SideOrder(number=1, side_type='french_fries', size='small')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(ham_burger)",
+            "TOPPING(tomato)",
+            "TOPPING(pickle)",
+            "TOPPING(lettuce)",
+            "TOPPING(ketchup)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "DRINK_TYPE(coca_cola)",
+            "NUMBER(1)",
+            "SIZE(small)",
+            "SIDE_TYPE(french_fries)"
+        ]
+    },
+    {
+        "SRC": "hi i'd like a cheeseburger with extra onions extra lettuce and spread an order of large fries and a medium diet coke thank you",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='onion', qualifier='extra'), Topping(name='lettuce', qualifier='extra'), Topping(name='spread')]), SideOrder(number=1, side_type='french_fries', size='large'), DrinkOrder(number=1, drink_type='diet_coke', size='medium')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(cheese_burger)",
+            "TOPPING(onion)",
+            "QUANTITY(extra)",
+            "TOPPING(lettuce)",
+            "QUANTITY(extra)",
+            "TOPPING(spread)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "SIDE_TYPE(french_fries)",
+            "NUMBER(1)",
+            "SIZE(medium)",
+            "DRINK_TYPE(diet_coke)"
+        ]
+    },
+    {
+        "SRC": "can i get the cheeseburger dressed with tomatoes and mayo along with a coke and a side of french fries",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='tomato'), Topping(name='mayonnaise')]), DrinkOrder(number=1, drink_type='coca_cola'), SideOrder(number=1, side_type='french_fries')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(cheese_burger)",
+            "TOPPING(tomato)",
+            "TOPPING(mayonnaise)",
+            "NUMBER(1)",
+            "DRINK_TYPE(coca_cola)",
+            "NUMBER(1)",
+            "SIDE_TYPE(french_fries)"
+        ]
+    },
+    {
+        "SRC": "double cheeseburger with cheddar bacon onion pickles jalapenos mustard and mayonnaise with a side of curly fries large and an extra large diet coke",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='cheddar'), Topping(name='bacon'), Topping(name='onion'), Topping(name='pickle'), Topping(name='jalapenos'), Topping(name='mustard'), Topping(name='mayonnaise')]), SideOrder(number=1, side_type='curly_fries', size='large'), DrinkOrder(number=1, drink_type='diet_coke', size='extra_large')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(double_cheese_burger)",
+            "TOPPING(cheddar)",
+            "TOPPING(bacon)",
+            "TOPPING(onion)",
+            "TOPPING(pickle)",
+            "TOPPING(jalapenos)",
+            "TOPPING(mustard)",
+            "TOPPING(mayonnaise)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "SIDE_TYPE(curly_fries)",
+            "NUMBER(1)",
+            "SIZE(extra_large)",
+            "DRINK_TYPE(diet_coke)"
+        ]
+    },
+    {
+        "SRC": "could i get a chicken sandwich with lettuce tomatoes and ketchup oh and add bacon please",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='chicken_sandwich', toppings=[Topping(name='lettuce'), Topping(name='tomato'), Topping(name='ketchup'), Topping(name='bacon')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(chicken_sandwich)",
+            "TOPPING(lettuce)",
+            "TOPPING(tomato)",
+            "TOPPING(ketchup)",
+            "TOPPING(bacon)"
+        ]
+    },
+    {
+        "SRC": "also a large pink lemonade and a large side of curly fries",
+        "TOPALIAS": "[DrinkOrder(number=1, drink_type='pink_lemonade', size='large'), SideOrder(number=1, side_type='curly_fries', size='large')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIZE(large)",
+            "DRINK_TYPE(pink_lemonade)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "SIDE_TYPE(curly_fries)"
+        ]
+    },
+    {
+        "SRC": "i'd like one double cheeseburger with everything on it and one hamburger with lettuce tomato and ketchup two large fries one large diet coke and one medium dr pepper",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='all_toppings')]), BurgerOrder(number=1, main_dish_type='ham_burger', toppings=[Topping(name='lettuce'), Topping(name='tomato'), Topping(name='ketchup')]), SideOrder(number=2, side_type='french_fries', size='large'), DrinkOrder(number=1, drink_type='diet_coke', size='large'), DrinkOrder(number=1, drink_type='dr_pepper', size='medium')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(double_cheese_burger)",
+            "TOPPING(all_toppings)",
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(ham_burger)",
+            "TOPPING(lettuce)",
+            "TOPPING(tomato)",
+            "TOPPING(ketchup)",
+            "NUMBER(2)",
+            "SIZE(large)",
+            "SIDE_TYPE(french_fries)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "DRINK_TYPE(diet_coke)",
+            "NUMBER(1)",
+            "SIZE(medium)",
+            "DRINK_TYPE(dr_pepper)"
+        ]
+    },
+    {
+        "SRC": "then two dr peppers large",
+        "TOPALIAS": "[DrinkOrder(number=2, drink_type='dr_pepper', size='large')]",
+        "USED_ITEMS": [
+            "NUMBER(2)",
+            "SIZE(large)",
+            "DRINK_TYPE(dr_pepper)"
+        ]
+    },
+    {
+        "SRC": "then an order of fries and curly fries",
+        "TOPALIAS": "[SideOrder(number=1, side_type='french_fries'), SideOrder(number=1, side_type='curly_fries')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIDE_TYPE(french_fries)",
+            "NUMBER(1)",
+            "SIDE_TYPE(curly_fries)"
+        ]
+    },
+    {
+        "SRC": "i would like a hamburger with cheddar cheese bacon mustard and ketchup a small order of curly fries and a large chocolate shake to drink",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='ham_burger', toppings=[Topping(name='cheddar'), Topping(name='bacon'), Topping(name='mustard'), Topping(name='ketchup')]), SideOrder(number=1, side_type='curly_fries', size='small'), DrinkOrder(number=1, drink_type='chocolate_shake', size='large')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(ham_burger)",
+            "TOPPING(cheddar)",
+            "TOPPING(bacon)",
+            "TOPPING(mustard)",
+            "TOPPING(ketchup)",
+            "NUMBER(1)",
+            "SIZE(small)",
+            "SIDE_TYPE(curly_fries)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "DRINK_TYPE(chocolate_shake)"
+        ]
+    },
+    {
+        "SRC": "i'd like a double cheeseburger with blue cheese onions pickles lettuce tomatoes jalapenos bacon and ketchup on it",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='blue_cheese'), Topping(name='onion'), Topping(name='pickle'), Topping(name='lettuce'), Topping(name='tomato'), Topping(name='jalapenos'), Topping(name='bacon'), Topping(name='ketchup')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(double_cheese_burger)",
+            "TOPPING(blue_cheese)",
+            "TOPPING(onion)",
+            "TOPPING(pickle)",
+            "TOPPING(lettuce)",
+            "TOPPING(tomato)",
+            "TOPPING(jalapenos)",
+            "TOPPING(bacon)",
+            "TOPPING(ketchup)"
+        ]
+    },
+    {
+        "SRC": "i'd also like a large root beer to drink and a large order of sweet potato fries",
+        "TOPALIAS": "[DrinkOrder(number=1, drink_type='root_beer', size='large'), SideOrder(number=1, side_type='sweet_potato_fries', size='large')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIZE(large)",
+            "DRINK_TYPE(root_beer)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "SIDE_TYPE(sweet_potato_fries)"
+        ]
+    },
+    {
+        "SRC": "can i have a double cheese burger with bacon and ketchup a large curly fries and a large coke please thanks",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='bacon'), Topping(name='ketchup')]), SideOrder(number=1, side_type='curly_fries', size='large'), DrinkOrder(number=1, drink_type='coca_cola', size='large')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(double_cheese_burger)",
+            "TOPPING(bacon)",
+            "TOPPING(ketchup)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "SIDE_TYPE(curly_fries)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "DRINK_TYPE(coca_cola)"
+        ]
+    },
+    {
+        "SRC": "hello i'd like a chicken sandwich with extra lettuce bacon and extra pickles",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='chicken_sandwich', toppings=[Topping(name='lettuce', qualifier='extra'), Topping(name='pickle', qualifier='extra'), Topping(name='bacon')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(chicken_sandwich)",
+            "TOPPING(lettuce)",
+            "QUANTITY(extra)",
+            "TOPPING(pickle)",
+            "QUANTITY(extra)",
+            "TOPPING(bacon)"
+        ]
+    },
+    {
+        "SRC": "i'd also like a small fry and large root beer",
+        "TOPALIAS": "[SideOrder(number=1, side_type='french_fries', size='small'), DrinkOrder(number=1, drink_type='root_beer', size='large')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIZE(small)",
+            "SIDE_TYPE(french_fries)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "DRINK_TYPE(root_beer)"
+        ]
+    },
+    {
+        "SRC": "i'd like to get a vegan burger with lettuce tomatoes jalapenos onions mustard and mayo",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='vegan_burger', toppings=[Topping(name='lettuce'), Topping(name='tomato'), Topping(name='jalapenos'), Topping(name='onion'), Topping(name='mustard'), Topping(name='mayonnaise')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(vegan_burger)",
+            "TOPPING(lettuce)",
+            "TOPPING(tomato)",
+            "TOPPING(jalapenos)",
+            "TOPPING(onion)",
+            "TOPPING(mustard)",
+            "TOPPING(mayonnaise)"
+        ]
+    },
+    {
+        "SRC": "with that i want a large vanilla shake and a large order of garlic fries",
+        "TOPALIAS": "[DrinkOrder(number=1, drink_type='vanilla_shake', size='large'), SideOrder(number=1, side_type='garlic_fries', size='large')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIZE(large)",
+            "DRINK_TYPE(vanilla_shake)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "SIDE_TYPE(garlic_fries)"
+        ]
+    },
+    {
+        "SRC": "i would like a cheeseburger with cheddar cheese lettuce tomatoes and pickles and mayonnaise with a side of fries",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='cheddar'), Topping(name='lettuce'), Topping(name='tomato'), Topping(name='pickle'), Topping(name='mayonnaise')]), SideOrder(number=1, side_type='french_fries')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(cheese_burger)",
+            "TOPPING(cheddar)",
+            "TOPPING(lettuce)",
+            "TOPPING(tomato)",
+            "TOPPING(pickle)",
+            "TOPPING(mayonnaise)",
+            "NUMBER(1)",
+            "SIDE_TYPE(french_fries)"
+        ]
+    },
+    {
+        "SRC": "i'll have an iced tea to drink",
+        "TOPALIAS": "[DrinkOrder(number=1, drink_type='iced_tea')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "DRINK_TYPE(iced_tea)"
+        ]
+    },
+    {
+        "SRC": "veggie burger with lettuce and bacon large curly fry and a small iced tea",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='vegan_burger', toppings=[Topping(name='lettuce'), Topping(name='bacon')]), SideOrder(number=1, side_type='curly_fries', size='large'), DrinkOrder(number=1, drink_type='iced_tea', size='small')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(vegan_burger)",
+            "TOPPING(lettuce)",
+            "TOPPING(bacon)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "SIDE_TYPE(curly_fries)",
+            "NUMBER(1)",
+            "SIZE(small)",
+            "DRINK_TYPE(iced_tea)"
+        ]
+    },
+    {
+        "SRC": "i'll go with a chicken sandwich and for toppings i would like mustard lettuce tomatoes and pickles",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='chicken_sandwich', toppings=[Topping(name='mustard'), Topping(name='lettuce'), Topping(name='tomato'), Topping(name='pickle')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(chicken_sandwich)",
+            "TOPPING(mustard)",
+            "TOPPING(lettuce)",
+            "TOPPING(tomato)",
+            "TOPPING(pickle)"
+        ]
+    },
+    {
+        "SRC": "for my drink i'd like a large dr pepper",
+        "TOPALIAS": "[DrinkOrder(number=1, drink_type='dr_pepper', size='large')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIZE(large)",
+            "DRINK_TYPE(dr_pepper)"
+        ]
+    },
+    {
+        "SRC": "for my side item i'll take a large order of garlic fries",
+        "TOPALIAS": "[SideOrder(number=1, side_type='garlic_fries', size='large')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIZE(large)",
+            "SIDE_TYPE(garlic_fries)"
+        ]
+    },
+    {
+        "SRC": "i want a cheeseburger with cheddar cheese and bacon",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='cheddar'), Topping(name='bacon')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(cheese_burger)",
+            "TOPPING(cheddar)",
+            "TOPPING(bacon)"
+        ]
+    },
+    {
+        "SRC": "i also need one large fries and a medium coke",
+        "TOPALIAS": "[SideOrder(number=1, side_type='french_fries', size='large'), DrinkOrder(number=1, drink_type='coca_cola', size='medium')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIZE(large)",
+            "SIDE_TYPE(french_fries)",
+            "NUMBER(1)",
+            "SIZE(medium)",
+            "DRINK_TYPE(coca_cola)"
+        ]
+    },
+    {
+        "SRC": "can i have a double cheeseburger with pickles and blue cheese a large garlic fries and a small strawberry shake",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='pickle'), Topping(name='blue_cheese')]), SideOrder(number=1, side_type='garlic_fries', size='large'), DrinkOrder(number=1, drink_type='strawberry_shake', size='small')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(double_cheese_burger)",
+            "TOPPING(pickle)",
+            "TOPPING(blue_cheese)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "SIDE_TYPE(garlic_fries)",
+            "NUMBER(1)",
+            "SIZE(small)",
+            "DRINK_TYPE(strawberry_shake)"
+        ]
+    },
+    {
+        "SRC": "can i get a hamburger with blue cheese lettuce and tomatoes please",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='ham_burger', toppings=[Topping(name='blue_cheese'), Topping(name='lettuce'), Topping(name='tomato')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(ham_burger)",
+            "TOPPING(blue_cheese)",
+            "TOPPING(lettuce)",
+            "TOPPING(tomato)"
+        ]
+    },
+    {
+        "SRC": "i'll also have a small order of sweet potato fries and a large diet coke with that",
+        "TOPALIAS": "[SideOrder(number=1, side_type='sweet_potato_fries', size='small'), DrinkOrder(number=1, drink_type='diet_coke', size='large')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIZE(small)",
+            "SIDE_TYPE(sweet_potato_fries)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "DRINK_TYPE(diet_coke)"
+        ]
+    },
+    {
+        "SRC": "could i please get one cheeseburger with cheddar lettuce tomato and onions and one vegan burger with ketchup and mayonnaise",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='cheddar'), Topping(name='lettuce'), Topping(name='tomato'), Topping(name='onion')]), BurgerOrder(number=1, main_dish_type='vegan_burger', toppings=[Topping(name='ketchup'), Topping(name='mayonnaise')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(cheese_burger)",
+            "TOPPING(cheddar)",
+            "TOPPING(lettuce)",
+            "TOPPING(tomato)",
+            "TOPPING(onion)",
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(vegan_burger)",
+            "TOPPING(ketchup)",
+            "TOPPING(mayonnaise)"
+        ]
+    },
+    {
+        "SRC": "and could i also get two medium diet cokes one small fry and one small curly fry",
+        "TOPALIAS": "[DrinkOrder(number=2, drink_type='diet_coke', size='medium'), SideOrder(number=1, side_type='french_fries', size='small'), SideOrder(number=1, side_type='curly_fries', size='small')]",
+        "USED_ITEMS": [
+            "NUMBER(2)",
+            "SIZE(medium)",
+            "DRINK_TYPE(diet_coke)",
+            "NUMBER(1)",
+            "SIZE(small)",
+            "SIDE_TYPE(french_fries)",
+            "NUMBER(1)",
+            "SIZE(small)",
+            "SIDE_TYPE(curly_fries)"
+        ]
+    },
+    {
+        "SRC": "i'd like to try out your vegan burger please can you put lettuce and mayonnaise and mustard on that",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='vegan_burger', toppings=[Topping(name='lettuce'), Topping(name='mayonnaise'), Topping(name='mustard')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(vegan_burger)",
+            "TOPPING(lettuce)",
+            "TOPPING(mayonnaise)",
+            "TOPPING(mustard)"
+        ]
+    },
+    {
+        "SRC": "i want a sugar free lemonade to drink also and a side of sweet potato fries",
+        "TOPALIAS": "[DrinkOrder(number=1, drink_type='zero_sugar_lemonade'), SideOrder(number=1, side_type='sweet_potato_fries')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "DRINK_TYPE(zero_sugar_lemonade)",
+            "NUMBER(1)",
+            "SIDE_TYPE(sweet_potato_fries)"
+        ]
+    },
+    {
+        "SRC": "i like to order a hamburger with tomatoes cheddar cheese lettuce ketchup and ice tea and french fries on the side",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='ham_burger', toppings=[Topping(name='tomato'), Topping(name='cheddar'), Topping(name='lettuce'), Topping(name='ketchup')]), DrinkOrder(number=1, drink_type='iced_tea'), SideOrder(number=1, side_type='french_fries')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(ham_burger)",
+            "TOPPING(tomato)",
+            "TOPPING(cheddar)",
+            "TOPPING(lettuce)",
+            "TOPPING(ketchup)",
+            "NUMBER(1)",
+            "DRINK_TYPE(iced_tea)",
+            "NUMBER(1)",
+            "SIDE_TYPE(french_fries)"
+        ]
+    },
+    {
+        "SRC": "i'll have a chicken sandwich with lettuce mayo and pickles with small garlic fries and a medium coke",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='chicken_sandwich', toppings=[Topping(name='lettuce'), Topping(name='mayonnaise'), Topping(name='pickle')]), SideOrder(number=1, side_type='garlic_fries', size='small'), DrinkOrder(number=1, drink_type='coca_cola', size='medium')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(chicken_sandwich)",
+            "TOPPING(lettuce)",
+            "TOPPING(mayonnaise)",
+            "TOPPING(pickle)",
+            "NUMBER(1)",
+            "SIZE(small)",
+            "SIDE_TYPE(garlic_fries)",
+            "NUMBER(1)",
+            "SIZE(medium)",
+            "DRINK_TYPE(coca_cola)"
+        ]
+    },
+    {
+        "SRC": "hi i'd like a double cheeseburger with ketchup and mayo",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='ketchup'), Topping(name='mayonnaise')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(double_cheese_burger)",
+            "TOPPING(ketchup)",
+            "TOPPING(mayonnaise)"
+        ]
+    },
+    {
+        "SRC": "a side of small sweet potato fries and a large chocolate milk shake",
+        "TOPALIAS": "[SideOrder(number=1, side_type='sweet_potato_fries', size='small'), DrinkOrder(number=1, drink_type='chocolate_shake', size='large')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIZE(small)",
+            "SIDE_TYPE(sweet_potato_fries)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "DRINK_TYPE(chocolate_shake)"
+        ]
+    },
+    {
+        "SRC": "i'd like a cheeseburger with cheddar cheese ketchup mayo and onions",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='cheddar'), Topping(name='ketchup'), Topping(name='mayonnaise'), Topping(name='onion')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(cheese_burger)",
+            "TOPPING(cheddar)",
+            "TOPPING(ketchup)",
+            "TOPPING(mayonnaise)",
+            "TOPPING(onion)"
+        ]
+    },
+    {
+        "SRC": "also a small order of fries and a medium coke please",
+        "TOPALIAS": "[SideOrder(number=1, side_type='french_fries', size='small'), DrinkOrder(number=1, drink_type='coca_cola', size='medium')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIZE(small)",
+            "SIDE_TYPE(french_fries)",
+            "NUMBER(1)",
+            "SIZE(medium)",
+            "DRINK_TYPE(coca_cola)"
+        ]
+    },
+    {
+        "SRC": "i'll have a chicken sandwich with lettuce tomatoes and mayo small french fries and a medium iced tea please",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='chicken_sandwich', toppings=[Topping(name='lettuce'), Topping(name='tomato'), Topping(name='mayonnaise')]), SideOrder(number=1, side_type='french_fries', size='small'), DrinkOrder(number=1, drink_type='iced_tea', size='medium')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(chicken_sandwich)",
+            "TOPPING(lettuce)",
+            "TOPPING(tomato)",
+            "TOPPING(mayonnaise)",
+            "NUMBER(1)",
+            "SIZE(small)",
+            "SIDE_TYPE(french_fries)",
+            "NUMBER(1)",
+            "SIZE(medium)",
+            "DRINK_TYPE(iced_tea)"
+        ]
+    },
+    {
+        "SRC": "i'd like a cheeseburger with lettuce tomato onions pickles and ketchup and a hamburger with only pickles",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='lettuce'), Topping(name='tomato'), Topping(name='onion'), Topping(name='pickle'), Topping(name='ketchup')]), BurgerOrder(number=1, main_dish_type='ham_burger', toppings=[Topping(name='pickle')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(cheese_burger)",
+            "TOPPING(lettuce)",
+            "TOPPING(tomato)",
+            "TOPPING(onion)",
+            "TOPPING(pickle)",
+            "TOPPING(ketchup)",
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(ham_burger)",
+            "TOPPING(pickle)"
+        ]
+    },
+    {
+        "SRC": "also two small orders of fries and a small seven up and a medium diet coke",
+        "TOPALIAS": "[SideOrder(number=2, side_type='french_fries', size='small'), DrinkOrder(number=1, drink_type='seven_up', size='small'), DrinkOrder(number=1, drink_type='diet_coke', size='medium')]",
+        "USED_ITEMS": [
+            "NUMBER(2)",
+            "SIZE(small)",
+            "SIDE_TYPE(french_fries)",
+            "NUMBER(1)",
+            "SIZE(small)",
+            "DRINK_TYPE(seven_up)",
+            "NUMBER(1)",
+            "SIZE(medium)",
+            "DRINK_TYPE(diet_coke)"
+        ]
+    },
+    {
+        "SRC": "i would like one salad with a side of apple slices and to drink i would like a medium diet coke please",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='salad'), SideOrder(number=1, side_type='apple_slices'), DrinkOrder(number=1, drink_type='diet_coke', size='medium')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(salad)",
+            "NUMBER(1)",
+            "SIDE_TYPE(apple_slices)",
+            "NUMBER(1)",
+            "SIZE(medium)",
+            "DRINK_TYPE(diet_coke)"
+        ]
+    },
+    {
+        "SRC": "i want two plain double cheeseburgers",
+        "TOPALIAS": "[BurgerOrder(number=2, main_dish_type='double_cheese_burger')]",
+        "USED_ITEMS": [
+            "NUMBER(2)",
+            "MAIN_DISH_TYPE(double_cheese_burger)"
+        ]
+    },
+    {
+        "SRC": "can i also get an iced tea and a root beer",
+        "TOPALIAS": "[DrinkOrder(number=1, drink_type='iced_tea'), DrinkOrder(number=1, drink_type='root_beer')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "DRINK_TYPE(iced_tea)",
+            "NUMBER(1)",
+            "DRINK_TYPE(root_beer)"
+        ]
+    },
+    {
+        "SRC": "i also want two orders of large curly fries",
+        "TOPALIAS": "[SideOrder(number=2, side_type='curly_fries', size='large')]",
+        "USED_ITEMS": [
+            "NUMBER(2)",
+            "SIZE(large)",
+            "SIDE_TYPE(curly_fries)"
+        ]
+    },
+    {
+        "SRC": "can i have two chicken sandwiches with mayonnaise lettuce and tomato two orders of fries and two small coffees please",
+        "TOPALIAS": "[BurgerOrder(number=2, main_dish_type='chicken_sandwich', toppings=[Topping(name='mayonnaise'), Topping(name='lettuce'), Topping(name='tomato')]), SideOrder(number=2, side_type='french_fries'), DrinkOrder(number=2, drink_type='coffee', size='small')]",
+        "USED_ITEMS": [
+            "NUMBER(2)",
+            "MAIN_DISH_TYPE(chicken_sandwich)",
+            "TOPPING(mayonnaise)",
+            "TOPPING(lettuce)",
+            "TOPPING(tomato)",
+            "NUMBER(2)",
+            "SIDE_TYPE(french_fries)",
+            "NUMBER(2)",
+            "SIZE(small)",
+            "DRINK_TYPE(coffee)"
+        ]
+    },
+    {
+        "SRC": "i would like a hamburger with lettuce jalapenos pickle ketchup large coke and a side order of small curly fries",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='ham_burger', toppings=[Topping(name='lettuce'), Topping(name='jalapenos'), Topping(name='pickle'), Topping(name='ketchup')]), DrinkOrder(number=1, drink_type='coca_cola', size='large'), SideOrder(number=1, side_type='curly_fries', size='small')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(ham_burger)",
+            "TOPPING(lettuce)",
+            "TOPPING(jalapenos)",
+            "TOPPING(pickle)",
+            "TOPPING(ketchup)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "DRINK_TYPE(coca_cola)",
+            "NUMBER(1)",
+            "SIZE(small)",
+            "SIDE_TYPE(curly_fries)"
+        ]
+    },
+    {
+        "SRC": "i would like a cheeseburger with all toppings with a side of large french fries",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='all_toppings')]), SideOrder(number=1, side_type='french_fries', size='large')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(cheese_burger)",
+            "TOPPING(all_toppings)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "SIDE_TYPE(french_fries)"
+        ]
+    },
+    {
+        "SRC": "i'd like a cheeseburger with only mustard a large order of garlic fries and a small vanilla shake",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='mustard')]), SideOrder(number=1, side_type='garlic_fries', size='large'), DrinkOrder(number=1, drink_type='vanilla_shake', size='small')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(cheese_burger)",
+            "TOPPING(mustard)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "SIDE_TYPE(garlic_fries)",
+            "NUMBER(1)",
+            "SIZE(small)",
+            "DRINK_TYPE(vanilla_shake)"
+        ]
+    },
+    {
+        "SRC": "i'd like a cheeseburger please with cheddar cheese pickles and mayonnaise",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='cheddar'), Topping(name='pickle'), Topping(name='mayonnaise')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(cheese_burger)",
+            "TOPPING(cheddar)",
+            "TOPPING(pickle)",
+            "TOPPING(mayonnaise)"
+        ]
+    },
+    {
+        "SRC": "and i'd like a large order of curly fries and a large dr pepper",
+        "TOPALIAS": "[SideOrder(number=1, side_type='curly_fries', size='large'), DrinkOrder(number=1, drink_type='dr_pepper', size='large')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIZE(large)",
+            "SIDE_TYPE(curly_fries)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "DRINK_TYPE(dr_pepper)"
+        ]
+    },
+    {
+        "SRC": "i would like a cheeseburger with jalapenos lettuce onions tomatoes and ketchup",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='jalapenos'), Topping(name='lettuce'), Topping(name='onion'), Topping(name='tomato'), Topping(name='ketchup')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(cheese_burger)",
+            "TOPPING(jalapenos)",
+            "TOPPING(lettuce)",
+            "TOPPING(onion)",
+            "TOPPING(tomato)",
+            "TOPPING(ketchup)"
+        ]
+    },
+    {
+        "SRC": "a side of fries and a large root beer",
+        "TOPALIAS": "[SideOrder(number=1, side_type='french_fries'), DrinkOrder(number=1, drink_type='root_beer', size='large')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIDE_TYPE(french_fries)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "DRINK_TYPE(root_beer)"
+        ]
+    },
+    {
+        "SRC": "i'll take a hamburger with ketchup and mayo plus a large curly fries and one large chocolate shake please",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='ham_burger', toppings=[Topping(name='ketchup'), Topping(name='mayonnaise')]), SideOrder(number=1, side_type='curly_fries', size='large'), DrinkOrder(number=1, drink_type='chocolate_shake', size='large')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(ham_burger)",
+            "TOPPING(ketchup)",
+            "TOPPING(mayonnaise)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "SIDE_TYPE(curly_fries)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "DRINK_TYPE(chocolate_shake)"
+        ]
+    },
+    {
+        "SRC": "can i get a cheese burger with ketchup lettuce and pickles with two sides of medium garlic fries and two medium cokes",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='ketchup'), Topping(name='lettuce'), Topping(name='pickle')]), SideOrder(number=2, side_type='garlic_fries', size='medium'), DrinkOrder(number=2, drink_type='coca_cola', size='medium')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(cheese_burger)",
+            "TOPPING(ketchup)",
+            "TOPPING(lettuce)",
+            "TOPPING(pickle)",
+            "NUMBER(2)",
+            "SIZE(medium)",
+            "SIDE_TYPE(garlic_fries)",
+            "NUMBER(2)",
+            "SIZE(medium)",
+            "DRINK_TYPE(coca_cola)"
+        ]
+    },
+    {
+        "SRC": "i'd like a double cheeseburger with bacon large french fries and a large root beer",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='bacon')]), SideOrder(number=1, side_type='french_fries', size='large'), DrinkOrder(number=1, drink_type='root_beer', size='large')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(double_cheese_burger)",
+            "TOPPING(bacon)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "SIDE_TYPE(french_fries)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "DRINK_TYPE(root_beer)"
+        ]
+    },
+    {
+        "SRC": "i'd like a cheeseburger with cheddar cheese lettuce tomatoes and bacon",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='cheddar'), Topping(name='lettuce'), Topping(name='tomato'), Topping(name='bacon')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(cheese_burger)",
+            "TOPPING(cheddar)",
+            "TOPPING(lettuce)",
+            "TOPPING(tomato)",
+            "TOPPING(bacon)"
+        ]
+    },
+    {
+        "SRC": "i'd also like a medium root beer",
+        "TOPALIAS": "[DrinkOrder(number=1, drink_type='root_beer', size='medium')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIZE(medium)",
+            "DRINK_TYPE(root_beer)"
+        ]
+    },
+    {
+        "SRC": "i'd like a double cheeseburger with grilled onions and pickles but no tomatoes",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='onion'), Topping(name='pickle'), Topping(name='tomato', negation=True)])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(double_cheese_burger)",
+            "TOPPING(onion)",
+            "TOPPING(pickle)",
+            "NOT(not)",
+            "TOPPING(tomato)"
+        ]
+    },
+    {
+        "SRC": "i'd also like large fries and a large coke",
+        "TOPALIAS": "[SideOrder(number=1, side_type='french_fries', size='large'), DrinkOrder(number=1, drink_type='coca_cola', size='large')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIZE(large)",
+            "SIDE_TYPE(french_fries)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "DRINK_TYPE(coca_cola)"
+        ]
+    },
+    {
+        "SRC": "can i have a plain vegan burger with large curly fries a small dr pepper and a medium diet coke",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='vegan_burger'), SideOrder(number=1, side_type='curly_fries', size='large'), DrinkOrder(number=1, drink_type='dr_pepper', size='small'), DrinkOrder(number=1, drink_type='diet_coke', size='medium')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(vegan_burger)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "SIDE_TYPE(curly_fries)",
+            "NUMBER(1)",
+            "SIZE(small)",
+            "DRINK_TYPE(dr_pepper)",
+            "NUMBER(1)",
+            "SIZE(medium)",
+            "DRINK_TYPE(diet_coke)"
+        ]
+    },
+    {
+        "SRC": "can i get a chicken sandwich with bacon lettuce and tomatoes and two cheeseburgers with mayo only",
+        "TOPALIAS": "[BurgerOrder(number=1, main_dish_type='chicken_sandwich', toppings=[Topping(name='bacon'), Topping(name='lettuce'), Topping(name='tomato')]), BurgerOrder(number=2, main_dish_type='cheese_burger', toppings=[Topping(name='mayonnaise')])]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "MAIN_DISH_TYPE(chicken_sandwich)",
+            "TOPPING(bacon)",
+            "TOPPING(lettuce)",
+            "TOPPING(tomato)",
+            "NUMBER(2)",
+            "MAIN_DISH_TYPE(cheese_burger)",
+            "TOPPING(mayonnaise)"
+        ]
+    },
+    {
+        "SRC": "i also need one order of curly fries plus a medium diet coke and a large root beer",
+        "TOPALIAS": "[SideOrder(number=1, side_type='curly_fries'), DrinkOrder(number=1, drink_type='diet_coke', size='medium'), DrinkOrder(number=1, drink_type='root_beer', size='large')]",
+        "USED_ITEMS": [
+            "NUMBER(1)",
+            "SIDE_TYPE(curly_fries)",
+            "NUMBER(1)",
+            "SIZE(medium)",
+            "DRINK_TYPE(diet_coke)",
+            "NUMBER(1)",
+            "SIZE(large)",
+            "DRINK_TYPE(root_beer)"
+        ]
+    }
+]

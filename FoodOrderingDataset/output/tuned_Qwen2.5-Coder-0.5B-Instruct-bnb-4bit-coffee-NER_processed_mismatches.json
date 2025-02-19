@@ -1,0 +1,65 @@
+[
+    {
+        "input": "one regular latte light roast with an extra espresso shot and honey added and one large cappuccino with caramel syrup in that one",
+        "input_augmented": "one regular latte light roast with an extra espresso shot and honey added and one large cappuccino with caramel syrup in that one\nItems Found: one - number(1), regular - size(regular), latte - drink_type(latte), light roast - roast_type(light_roast), an extra espresso shot - topping(espresso_shot_1), honey - topping(honey), one - number(1), large - size(large), cappuccino - drink_type(cappuccino), caramel syrup - topping(caramel_syrup), one - number(1)",
+        "output": "[DrinkOrder(number=1, drink_type='latte', roast_type='light_roast', size='large', toppings=[Topping(name='honey'), Topping(name='espresso_shot_1'), Topping(name='caramel_syrup')]), DrinkOrder(number=1, drink_type='cappuccino', size='regular')]",
+        "expected": "[DrinkOrder(number=1, drink_type='latte', roast_type='light_roast', size='regular', toppings=[Topping(name='espresso_shot_1'), Topping(name='honey')]), DrinkOrder(number=1, drink_type='cappuccino', size='large', toppings=[Topping(name='caramel_syrup')])]",
+        "output_NER": "one - number(1), regular - size(regular), latte - drink_type(latte), light roast - roast_type(light_roast), an extra espresso shot - topping(espresso_shot_1), honey - topping(honey), one - number(1), large - size(large), cappuccino - drink_type(cappuccino), caramel syrup - topping(caramel_syrup), one - number(1)"
+    },
+    {
+        "input": "please give me a large latte french roast and a medium americano dark roast with caramel syrup",
+        "input_augmented": "please give me a large latte french roast and a medium americano dark roast with caramel syrup\nItems Found: a - number(1), large - size(large), latte - drink_type(latte), french roast - roast_type(french), a - number(1), medium - size(regular), americano - drink_type(americano), dark roast - roast_type(dark_roast), caramel syrup - topping(caramel_syrup)",
+        "output": "[DrinkOrder(number=1, drink_type='latte', roast_type='french', size='large', toppings=[Topping(name='caramel_syrup')]), DrinkOrder(number=1, drink_type='americano', roast_type='dark_roast', size='regular')]",
+        "expected": "[DrinkOrder(number=1, drink_type='latte', roast_type='french', size='large'), DrinkOrder(number=1, drink_type='americano', roast_type='dark_roast', size='regular', toppings=[Topping(name='caramel_syrup')])]",
+        "output_NER": "a - number(1), large - size(large), latte - drink_type(latte), french roast - roast_type(french), a - number(1), medium - size(regular), americano - drink_type(americano), dark roast - roast_type(dark_roast), caramel syrup - topping(caramel_syrup)"
+    },
+    {
+        "input": "i need a large medium roast skinny latte with raspberry syrup and a small dark roast americano with whipped cream on top",
+        "input_augmented": "i need a large medium roast skinny latte with raspberry syrup and a small dark roast americano with whipped cream on top\nItems Found: a - number(1), large - size(large), medium roast - roast_type(medium_roast), skinny - style(skinny), latte - drink_type(latte), raspberry syrup - topping(raspberry_syrup), a - number(1), small - size(small), dark roast - roast_type(dark_roast), americano - drink_type(americano), whipped cream - topping(whipped_cream)",
+        "output": "[DrinkOrder(number=1, drink_type='latte', roast_type='dark_roast', size='large', style='skinny', toppings=[Topping(name='raspberry_syrup'), Topping(name='whipped_cream')]), DrinkOrder(number=1, drink_type='americano', roast_type='medium_roast', size='small')]",
+        "expected": "[DrinkOrder(number=1, drink_type='latte', roast_type='medium_roast', size='large', style='skinny', toppings=[Topping(name='raspberry_syrup')]), DrinkOrder(number=1, drink_type='americano', roast_type='dark_roast', size='small', toppings=[Topping(name='whipped_cream')])]",
+        "output_NER": "a - number(1), large - size(large), medium roast - roast_type(medium_roast), skinny - style(skinny), latte - drink_type(latte), raspberry syrup - topping(raspberry_syrup), a - number(1), small - size(small), dark roast - roast_type(dark_roast), americano - drink_type(americano), whipped cream - topping(whipped_cream)"
+    },
+    {
+        "input": "can i get a large dark roast cappuccino with vanilla and caramel syrup",
+        "input_augmented": "can i get a large dark roast cappuccino with vanilla and caramel syrup\nItems Found: a - number(1), large - size(large), dark roast - roast_type(dark_roast), cappuccino - drink_type(cappuccino), vanilla - topping(vanilla_syrup), caramel syrup - topping(caramel_syrup)",
+        "output": "[DrinkOrder(number=1, drink_type='cappuccino', roast_type='dark_roast', size='large', toppings=[Topping(name='caramel_syrup'), Topping(name='vanilla_syrup')])]",
+        "expected": "[DrinkOrder(number=1, drink_type='cappuccino', roast_type='dark_roast', size='large', toppings=[Topping(name='vanilla_syrup'), Topping(name='caramel_syrup')])]",
+        "output_NER": "a - number(1), large - size(large), dark roast - roast_type(dark_roast), cappuccino - drink_type(cappuccino), vanilla - topping(vanilla_syrup), caramel syrup - topping(caramel_syrup)"
+    },
+    {
+        "input": "i want two large espressos with cinnamon and drizzle please",
+        "input_augmented": "i want two large espressos with cinnamon and drizzle please\nItems Found: two - number(2), large - size(large), espressos - drink_type(espresso), cinnamon - topping(cinnamon), drizzle - topping(drizzles)",
+        "output": "[DrinkOrder(number=1, drink_type='espresso', size='large', toppings=[Topping(name='cinnamon'), Topping(name='drizzles')])]",
+        "expected": "[DrinkOrder(number=2, drink_type='espresso', size='large', toppings=[Topping(name='cinnamon'), Topping(name='drizzles')])]",
+        "output_NER": "two - number(2), large - size(large), espressos - drink_type(espresso), cinnamon - topping(cinnamon), drizzle - topping(drizzles)"
+    },
+    {
+        "input": "could you get me a large french roast americano coffee",
+        "input_augmented": "could you get me a large french roast americano coffee\nItems Found: a - number(1), large - size(large), french roast - roast_type(french), americano - drink_type(americano), coffee - drink_type(drip_coffee)",
+        "output": "[DrinkOrder(number=1, drink_type='drip_coffee', roast_type='french', size='large'), DrinkOrder(number=1, drink_type='americano')]",
+        "expected": "[DrinkOrder(number=1, drink_type='americano', roast_type='french', size='large')]",
+        "output_NER": "a - number(1), large - size(large), french roast - roast_type(french), americano - drink_type(americano), coffee - drink_type(drip_coffee)"
+    },
+    {
+        "input": "can i get a small hot chocolate with whipped cream and a regular drip coffee with vanilla syrup",
+        "input_augmented": "can i get a small hot chocolate with whipped cream and a regular drip coffee with vanilla syrup\nItems Found: a - number(1), small - size(small), hot chocolate - drink_type(hot_chocolate), whipped cream - topping(whipped_cream), a - number(1), regular - size(regular), drip coffee - drink_type(drip_coffee), vanilla syrup - topping(vanilla_syrup)",
+        "output": "[DrinkOrder(number=1, drink_type='hot_chocolate', size='regular', toppings=[Topping(name='vanilla_syrup'), Topping(name='whipped_cream')]), DrinkOrder(number=1, drink_type='drip_coffee', size='small')]",
+        "expected": "[DrinkOrder(number=1, drink_type='hot_chocolate', size='small', toppings=[Topping(name='whipped_cream')]), DrinkOrder(number=1, drink_type='drip_coffee', size='regular', toppings=[Topping(name='vanilla_syrup')])]",
+        "output_NER": "a - number(1), small - size(small), hot chocolate - drink_type(hot_chocolate), whipped cream - topping(whipped_cream), a - number(1), regular - size(regular), drip coffee - drink_type(drip_coffee), vanilla syrup - topping(vanilla_syrup)"
+    },
+    {
+        "input": "i'd like a large decaf continental with vanilla syrup and a small skinny italian roast cappuccino with crumbles on top",
+        "input_augmented": "i'd like a large decaf continental with vanilla syrup and a small skinny italian roast cappuccino with crumbles on top\nItems Found: a - number(1), large - size(large), decaf - style(decaf), continental - roast_type(continental_roast), vanilla syrup - topping(vanilla_syrup), a - number(1), small - size(small), skinny - style(skinny), italian roast - roast_type(italian), cappuccino - drink_type(cappuccino), crumbles - topping(crumbles)",
+        "output": "[DrinkOrder(number=1, drink_type='cappuccino', roast_type='italian', size='large', style='decaf', toppings=[Topping(name='vanilla_syrup'), Topping(name='crumbles')])]",
+        "expected": "[DrinkOrder(number=1, roast_type='continental_roast', size='large', style='decaf', toppings=[Topping(name='vanilla_syrup')]), DrinkOrder(number=1, drink_type='cappuccino', roast_type='italian', size='small', style='skinny', toppings=[Topping(name='crumbles')])]",
+        "output_NER": "a - number(1), large - size(large), decaf - style(decaf), continental - roast_type(continental_roast), vanilla syrup - topping(vanilla_syrup), a - number(1), small - size(small), skinny - style(skinny), italian roast - roast_type(italian), cappuccino - drink_type(cappuccino), crumbles - topping(crumbles)"
+    },
+    {
+        "input": "can i get a small iced coffee decaf french roast with hazelnut drizzles",
+        "input_augmented": "can i get a small iced coffee decaf french roast with hazelnut drizzles\nItems Found: a - number(1), small - size(small), iced - style(iced), coffee - drink_type(drip_coffee), decaf - style(decaf), french roast - roast_type(french), hazelnut - topping(hazelnut_syrup), drizzles - topping(drizzles)",
+        "output": "[DrinkOrder(number=1, drink_type='drip_coffee', roast_type='french', size='small', style='decaf', toppings=[Topping(name='hazelnut_syrup'), Topping(name='drizzles')])]",
+        "expected": "[DrinkOrder(number=1, drink_type='drip_coffee', roast_type='french', size='small', style='iced', toppings=[Topping(name='hazelnut_syrup'), Topping(name='drizzles')])]",
+        "output_NER": "a - number(1), small - size(small), iced - style(iced), coffee - drink_type(drip_coffee), decaf - style(decaf), french roast - roast_type(french), hazelnut - topping(hazelnut_syrup), drizzles - topping(drizzles)"
+    }
+]

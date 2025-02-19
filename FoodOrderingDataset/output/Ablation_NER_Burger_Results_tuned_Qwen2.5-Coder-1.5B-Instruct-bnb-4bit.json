@@ -1,0 +1,919 @@
+[
+    {
+        "input": "i would like a vegan burger with lettuce tomatoes and onions and a large order of sweet potato fries",
+        "input_augmented": "i would like a vegan burger with lettuce tomatoes and onions and a large order of sweet potato fries\nItems Found: a - number(1), vegan burger - main_dish_type(vegan_burger), lettuce - topping(lettuce), tomatoes - topping(tomato), onions - topping(onion), a - number(1), large - side_size(large), sweet potato fries - side_type(sweet_potato_fries)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='vegan_burger', toppings=[Topping(name='lettuce', qualifier='None', negation=False), Topping(name='tomatoes', qualifier='None', negation=False), Topping(name='onions', qualifier='None', negation=False)]), SideOrder(number=1, size='large', side_type='sweet_potato_fries', size_type='None')]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='vegan_burger', toppings=[Topping(name='lettuce'), Topping(name='tomato'), Topping(name='onion')]), SideOrder(number=1, side_type='sweet_potato_fries', size='large')]",
+        "output_NER": "a - number(1), vegan burger - main_dish_type(vegan_burger), lettuce - topping(lettuce), tomatoes - topping(tomato), onions - topping(onion), a - number(1), large - side_size(large), sweet potato fries - side_type(sweet_potato_fries)"
+    },
+    {
+        "input": "i would also like an iced tea",
+        "input_augmented": "i would also like an iced tea\nItems Found: an - number(1), iced tea - drink_type(iced_tea)",
+        "output": "[DrinkOrder(number=1, drink_type='ice_tea')]",
+        "expected": "[DrinkOrder(number=1, drink_type='iced_tea')]",
+        "output_NER": "an - number(1), iced tea - drink_type(iced_tea)"
+    },
+    {
+        "input": "i'll have a cheeseburger with lettuce large french fries and a large diet coke",
+        "input_augmented": "i'll have a cheeseburger with lettuce large french fries and a large diet coke\nItems Found: a - number(1), cheeseburger - main_dish_type(cheese_burger), lettuce - topping(lettuce), large - side_size(large), french fries - side_type(french_fries), a - number(1), large - drink_size(large), diet coke - drink_type(diet_coke)",
+        "output": "[BurgerOrder(number=1, main_dish_type='cheeseburger', toppings=[Topping(name='lettuce')]), SideOrder(number=1, side_type='french_fries', size='large'), DrinkOrder(number=1, drink_type='diet_coke', size='large')]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='lettuce')]), SideOrder(number=1, side_type='french_fries', size='large'), DrinkOrder(number=1, drink_type='diet_coke', size='large')]",
+        "output_NER": "a - number(1), cheeseburger - main_dish_type(cheese_burger), lettuce - topping(lettuce), large - side_size(large), french fries - side_type(french_fries), a - number(1), large - drink_size(large), diet coke - drink_type(diet_coke)"
+    },
+    {
+        "input": "i'd like a double cheeseburger with onions pickles bacon ketchup and mustard",
+        "input_augmented": "i'd like a double cheeseburger with onions pickles bacon ketchup and mustard\nItems Found: a - number(1), double cheeseburger - main_dish_type(double_cheese_burger), onions - topping(onion), pickles - topping(pickle), bacon - topping(bacon), ketchup - topping(ketchup), mustard - topping(mustard)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='double_cheeseburger', toppings=[Topping(name='onions', qualifier='None', negation=False), Topping(name='pickles', qualifier='None', negation=False), Topping(name='bacon', qualifier='None', negation=False), Topping(name='ketchup', qualifier='None', negation=False), Topping(name='mustard', qualifier='None', negation=False)])]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='onion'), Topping(name='pickle'), Topping(name='bacon'), Topping(name='ketchup'), Topping(name='mustard')])]",
+        "output_NER": "a - number(1), double cheeseburger - main_dish_type(double_cheese_burger), onions - topping(onion), pickles - topping(pickle), bacon - topping(bacon), ketchup - topping(ketchup), mustard - topping(mustard)"
+    },
+    {
+        "input": "for my drink i'd like an extra large sugar free lemonade and i'll take a large curly fries on the side",
+        "input_augmented": "for my drink i'd like an extra large sugar free lemonade and i'll take a large curly fries on the side\nItems Found: an - number(1), extra large - drink_size(extra_large), sugar free lemonade - drink_type(zero_sugar_lemonade), a - number(1), large - side_size(large), curly fries - side_type(curly_fries)",
+        "output": "[DrinkOrder(number=1, drink_type='sugar_free_lemonade', size='extra_large'), DrinkOrder(number=1, drink_type='zero_sugar_lemonade', size='None'), SideOrder(number=1, side_type='curly_fries', size='large')]",
+        "expected": "[DrinkOrder(number=1, drink_type='zero_sugar_lemonade', size='extra_large'), SideOrder(number=1, side_type='curly_fries', size='large')]",
+        "output_NER": "an - number(1), extra large - drink_size(extra_large), sugar free lemonade - drink_type(zero_sugar_lemonade), a - number(1), large - side_size(large), curly fries - side_type(curly_fries)"
+    },
+    {
+        "input": "hi can i have the double cheeseburger with ketchup and onions and french fries on the side",
+        "input_augmented": "hi can i have the double cheeseburger with ketchup and onions and french fries on the side\nItems Found: double cheeseburger - main_dish_type(double_cheese_burger), ketchup - topping(ketchup), onions - topping(onion), french fries - side_type(french_fries)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='double_cheeseburger', toppings=[Topping(name='ketchup', qualifier='None', negation=False), Topping(name='onions', qualifier='None', negation=False)]), SideOrder(number=1, size='None', side_type='french_fries')]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='ketchup'), Topping(name='onion')]), SideOrder(number=1, side_type='french_fries')]",
+        "output_NER": "double cheeseburger - main_dish_type(double_cheese_burger), ketchup - topping(ketchup), onions - topping(onion), french fries - side_type(french_fries)"
+    },
+    {
+        "input": "can i also have a medium diet coke",
+        "input_augmented": "can i also have a medium diet coke\nItems Found: a - number(1), medium - drink_size(medium), diet coke - drink_type(diet_coke)",
+        "output": "[DrinkOrder(number=1, drink_type='diet_coke', size='medium')]",
+        "expected": "[DrinkOrder(number=1, drink_type='diet_coke', size='medium')]",
+        "output_NER": "a - number(1), medium - drink_size(medium), diet coke - drink_type(diet_coke)"
+    },
+    {
+        "input": "can i have a chicken sandwich with lettuce and tomatoes a small curly fries and a small chocolate shake",
+        "input_augmented": "can i have a chicken sandwich with lettuce and tomatoes a small curly fries and a small chocolate shake\nItems Found: a - number(1), chicken sandwich - main_dish_type(chicken_sandwich), lettuce - topping(lettuce), tomatoes - topping(tomato), a - number(1), small - side_size(small), curly fries - side_type(curly_fries), a - number(1), small - drink_size(small), chocolate shake - drink_type(chocolate_shake)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='chicken_sandwich', toppings=[Topping(name='lettuce', qualifier='None', negation=False), Topping(name='tomatoes', qualifier='None', negation=False)]), SideOrder(number=1, size='small', side_type='curly_fries', qualifier='None'), DrinkOrder(number=1, size='small', drink_type='chocolate_shake', qualifier='None')]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='chicken_sandwich', toppings=[Topping(name='lettuce'), Topping(name='tomato')]), SideOrder(number=1, side_type='curly_fries', size='small'), DrinkOrder(number=1, drink_type='chocolate_shake', size='small')]",
+        "output_NER": "a - number(1), chicken sandwich - main_dish_type(chicken_sandwich), lettuce - topping(lettuce), tomatoes - topping(tomato), a - number(1), small - side_size(small), curly fries - side_type(curly_fries), a - number(1), small - drink_size(small), chocolate shake - drink_type(chocolate_shake)"
+    },
+    {
+        "input": "hi could i please have a cheeseburger with cheddar cheese onions pickles lettuce ketchup mustard and a little mayo",
+        "input_augmented": "hi could i please have a cheeseburger with cheddar cheese onions pickles lettuce ketchup mustard and a little mayo\nItems Found: a - number(1), cheeseburger - main_dish_type(cheese_burger), cheddar cheese - topping(cheddar), onions - topping(onion), pickles - topping(pickle), lettuce - topping(lettuce), ketchup - topping(ketchup), mustard - topping(mustard), a little - quantity(light), mayo - topping(mayonnaise)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='cheeseburger', toppings=[Topping(name='mayonnaise', qualifier='light', negation=False), Topping(name='cheddar_cheese', qualifier='None', negation=False), Topping(name='onions', qualifier='None', negation=False), Topping(name='pickles', qualifier='None', negation=False), Topping(name='lettuce', qualifier='None', negation=False), Topping(name='ketchup', qualifier='None', negation=False), Topping(name='mustard', qualifier='None', negation=False), Topping(name='mayonnaise', qualifier='None', negation=False)])]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='mayonnaise', qualifier='light'), Topping(name='cheddar'), Topping(name='onion'), Topping(name='pickle'), Topping(name='lettuce'), Topping(name='ketchup'), Topping(name='mustard')])]",
+        "output_NER": "a - number(1), cheeseburger - main_dish_type(cheese_burger), cheddar cheese - topping(cheddar), onions - topping(onion), pickles - topping(pickle), lettuce - topping(lettuce), ketchup - topping(ketchup), mustard - topping(mustard), a little - quantity(light), mayo - topping(mayonnaise)"
+    },
+    {
+        "input": "i would also like a small garlic fry and a medium diet coke",
+        "input_augmented": "i would also like a small garlic fry and a medium diet coke\nItems Found: a - number(1), small - side_size(small), garlic fry - side_type(garlic_fries), a - number(1), medium - drink_size(medium), diet coke - drink_type(diet_coke)",
+        "output": "[SideOrder(number=1, side_type='french_fries', size='small'), DrinkOrder(number=1, drink_type='diet_coke', size='medium')]",
+        "expected": "[SideOrder(number=1, side_type='garlic_fries', size='small'), DrinkOrder(number=1, drink_type='diet_coke', size='medium')]",
+        "output_NER": "a - number(1), small - side_size(small), garlic fry - side_type(garlic_fries), a - number(1), medium - drink_size(medium), diet coke - drink_type(diet_coke)"
+    },
+    {
+        "input": "today i'd like to try your double cheese burger plain with just ketchup and cheddar cheese on it",
+        "input_augmented": "today i'd like to try your double cheese burger plain with just ketchup and cheddar cheese on it\nItems Found: today - date, double cheese burger - main_dish_type(double_cheese_burger), ketchup - topping(ketchup), cheddar cheese - topping(cheddar)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='double_cheese_burger', toppings=[Topping(name='ketchup', qualifier='None', negation=False), Topping(name='cheddar', qualifier='None', negation=False)])]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='ketchup'), Topping(name='cheddar')])]",
+        "output_NER": "today - date, double cheese burger - main_dish_type(double_cheese_burger), ketchup - topping(ketchup), cheddar cheese - topping(cheddar)"
+    },
+    {
+        "input": "to drink i'd like a root beer and for my side i want a large curly fries",
+        "input_augmented": "to drink i'd like a root beer and for my side i want a large curly fries\nItems Found: a - number(1), root beer - drink_type(root_beer), a - number(1), large - side_size(large), curly fries - side_type(curly_fries)",
+        "output": "[DrinkOrder(number=1, drink_type='root_beer'), SideOrder(number=1, size='large', side_type='curly_fries')]",
+        "expected": "[DrinkOrder(number=1, drink_type='root_beer'), SideOrder(number=1, side_type='curly_fries', size='large')]",
+        "output_NER": "a - number(1), root beer - drink_type(root_beer), a - number(1), large - side_size(large), curly fries - side_type(curly_fries)"
+    },
+    {
+        "input": "we also need a small fry a side of apple slices a medium diet coke and a small chocolate shake",
+        "input_augmented": "we also need a small fry a side of apple slices a medium diet coke and a small chocolate shake\nItems Found: a - number(1), small - side_size(small), fry - side_type(french_fries), a - number(1), apple slices - side_type(apple_slices), a - number(1), medium - drink_size(medium), diet coke - drink_type(diet_coke), a - number(1), small - drink_size(small), chocolate shake - drink_type(chocolate_shake)",
+        "output": "[SideOrder(number=1, side_type='french_fries', size='small'), SideOrder(number=1, side_type='apple_slices', size='None'), DrinkOrder(number=1, drink_type='diet_coke', size='medium'), DrinkOrder(number=1, drink_type='chocolate_shake', size='small')]",
+        "expected": "[SideOrder(number=1, side_type='french_fries', size='small'), SideOrder(number=1, side_type='apple_slices'), DrinkOrder(number=1, drink_type='diet_coke', size='medium'), DrinkOrder(number=1, drink_type='chocolate_shake', size='small')]",
+        "output_NER": "a - number(1), small - side_size(small), fry - side_type(french_fries), a - number(1), apple slices - side_type(apple_slices), a - number(1), medium - drink_size(medium), diet coke - drink_type(diet_coke), a - number(1), small - drink_size(small), chocolate shake - drink_type(chocolate_shake)"
+    },
+    {
+        "input": "i would like two cheeseburgers with lettuce pickles and mustard",
+        "input_augmented": "i would like two cheeseburgers with lettuce pickles and mustard\nItems Found: two - number(2), cheeseburgers - main_dish_type(cheese_burger), lettuce - topping(lettuce), pickles - topping(pickle), mustard - topping(mustard)",
+        "output": "[BurgerOrder(number=2, size='None', main_dish_type='cheese_burger', toppings=[Topping(name='lettuce', qualifier='None', negation=False), Topping(name='pickles', qualifier='None', negation=False), Topping(name='mustard', qualifier='None', negation=False)])]",
+        "expected": "[BurgerOrder(number=2, main_dish_type='cheese_burger', toppings=[Topping(name='lettuce'), Topping(name='pickle'), Topping(name='mustard')])]",
+        "output_NER": "two - number(2), cheeseburgers - main_dish_type(cheese_burger), lettuce - topping(lettuce), pickles - topping(pickle), mustard - topping(mustard)"
+    },
+    {
+        "input": "i would also like a large sugar free lemonade a small root beer and and two orders of fries",
+        "input_augmented": "i would also like a large sugar free lemonade a small root beer and and two orders of fries\nItems Found: a - number(1), large - drink_size(large), sugar free lemonade - drink_type(zero_sugar_lemonade), a - number(1), small - drink_size(small), root beer - drink_type(root_beer), two - number(2), fries - side_type(french_fries)",
+        "output": "[DrinkOrder(number=1, drink_type='sugar_free_lemonade', size='large'), DrinkOrder(number=1, drink_type='root_beer', size='small'), SideOrder(number=2, side_type='french_fries')]",
+        "expected": "[DrinkOrder(number=1, drink_type='zero_sugar_lemonade', size='large'), DrinkOrder(number=1, drink_type='root_beer', size='small'), SideOrder(number=2, side_type='french_fries')]",
+        "output_NER": "a - number(1), large - drink_size(large), sugar free lemonade - drink_type(zero_sugar_lemonade), a - number(1), small - drink_size(small), root beer - drink_type(root_beer), two - number(2), fries - side_type(french_fries)"
+    },
+    {
+        "input": "hi i want a vegan burger with extra onions lettuce pickles and mustard",
+        "input_augmented": "hi i want a vegan burger with extra onions lettuce pickles and mustard\nItems Found: a - number(1), vegan burger - main_dish_type(vegan_burger), extra - quantity(extra), onions - topping(onion), lettuce - topping(lettuce), pickles - topping(pickle), mustard - topping(mustard)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='vegan_burger', toppings=[Topping(name='onions', qualifier='extra', negation=False), Topping(name='lettuce', qualifier='None', negation=False), Topping(name='pickles', qualifier='None', negation=False), Topping(name='mustard', qualifier='None', negation=False)])]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='vegan_burger', toppings=[Topping(name='onion', qualifier='extra'), Topping(name='lettuce'), Topping(name='pickle'), Topping(name='mustard')])]",
+        "output_NER": "a - number(1), vegan burger - main_dish_type(vegan_burger), extra - quantity(extra), onions - topping(onion), lettuce - topping(lettuce), pickles - topping(pickle), mustard - topping(mustard)"
+    },
+    {
+        "input": "i'd also like a side of baby carrots and a sugar free lemonade please",
+        "input_augmented": "i'd also like a side of baby carrots and a sugar free lemonade please\nItems Found: a - number(1), baby carrots - side_type(baby_carrots), a - number(1), sugar free lemonade - drink_type(zero_sugar_lemonade)",
+        "output": "[SideOrder(number=1, side_type='baby_carrots'), DrinkOrder(number=1, drink_type='zero_sugar_lemonade')]",
+        "expected": "[SideOrder(number=1, side_type='baby_carrots'), DrinkOrder(number=1, drink_type='zero_sugar_lemonade')]",
+        "output_NER": "a - number(1), baby carrots - side_type(baby_carrots), a - number(1), sugar free lemonade - drink_type(zero_sugar_lemonade)"
+    },
+    {
+        "input": "can i get a double cheese burger with onions cheddar cheese lettuce pickles bacon tomatoes and mustard",
+        "input_augmented": "can i get a double cheese burger with onions cheddar cheese lettuce pickles bacon tomatoes and mustard\nItems Found: a - number(1), double cheese burger - main_dish_type(double_cheese_burger), onions - topping(onion), cheddar cheese - topping(cheddar), lettuce - topping(lettuce), pickles - topping(pickle), bacon - topping(bacon), tomatoes - topping(tomato), mustard - topping(mustard)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='cheeseburger', toppings=[Topping(name='onions', qualifier='None', negation=False), Topping(name='cheddar', qualifier='None', negation=False), Topping(name='lettuce', qualifier='None', negation=False), Topping(name='pickles', qualifier='None', negation=False), Topping(name='bacon', qualifier='None', negation=False), Topping(name='tomatoes', qualifier='None', negation=False), Topping(name='mustard', qualifier='None', negation=False)])]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='onion'), Topping(name='cheddar'), Topping(name='lettuce'), Topping(name='pickle'), Topping(name='bacon'), Topping(name='tomato'), Topping(name='mustard')])]",
+        "output_NER": "a - number(1), double cheese burger - main_dish_type(double_cheese_burger), onions - topping(onion), cheddar cheese - topping(cheddar), lettuce - topping(lettuce), pickles - topping(pickle), bacon - topping(bacon), tomatoes - topping(tomato), mustard - topping(mustard)"
+    },
+    {
+        "input": "a large side of fries with a coke",
+        "input_augmented": "a large side of fries with a coke\nItems Found: a - number(1), large - side_size(large), fries - side_type(french_fries), a - number(1), coke - drink_type(coca_cola)",
+        "output": "[SideOrder(number=1, size='large', side_type='french_fries'), DrinkOrder(number=1, drink_type='coca_cola')]",
+        "expected": "[SideOrder(number=1, side_type='french_fries', size='large'), DrinkOrder(number=1, drink_type='coca_cola')]",
+        "output_NER": "a - number(1), large - side_size(large), fries - side_type(french_fries), a - number(1), coke - drink_type(coca_cola)"
+    },
+    {
+        "input": "and two plain chicken sandwiches with iced tea and small curly fries on the side",
+        "input_augmented": "and two plain chicken sandwiches with iced tea and small curly fries on the side\nItems Found: two - number(2), chicken sandwiches - main_dish_type(chicken_sandwich), iced tea - drink_type(iced_tea), small - side_size(small), curly fries - side_type(curly_fries)",
+        "output": "[SandwichOrder(number=2, size='None', base_sandwich='chicken_sandwich', toppings=[]), DrinkOrder(number=1, drink_type='ice_tea'), SideOrder(number=1, size='small', side_type='curly_fries')]",
+        "expected": "[BurgerOrder(number=2, main_dish_type='chicken_sandwich'), DrinkOrder(number=1, drink_type='iced_tea'), SideOrder(number=1, side_type='curly_fries', size='small')]",
+        "output_NER": "two - number(2), chicken sandwiches - main_dish_type(chicken_sandwich), iced tea - drink_type(iced_tea), small - side_size(small), curly fries - side_type(curly_fries)"
+    },
+    {
+        "input": "hi i'd like a double cheeseburger with bacon and jalapenos a medium dr pepper and a small order of sweet potato fries",
+        "input_augmented": "hi i'd like a double cheeseburger with bacon and jalapenos a medium dr pepper and a small order of sweet potato fries\nItems Found: a - number(1), double cheeseburger - main_dish_type(double_cheese_burger), bacon - topping(bacon), jalapenos - topping(jalapenos), a - number(1), medium - drink_size(medium), dr pepper - drink_type(dr_pepper), a - number(1), small - side_size(small), sweet potato fries - side_type(sweet_potato_fries)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='double_cheeseburger', toppings=[Topping(name='bacon', qualifier='None', negation=False), Topping(name='jalapenos', qualifier='None', negation=False)]), DrinkOrder(number=1, size='medium', drink_type='dr_pepper'), SideOrder(number=1, size='small', side_type='sweet_potato_fries')]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='bacon'), Topping(name='jalapenos')]), DrinkOrder(number=1, drink_type='dr_pepper', size='medium'), SideOrder(number=1, side_type='sweet_potato_fries', size='small')]",
+        "output_NER": "a - number(1), double cheeseburger - main_dish_type(double_cheese_burger), bacon - topping(bacon), jalapenos - topping(jalapenos), a - number(1), medium - drink_size(medium), dr pepper - drink_type(dr_pepper), a - number(1), small - side_size(small), sweet potato fries - side_type(sweet_potato_fries)"
+    },
+    {
+        "input": "i want two chicken sandwich with bacon lettuce tomatoes onions jalapenos and mustard and mayo",
+        "input_augmented": "i want two chicken sandwich with bacon lettuce tomatoes onions jalapenos and mustard and mayo\nItems Found: two - number(2), chicken sandwich - main_dish_type(chicken_sandwich), bacon - topping(bacon), lettuce - topping(lettuce), tomatoes - topping(tomato), onions - topping(onion), jalapenos - topping(jalapenos), mustard - topping(mustard), mayo - topping(mayonnaise)",
+        "output": "[SandwichOrder(number=2, size='None', base_sandwich='chicken_sandwich', toppings=[Topping(name='bacon', qualifier='None', negation=False), Topping(name='lettuce', qualifier='None', negation=False), Topping(name='tomatoes', qualifier='None', negation=False), Topping(name='onions', qualifier='None', negation=False), Topping(name='jalapenos', qualifier='None', negation=False), Topping(name='mustard', qualifier='None', negation=False), Topping(name='mayonnaise', qualifier='None', negation=False)])]",
+        "expected": "[BurgerOrder(number=2, main_dish_type='chicken_sandwich', toppings=[Topping(name='bacon'), Topping(name='lettuce'), Topping(name='tomato'), Topping(name='onion'), Topping(name='jalapenos'), Topping(name='mustard'), Topping(name='mayonnaise')])]",
+        "output_NER": "two - number(2), chicken sandwich - main_dish_type(chicken_sandwich), bacon - topping(bacon), lettuce - topping(lettuce), tomatoes - topping(tomato), onions - topping(onion), jalapenos - topping(jalapenos), mustard - topping(mustard), mayo - topping(mayonnaise)"
+    },
+    {
+        "input": "to drink i want a large pink lemonade as well as a side order of large garlic fries",
+        "input_augmented": "to drink i want a large pink lemonade as well as a side order of large garlic fries\nItems Found: a - number(1), large - drink_size(large), pink lemonade - drink_type(pink_lemonade), a - number(1), large - side_size(large), garlic fries - side_type(garlic_fries)",
+        "output": "[DrinkOrder(number=1, drink_type='pink_lemonade', size='large'), SideOrder(number=1, side_type='french_fries', size='large')]",
+        "expected": "[DrinkOrder(number=1, drink_type='pink_lemonade', size='large'), SideOrder(number=1, side_type='garlic_fries', size='large')]",
+        "output_NER": "a - number(1), large - drink_size(large), pink lemonade - drink_type(pink_lemonade), a - number(1), large - side_size(large), garlic fries - side_type(garlic_fries)"
+    },
+    {
+        "input": "can i get a double cheeseburger with bacon jalapenos lettuce onions mayo and mustard",
+        "input_augmented": "can i get a double cheeseburger with bacon jalapenos lettuce onions mayo and mustard\nItems Found: a - number(1), double cheeseburger - main_dish_type(double_cheese_burger), bacon - topping(bacon), jalapenos - topping(jalapenos), lettuce - topping(lettuce), onions - topping(onion), mayo - topping(mayonnaise), mustard - topping(mustard)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='cheeseburger', toppings=[Topping(name='bacon', qualifier='None', negation=False), Topping(name='jalapenos', qualifier='None', negation=False), Topping(name='lettuce', qualifier='None', negation=False), Topping(name='onions', qualifier='None', negation=False), Topping(name='mayonnaise', qualifier='None', negation=False), Topping(name='mustard', qualifier='None', negation=False)])]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='bacon'), Topping(name='jalapenos'), Topping(name='lettuce'), Topping(name='onion'), Topping(name='mayonnaise'), Topping(name='mustard')])]",
+        "output_NER": "a - number(1), double cheeseburger - main_dish_type(double_cheese_burger), bacon - topping(bacon), jalapenos - topping(jalapenos), lettuce - topping(lettuce), onions - topping(onion), mayo - topping(mayonnaise), mustard - topping(mustard)"
+    },
+    {
+        "input": "also a large vanilla shake",
+        "input_augmented": "also a large vanilla shake\nItems Found: a - number(1), large - drink_size(large), vanilla shake - drink_type(vanilla_shake)",
+        "output": "[DrinkOrder(number=1, drink_type='large_vanilla_shake')]",
+        "expected": "[DrinkOrder(number=1, drink_type='vanilla_shake', size='large')]",
+        "output_NER": "a - number(1), large - drink_size(large), vanilla shake - drink_type(vanilla_shake)"
+    },
+    {
+        "input": "i'll have a double cheeseburger with cheddar cheese onions bacon lettuce mustard and ketchup",
+        "input_augmented": "i'll have a double cheeseburger with cheddar cheese onions bacon lettuce mustard and ketchup\nItems Found: a - number(1), double cheeseburger - main_dish_type(double_cheese_burger), cheddar cheese - topping(cheddar), onions - topping(onion), bacon - topping(bacon), lettuce - topping(lettuce), mustard - topping(mustard), ketchup - topping(ketchup)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='cheeseburger', toppings=[Topping(name='cheddar_cheese', qualifier='None', negation=False), Topping(name='onions', qualifier='None', negation=False), Topping(name='bacon', qualifier='None', negation=False), Topping(name='lettuce', qualifier='None', negation=False), Topping(name='mustard', qualifier='None', negation=False), Topping(name='ketchup', qualifier='None', negation=False)])]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='cheddar'), Topping(name='onion'), Topping(name='bacon'), Topping(name='lettuce'), Topping(name='mustard'), Topping(name='ketchup')])]",
+        "output_NER": "a - number(1), double cheeseburger - main_dish_type(double_cheese_burger), cheddar cheese - topping(cheddar), onions - topping(onion), bacon - topping(bacon), lettuce - topping(lettuce), mustard - topping(mustard), ketchup - topping(ketchup)"
+    },
+    {
+        "input": "also a large fry and a medium coke",
+        "input_augmented": "also a large fry and a medium coke\nItems Found: a - number(1), large - side_size(large), fry - side_type(french_fries), a - number(1), medium - drink_size(medium), coke - drink_type(coca_cola)",
+        "output": "[SideOrder(number=1, size='large', side_type='french_fries'), DrinkOrder(number=1, drink_type='coke')]",
+        "expected": "[SideOrder(number=1, side_type='french_fries', size='large'), DrinkOrder(number=1, drink_type='coca_cola', size='medium')]",
+        "output_NER": "a - number(1), large - side_size(large), fry - side_type(french_fries), a - number(1), medium - drink_size(medium), coke - drink_type(coca_cola)"
+    },
+    {
+        "input": "i would like to order a chicken sandwich with lettuce tomatoes mayonnaise and a medium pink lemonade large curly fries on the side",
+        "input_augmented": "i would like to order a chicken sandwich with lettuce tomatoes mayonnaise and a medium pink lemonade large curly fries on the side\nItems Found: a - number(1), chicken sandwich - main_dish_type(chicken_sandwich), lettuce - topping(lettuce), tomatoes - topping(tomato), mayonnaise - topping(mayonnaise), a - number(1), medium - drink_size(medium), pink lemonade - drink_type(pink_lemonade), large - side_size(large), curly fries - side_type(curly_fries)",
+        "output": "[SandwichOrder(number=1, size='None', base_sandwich='chicken', toppings=[Topping(name='lettuce', qualifier='None', negation=False), Topping(name='tomatoes', qualifier='None', negation=False), Topping(name='mayonnaise', qualifier='None', negation=False)]), DrinkOrder(number=1, size='medium', drink_type='pink_lemonade'), SideOrder(number=1, size='large', side_type='curly_fries')]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='chicken_sandwich', toppings=[Topping(name='lettuce'), Topping(name='tomato'), Topping(name='mayonnaise')]), DrinkOrder(number=1, drink_type='pink_lemonade', size='medium'), SideOrder(number=1, side_type='curly_fries', size='large')]",
+        "output_NER": "a - number(1), chicken sandwich - main_dish_type(chicken_sandwich), lettuce - topping(lettuce), tomatoes - topping(tomato), mayonnaise - topping(mayonnaise), a - number(1), medium - drink_size(medium), pink lemonade - drink_type(pink_lemonade), large - side_size(large), curly fries - side_type(curly_fries)"
+    },
+    {
+        "input": "i'll have a cheeseburger with ketchup mustard onions and pickles a large order of garlic fries a small chocolate shake and i need a large dr pepper",
+        "input_augmented": "i'll have a cheeseburger with ketchup mustard onions and pickles a large order of garlic fries a small chocolate shake and i need a large dr pepper\nItems Found: a - number(1), cheeseburger - main_dish_type(cheese_burger), ketchup - topping(ketchup), mustard - topping(mustard), onions - topping(onion), pickles - topping(pickle), a - number(1), large - side_size(large), garlic fries - side_type(garlic_fries), a - number(1), small - drink_size(small), chocolate shake - drink_type(chocolate_shake), a - number(1), large - drink_size(large), dr pepper - drink_type(dr_pepper)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='cheeseburger', toppings=[Topping(name='ketchup', qualifier='None', negation=False), Topping(name='mustard', qualifier='None', negation=False), Topping(name='onions', qualifier='None', negation=False), Topping(name='pickles', qualifier='None', negation=False)]), SideOrder(number=1, size='large', side_type='garlic_fries', qualifier='None'), DrinkOrder(number=1, size='None', drink_type='chocolate_shake', qualifier='None'), DrinkOrder(number=1, size='small', drink_type='chocolate_shake', qualifier='None'), DrinkOrder(number=1, size='large', drink_type='dr_pepper', qualifier='None')]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='ketchup'), Topping(name='mustard'), Topping(name='onion'), Topping(name='pickle')]), SideOrder(number=1, side_type='garlic_fries', size='large'), DrinkOrder(number=1, drink_type='chocolate_shake', size='small'), DrinkOrder(number=1, drink_type='dr_pepper', size='large')]",
+        "output_NER": "a - number(1), cheeseburger - main_dish_type(cheese_burger), ketchup - topping(ketchup), mustard - topping(mustard), onions - topping(onion), pickles - topping(pickle), a - number(1), large - side_size(large), garlic fries - side_type(garlic_fries), a - number(1), small - drink_size(small), chocolate shake - drink_type(chocolate_shake), a - number(1), large - drink_size(large), dr pepper - drink_type(dr_pepper)"
+    },
+    {
+        "input": "double bacon cheeseburger with mustard and lettuce large curly fry and a milk",
+        "input_augmented": "double bacon cheeseburger with mustard and lettuce large curly fry and a milk\nItems Found: bacon - topping(bacon), cheeseburger - main_dish_type(cheese_burger), mustard - topping(mustard), lettuce - topping(lettuce), large - side_size(large), curly fry - side_type(curly_fries), a - number(1), milk - drink_type(milk)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='cheese_bacon_macadamia_nut_cookie', toppings=[Topping(name='mustard', qualifier='None', negation=False), Topping(name='lettuce', qualifier='None', negation=False)]), SideOrder(number=1, size='large', side_type='curly_fries', qualifier='None'), DrinkOrder(number=1, drink_type='low_fat_milk')]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='bacon'), Topping(name='mustard'), Topping(name='lettuce')]), SideOrder(number=1, side_type='french_fries', size='large'), DrinkOrder(number=1, drink_type='milk')]",
+        "output_NER": "bacon - topping(bacon), cheeseburger - main_dish_type(cheese_burger), mustard - topping(mustard), lettuce - topping(lettuce), large - side_size(large), curly fry - side_type(curly_fries), a - number(1), milk - drink_type(milk)"
+    },
+    {
+        "input": "i'll have a cheeseburger with lettuce onions pickles tomatoes bacon ketchup mustard and mayo",
+        "input_augmented": "i'll have a cheeseburger with lettuce onions pickles tomatoes bacon ketchup mustard and mayo\nItems Found: a - number(1), cheeseburger - main_dish_type(cheese_burger), lettuce - topping(lettuce), onions - topping(onion), pickles - topping(pickle), tomatoes - topping(tomato), bacon - topping(bacon), ketchup - topping(ketchup), mustard - topping(mustard), mayo - topping(mayonnaise)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='cheeseburger', toppings=[Topping(name='lettuce', qualifier='None', negation=False), Topping(name='onion', qualifier='None', negation=False), Topping(name='pickles', qualifier='None', negation=False), Topping(name='tomatoes', qualifier='None', negation=False), Topping(name='bacon', qualifier='None', negation=False), Topping(name='ketchup', qualifier='None', negation=False), Topping(name='mustard', qualifier='None', negation=False), Topping(name='mayonnaise', qualifier='None', negation=False)])]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='lettuce'), Topping(name='onion'), Topping(name='pickle'), Topping(name='tomato'), Topping(name='bacon'), Topping(name='ketchup'), Topping(name='mustard'), Topping(name='mayonnaise')])]",
+        "output_NER": "a - number(1), cheeseburger - main_dish_type(cheese_burger), lettuce - topping(lettuce), onions - topping(onion), pickles - topping(pickle), tomatoes - topping(tomato), bacon - topping(bacon), ketchup - topping(ketchup), mustard - topping(mustard), mayo - topping(mayonnaise)"
+    },
+    {
+        "input": "give me a medium coke and a large side of french fries",
+        "input_augmented": "give me a medium coke and a large side of french fries\nItems Found: a - number(1), medium - drink_size(medium), coke - drink_type(coca_cola), a - number(1), large - side_size(large), french fries - side_type(french_fries)",
+        "output": "[DrinkOrder(number=1, drink_type='coke', size='medium'), SideOrder(number=1, side_type='french_fries', size='large')]",
+        "expected": "[DrinkOrder(number=1, drink_type='coca_cola', size='medium'), SideOrder(number=1, side_type='french_fries', size='large')]",
+        "output_NER": "a - number(1), medium - drink_size(medium), coke - drink_type(coca_cola), a - number(1), large - side_size(large), french fries - side_type(french_fries)"
+    },
+    {
+        "input": "hi i'd like a cheeseburger with mustard and ketchup no mayo",
+        "input_augmented": "hi i'd like a cheeseburger with mustard and ketchup no mayo\nItems Found: a - number(1), cheeseburger - main_dish_type(cheese_burger), mustard - topping(mustard), ketchup - topping(ketchup), no - not(not), mayo - topping(mayonnaise)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='cheeseburger', toppings=[Topping(name='mustard', qualifier='None', negation=False), Topping(name='ketchup', qualifier='None', negation=False), Topping(name='mayonnaise', qualifier='None', negation=True)])]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='mustard'), Topping(name='ketchup'), Topping(name='mayonnaise', negation=True)])]",
+        "output_NER": "a - number(1), cheeseburger - main_dish_type(cheese_burger), mustard - topping(mustard), ketchup - topping(ketchup), no - not(not), mayo - topping(mayonnaise)"
+    },
+    {
+        "input": "i'd also like a side of large fries and a medium coke",
+        "input_augmented": "i'd also like a side of large fries and a medium coke\nItems Found: a - number(1), large - side_size(large), fries - side_type(french_fries), a - number(1), medium - drink_size(medium), coke - drink_type(coca_cola)",
+        "output": "[SideOrder(number=1, size='large', side_type='french_fries'), DrinkOrder(number=1, size='medium', drink_type='coke')]",
+        "expected": "[SideOrder(number=1, side_type='french_fries', size='large'), DrinkOrder(number=1, drink_type='coca_cola', size='medium')]",
+        "output_NER": "a - number(1), large - side_size(large), fries - side_type(french_fries), a - number(1), medium - drink_size(medium), coke - drink_type(coca_cola)"
+    },
+    {
+        "input": "i'll have a hamburger topped with bacon and ketchup along with a large coke and large order of french fries",
+        "input_augmented": "i'll have a hamburger topped with bacon and ketchup along with a large coke and large order of french fries\nItems Found: a - number(1), hamburger - main_dish_type(ham_burger), bacon - topping(bacon), ketchup - topping(ketchup), a - number(1), large - drink_size(large), coke - drink_type(coca_cola), large - side_size(large), french fries - side_type(french_fries)",
+        "output": "[BurgerOrder(number=1, main_dish_type='hamburger', toppings=[Topping(name='bacon', qualifier='None', negation=False), Topping(name='ketchup', qualifier='None', negation=False)]), DrinkOrder(number=1, drink_type='coke', size='large'), SideOrder(number=1, side_type='french_fries', size='large')]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='ham_burger', toppings=[Topping(name='bacon'), Topping(name='ketchup')]), DrinkOrder(number=1, drink_type='coca_cola', size='large'), SideOrder(number=1, side_type='french_fries', size='large')]",
+        "output_NER": "a - number(1), hamburger - main_dish_type(ham_burger), bacon - topping(bacon), ketchup - topping(ketchup), a - number(1), large - drink_size(large), coke - drink_type(coca_cola), large - side_size(large), french fries - side_type(french_fries)"
+    },
+    {
+        "input": "i'll have a chicken sandwich can you put lettuce and onions on that",
+        "input_augmented": "i'll have a chicken sandwich can you put lettuce and onions on that\nItems Found: a - number(1), chicken sandwich - main_dish_type(chicken_sandwich), lettuce - topping(lettuce), onions - topping(onion)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='chicken_sandwich', toppings=[Topping(name='lettuce', qualifier='None', negation=False), Topping(name='onions', qualifier='None', negation=False)])]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='chicken_sandwich', toppings=[Topping(name='lettuce'), Topping(name='onion')])]",
+        "output_NER": "a - number(1), chicken sandwich - main_dish_type(chicken_sandwich), lettuce - topping(lettuce), onions - topping(onion)"
+    },
+    {
+        "input": "also a large order of curly fries and a large root beer",
+        "input_augmented": "also a large order of curly fries and a large root beer\nItems Found: a - number(1), large - side_size(large), curly fries - side_type(curly_fries), a - number(1), large - drink_size(large), root beer - drink_type(root_beer)",
+        "output": "[SideOrder(number=1, size='large', side_type='curly_fries'), DrinkOrder(number=1, size='large', drink_type='root_beer')]",
+        "expected": "[SideOrder(number=1, side_type='curly_fries', size='large'), DrinkOrder(number=1, drink_type='root_beer', size='large')]",
+        "output_NER": "a - number(1), large - side_size(large), curly fries - side_type(curly_fries), a - number(1), large - drink_size(large), root beer - drink_type(root_beer)"
+    },
+    {
+        "input": "hi can i get a double cheeseburger with bacon ketchup and mayonnaise a large diet coke and a large curly fries",
+        "input_augmented": "hi can i get a double cheeseburger with bacon ketchup and mayonnaise a large diet coke and a large curly fries\nItems Found: a - number(1), double cheeseburger - main_dish_type(double_cheese_burger), bacon - topping(bacon), ketchup - topping(ketchup), mayonnaise - topping(mayonnaise), a - number(1), large - drink_size(large), diet coke - drink_type(diet_coke), a - number(1), large - side_size(large), curly fries - side_type(curly_fries)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='cheeseburger', toppings=[Topping(name='bacon', qualifier='None', negation=False), Topping(name='ketchup', qualifier='None', negation=False), Topping(name='mayonnaise', qualifier='None', negation=False)]), DrinkOrder(number=1, drink_type='diet_coke', size='large'), SideOrder(number=1, size='large', side_type='curly_fries')]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='bacon'), Topping(name='ketchup'), Topping(name='mayonnaise')]), DrinkOrder(number=1, drink_type='diet_coke', size='large'), SideOrder(number=1, side_type='curly_fries', size='large')]",
+        "output_NER": "a - number(1), double cheeseburger - main_dish_type(double_cheese_burger), bacon - topping(bacon), ketchup - topping(ketchup), mayonnaise - topping(mayonnaise), a - number(1), large - drink_size(large), diet coke - drink_type(diet_coke), a - number(1), large - side_size(large), curly fries - side_type(curly_fries)"
+    },
+    {
+        "input": "i'll take a cheeseburger with onions and pickles and ketchup and one large coke please",
+        "input_augmented": "i'll take a cheeseburger with onions and pickles and ketchup and one large coke please\nItems Found: a - number(1), cheeseburger - main_dish_type(cheese_burger), onions - topping(onion), pickles - topping(pickle), ketchup - topping(ketchup), one - number(1), large - drink_size(large), coke - drink_type(coca_cola)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='cheeseburger', toppings=[Topping(name='onions', qualifier='None', negation=False), Topping(name='pickles', qualifier='None', negation=False), Topping(name='ketchup', qualifier='None', negation=False)]), DrinkOrder(number=1, size='large', drink_type='coke')]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='onion'), Topping(name='pickle'), Topping(name='ketchup')]), DrinkOrder(number=1, drink_type='coca_cola', size='large')]",
+        "output_NER": "a - number(1), cheeseburger - main_dish_type(cheese_burger), onions - topping(onion), pickles - topping(pickle), ketchup - topping(ketchup), one - number(1), large - drink_size(large), coke - drink_type(coca_cola)"
+    },
+    {
+        "input": "can i get a cheeseburger with mayo and pickle only a small fry and chocolate shake please",
+        "input_augmented": "can i get a cheeseburger with mayo and pickle only a small fry and chocolate shake please\nItems Found: a - number(1), cheeseburger - main_dish_type(cheese_burger), mayo - topping(mayonnaise), pickle - topping(pickle), a - number(1), small - side_size(small), fry - side_type(french_fries), chocolate shake - drink_type(chocolate_shake)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='cheeseburger', toppings=[Topping(name='mayonnaise', qualifier='None', negation=False), Topping(name='pickles', qualifier='None', negation=False)]), SideOrder(number=1, size='small', side_type='french_fries', size='None'), DrinkOrder(number=1, drink_type='chocolate_shake', size='None')]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='mayonnaise'), Topping(name='pickle')]), SideOrder(number=1, side_type='french_fries', size='small'), DrinkOrder(number=1, drink_type='chocolate_shake')]",
+        "output_NER": "a - number(1), cheeseburger - main_dish_type(cheese_burger), mayo - topping(mayonnaise), pickle - topping(pickle), a - number(1), small - side_size(small), fry - side_type(french_fries), chocolate shake - drink_type(chocolate_shake)"
+    },
+    {
+        "input": "i'd like a double cheeseburger with onions and mustard large garlic fries and a strawberry shake",
+        "input_augmented": "i'd like a double cheeseburger with onions and mustard large garlic fries and a strawberry shake\nItems Found: a - number(1), double cheeseburger - main_dish_type(double_cheese_burger), onions - topping(onion), mustard - topping(mustard), large - side_size(large), garlic fries - side_type(garlic_fries), a - number(1), strawberry shake - drink_type(strawberry_shake)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='double_cheeseburger', toppings=[Topping(name='onions', qualifier='None', negation=False), Topping(name='mustard', qualifier='None', negation=False)]), SideOrder(number=1, size='large', side_type='garlic_fries', qualifier='None'), DrinkOrder(number=1, drink_type='strawberry_shake', size='None')]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='onion'), Topping(name='mustard')]), SideOrder(number=1, side_type='garlic_fries', size='large'), DrinkOrder(number=1, drink_type='strawberry_shake')]",
+        "output_NER": "a - number(1), double cheeseburger - main_dish_type(double_cheese_burger), onions - topping(onion), mustard - topping(mustard), large - side_size(large), garlic fries - side_type(garlic_fries), a - number(1), strawberry shake - drink_type(strawberry_shake)"
+    },
+    {
+        "input": "i would like a chicken sandwich with lettuce mayo and tomatoes",
+        "input_augmented": "i would like a chicken sandwich with lettuce mayo and tomatoes\nItems Found: a - number(1), chicken sandwich - main_dish_type(chicken_sandwich), lettuce - topping(lettuce), mayo - topping(mayonnaise), tomatoes - topping(tomato)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='chicken_sandwich', toppings=[Topping(name='lettuce', qualifier='None', negation=False), Topping(name='mayonnaise', qualifier='None', negation=False), Topping(name='tomatoes', qualifier='None', negation=False)])]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='chicken_sandwich', toppings=[Topping(name='lettuce'), Topping(name='mayonnaise'), Topping(name='tomato')])]",
+        "output_NER": "a - number(1), chicken sandwich - main_dish_type(chicken_sandwich), lettuce - topping(lettuce), mayo - topping(mayonnaise), tomatoes - topping(tomato)"
+    },
+    {
+        "input": "i would also like a small seven up",
+        "input_augmented": "i would also like a small seven up\nItems Found: a - number(1), small - drink_size(small), seven up - drink_type(seven_up)",
+        "output": "[DrinkOrder(number=1, drink_type='seven_up', size='None')]",
+        "expected": "[DrinkOrder(number=1, drink_type='seven_up', size='small')]",
+        "output_NER": "a - number(1), small - drink_size(small), seven up - drink_type(seven_up)"
+    },
+    {
+        "input": "add a large order of curly fries too",
+        "input_augmented": "add a large order of curly fries too\nItems Found: a - number(1), large - side_size(large), curly fries - side_type(curly_fries)",
+        "output": "[SideOrder(number=1, size='large', side_type='curly_fries')]",
+        "expected": "[SideOrder(number=1, side_type='curly_fries', size='large')]",
+        "output_NER": "a - number(1), large - side_size(large), curly fries - side_type(curly_fries)"
+    },
+    {
+        "input": "can i have two cheeseburgers onions only a chicken sandwich two large french fries and two medium pink lemonades",
+        "input_augmented": "can i have two cheeseburgers onions only a chicken sandwich two large french fries and two medium pink lemonades\nItems Found: two - number(2), cheeseburgers - main_dish_type(cheese_burger), onions - topping(onion), a - number(1), chicken sandwich - main_dish_type(chicken_sandwich), two - number(2), large - side_size(large), french fries - side_type(french_fries), two - number(2), medium - drink_size(medium), pink lemonades - drink_type(pink_lemonade)",
+        "output": "[BurgerOrder(number=2, size='None', main_dish_type='cheese_burger', toppings=[Topping(name='onions', qualifier='None', negation=False)]), SandwichOrder(number=1, size='None', base_sandwich='chicken_sandwich', toppings=[]), SideOrder(number=2, size='large', side_type='french_fries'), DrinkOrder(number=2, size='medium', drink_type='pink_lemonade')]",
+        "expected": "[BurgerOrder(number=2, main_dish_type='cheese_burger', toppings=[Topping(name='onion')]), BurgerOrder(number=1, main_dish_type='chicken_sandwich'), SideOrder(number=2, side_type='french_fries', size='large'), DrinkOrder(number=2, drink_type='pink_lemonade', size='medium')]",
+        "output_NER": "two - number(2), cheeseburgers - main_dish_type(cheese_burger), onions - topping(onion), a - number(1), chicken sandwich - main_dish_type(chicken_sandwich), two - number(2), large - side_size(large), french fries - side_type(french_fries), two - number(2), medium - drink_size(medium), pink lemonades - drink_type(pink_lemonade)"
+    },
+    {
+        "input": "can i have a chicken sandwich with a side of large curly fries and a medium pink lemonade",
+        "input_augmented": "can i have a chicken sandwich with a side of large curly fries and a medium pink lemonade\nItems Found: a - number(1), chicken sandwich - main_dish_type(chicken_sandwich), a - number(1), large - side_size(large), curly fries - side_type(curly_fries), a - number(1), medium - drink_size(medium), pink lemonade - drink_type(pink_lemonade)",
+        "output": "[SandwichOrder(number=1, main_filling='chicken', rice_filling='None', bean_filling='None', salsa_toppings=[], toppings=[]), SideOrder(number=1, size='large', side_type='curly_fries'), DrinkOrder(number=1, drink_type='pink_lemonade', size='medium')]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='chicken_sandwich'), SideOrder(number=1, side_type='curly_fries', size='large'), DrinkOrder(number=1, drink_type='pink_lemonade', size='medium')]",
+        "output_NER": "a - number(1), chicken sandwich - main_dish_type(chicken_sandwich), a - number(1), large - side_size(large), curly fries - side_type(curly_fries), a - number(1), medium - drink_size(medium), pink lemonade - drink_type(pink_lemonade)"
+    },
+    {
+        "input": "could i get a cheeseburger with cheddar cheese lettuce tomato pickles and ketchup and a side of small fries and a medium coke",
+        "input_augmented": "could i get a cheeseburger with cheddar cheese lettuce tomato pickles and ketchup and a side of small fries and a medium coke\nItems Found: a - number(1), cheeseburger - main_dish_type(cheese_burger), cheddar cheese - topping(cheddar), lettuce - topping(lettuce), tomato - topping(tomato), pickles - topping(pickle), ketchup - topping(ketchup), a - number(1), small - side_size(small), fries - side_type(french_fries), a - number(1), medium - drink_size(medium), coke - drink_type(coca_cola)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='cheeseburger', toppings=[Topping(name='cheddar_cheese', qualifier='None', negation=False), Topping(name='lettuce', qualifier='None', negation=False), Topping(name='tomatoes', qualifier='None', negation=False), Topping(name='pickles', qualifier='None', negation=False), Topping(name='ketchup', qualifier='None', negation=False)]), SideOrder(number=1, size='small', side_type='french_fries', size='None'), DrinkOrder(number=1, size='medium', drink_type='coke')]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='cheddar'), Topping(name='lettuce'), Topping(name='tomato'), Topping(name='pickle'), Topping(name='ketchup')]), SideOrder(number=1, side_type='french_fries', size='small'), DrinkOrder(number=1, drink_type='coca_cola', size='medium')]",
+        "output_NER": "a - number(1), cheeseburger - main_dish_type(cheese_burger), cheddar cheese - topping(cheddar), lettuce - topping(lettuce), tomato - topping(tomato), pickles - topping(pickle), ketchup - topping(ketchup), a - number(1), small - side_size(small), fries - side_type(french_fries), a - number(1), medium - drink_size(medium), coke - drink_type(coca_cola)"
+    },
+    {
+        "input": "for my main dish i'll have a chicken sandwich with lettuce ketchup and mayo",
+        "input_augmented": "for my main dish i'll have a chicken sandwich with lettuce ketchup and mayo\nItems Found: a - number(1), chicken sandwich - main_dish_type(chicken_sandwich), lettuce - topping(lettuce), ketchup - topping(ketchup), mayo - topping(mayonnaise)",
+        "output": "[SandwichOrder(number=1, size='None', base_sandwich='chicken', toppings=[Topping(name='lettuce', qualifier='None', negation=False), Topping(name='ketchup', qualifier='None', negation=False), Topping(name='mayonnaise', qualifier='None', negation=False)])]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='chicken_sandwich', toppings=[Topping(name='lettuce'), Topping(name='ketchup'), Topping(name='mayonnaise')])]",
+        "output_NER": "a - number(1), chicken sandwich - main_dish_type(chicken_sandwich), lettuce - topping(lettuce), ketchup - topping(ketchup), mayo - topping(mayonnaise)"
+    },
+    {
+        "input": "i want fries for a side and for my drink can i get a coke please",
+        "input_augmented": "i want fries for a side and for my drink can i get a coke please\nItems Found: fries - side_type(french_fries), a - number(1), a - number(1), coke - drink_type(coca_cola)",
+        "output": "[SideOrder(number=1, side_type='french_fries', size='None'), DrinkOrder(number=1, drink_type='coke')]",
+        "expected": "[SideOrder(number=1, side_type='french_fries'), DrinkOrder(number=1, drink_type='coca_cola')]",
+        "output_NER": "fries - side_type(french_fries), a - number(1), a - number(1), coke - drink_type(coca_cola)"
+    },
+    {
+        "input": "i'd like a cheeseburger with mayonnaise lettuce and tomato small fries and a medium dr pepper",
+        "input_augmented": "i'd like a cheeseburger with mayonnaise lettuce and tomato small fries and a medium dr pepper\nItems Found: a - number(1), cheeseburger - main_dish_type(cheese_burger), mayonnaise - topping(mayonnaise), lettuce - topping(lettuce), tomato - topping(tomato), small - side_size(small), fries - side_type(french_fries), a - number(1), medium - drink_size(medium), dr pepper - drink_type(dr_pepper)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='cheeseburger', toppings=[Topping(name='mayonnaise', qualifier='None', negation=False), Topping(name='lettuce', qualifier='None', negation=False), Topping(name='tomato', qualifier='None', negation=False)]), SideOrder(number=1, size='small', side_type='french_fries', qualifier='None'), DrinkOrder(number=1, size='medium', drink_type='dr_pepper', qualifier='None')]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='mayonnaise'), Topping(name='lettuce'), Topping(name='tomato')]), SideOrder(number=1, side_type='french_fries', size='small'), DrinkOrder(number=1, drink_type='dr_pepper', size='medium')]",
+        "output_NER": "a - number(1), cheeseburger - main_dish_type(cheese_burger), mayonnaise - topping(mayonnaise), lettuce - topping(lettuce), tomato - topping(tomato), small - side_size(small), fries - side_type(french_fries), a - number(1), medium - drink_size(medium), dr pepper - drink_type(dr_pepper)"
+    },
+    {
+        "input": "vegan burger topping tomato mustard lettuce pickle",
+        "input_augmented": "vegan burger topping tomato mustard lettuce pickle\nItems Found: vegan burger - main_dish_type(vegan_burger), tomato - topping(tomato), mustard - topping(mustard), lettuce - topping(lettuce), pickle - topping(pickle)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='vegan_burger', toppings=[Topping(name='tomatoes', qualifier='None', negation=False), Topping(name='mustard', qualifier='None', negation=False), Topping(name='lettuce', qualifier='None', negation=False), Topping(name='pickles', qualifier='None', negation=False)])]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='vegan_burger', toppings=[Topping(name='tomato'), Topping(name='mustard'), Topping(name='lettuce'), Topping(name='pickle')])]",
+        "output_NER": "vegan burger - main_dish_type(vegan_burger), tomato - topping(tomato), mustard - topping(mustard), lettuce - topping(lettuce), pickle - topping(pickle)"
+    },
+    {
+        "input": "side curly fries small",
+        "input_augmented": "side curly fries small\nItems Found: curly fries - side_type(curly_fries), small - side_size(small)",
+        "output": "[SideOrder(number=1, side_type='curly_fries', size='small')]",
+        "expected": "[SideOrder(number=1, side_type='curly_fries', size='small')]",
+        "output_NER": "curly fries - side_type(curly_fries), small - side_size(small)"
+    },
+    {
+        "input": "drink seven up",
+        "input_augmented": "drink seven up\nItems Found: seven up - drink_type(seven_up)",
+        "output": "[DrinkOrder(number=7, drink_type='seven_up')]",
+        "expected": "[DrinkOrder(number=1, drink_type='seven_up')]",
+        "output_NER": "seven up - drink_type(seven_up)"
+    },
+    {
+        "input": "can i get a plain chicken sandwich small curly fries and a medium dr pepper",
+        "input_augmented": "can i get a plain chicken sandwich small curly fries and a medium dr pepper\nItems Found: a - number(1), chicken sandwich - main_dish_type(chicken_sandwich), small - side_size(small), curly fries - side_type(curly_fries), a - number(1), medium - drink_size(medium), dr pepper - drink_type(dr_pepper)",
+        "output": "[BurgerOrder(number=1, size='small', main_dish_type='chicken_sandwich', toppings=[]), SideOrder(number=1, size='small', side_type='curly_fries', qualifier='None', negation=False), DrinkOrder(number=1, size='medium', drink_type='dr_pepper', qualifier='None', negation=False)]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='chicken_sandwich'), SideOrder(number=1, side_type='curly_fries', size='small'), DrinkOrder(number=1, drink_type='dr_pepper', size='medium')]",
+        "output_NER": "a - number(1), chicken sandwich - main_dish_type(chicken_sandwich), small - side_size(small), curly fries - side_type(curly_fries), a - number(1), medium - drink_size(medium), dr pepper - drink_type(dr_pepper)"
+    },
+    {
+        "input": "let me have a cheeseburger with lettuce tomatoes onions pickles ketchup and mustard",
+        "input_augmented": "let me have a cheeseburger with lettuce tomatoes onions pickles ketchup and mustard\nItems Found: a - number(1), cheeseburger - main_dish_type(cheese_burger), lettuce - topping(lettuce), tomatoes - topping(tomato), onions - topping(onion), pickles - topping(pickle), ketchup - topping(ketchup), mustard - topping(mustard)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='cheeseburger', toppings=[Topping(name='lettuce', qualifier='None', negation=False), Topping(name='tomatoes', qualifier='None', negation=False), Topping(name='onions', qualifier='None', negation=False), Topping(name='pickles', qualifier='None', negation=False), Topping(name='ketchup', qualifier='None', negation=False), Topping(name='mustard', qualifier='None', negation=False)])]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='lettuce'), Topping(name='tomato'), Topping(name='onion'), Topping(name='pickle'), Topping(name='ketchup'), Topping(name='mustard')])]",
+        "output_NER": "a - number(1), cheeseburger - main_dish_type(cheese_burger), lettuce - topping(lettuce), tomatoes - topping(tomato), onions - topping(onion), pickles - topping(pickle), ketchup - topping(ketchup), mustard - topping(mustard)"
+    },
+    {
+        "input": "also let me have a large curly fry with a large sweet tea",
+        "input_augmented": "also let me have a large curly fry with a large sweet tea\nItems Found: a - number(1), large - side_size(large), curly fry - side_type(curly_fries), a - number(1), large - drink_size(large), tea - drink_type(iced_tea)",
+        "output": "[SideOrder(number=1, size='large', side_type='curly_fries'), DrinkOrder(number=1, size='large', drink_type='sweet_tomato_tea')]",
+        "expected": "[SideOrder(number=1, side_type='curly_fries', size='large'), DrinkOrder(number=1, drink_type='iced_tea', size='large')]",
+        "output_NER": "a - number(1), large - side_size(large), curly fry - side_type(curly_fries), a - number(1), large - drink_size(large), tea - drink_type(iced_tea)"
+    },
+    {
+        "input": "let me get a double cheeseburger with blue cheese lettuce and mustard",
+        "input_augmented": "let me get a double cheeseburger with blue cheese lettuce and mustard\nItems Found: a - number(1), double cheeseburger - main_dish_type(double_cheese_burger), blue cheese - topping(blue_cheese), lettuce - topping(lettuce), mustard - topping(mustard)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='cheeseburger', toppings=[Topping(name='blue_cheese', qualifier='None', negation=False), Topping(name='lettuce', qualifier='None', negation=False), Topping(name='mustard', qualifier='None', negation=False)])]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='blue_cheese'), Topping(name='lettuce'), Topping(name='mustard')])]",
+        "output_NER": "a - number(1), double cheeseburger - main_dish_type(double_cheese_burger), blue cheese - topping(blue_cheese), lettuce - topping(lettuce), mustard - topping(mustard)"
+    },
+    {
+        "input": "no drinks for me today but i'll take a small order of french fries",
+        "input_augmented": "no drinks for me today but i'll take a small order of french fries\nItems Found: no - not(not), today - date, a - number(1), small - side_size(small), french fries - side_type(french_fries)",
+        "output": "[SideOrder(number=1, size='small', side_type='french_fries')]",
+        "expected": "[SideOrder(number=1, side_type='french_fries', size='small')]",
+        "output_NER": "no - not(not), today - date, a - number(1), small - side_size(small), french fries - side_type(french_fries)"
+    },
+    {
+        "input": "i'd like to order a double cheeseburger",
+        "input_augmented": "i'd like to order a double cheeseburger\nItems Found: a - number(1), double cheeseburger - main_dish_type(double_cheese_burger)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='cheeseburger', toppings=[])]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger')]",
+        "output_NER": "a - number(1), double cheeseburger - main_dish_type(double_cheese_burger)"
+    },
+    {
+        "input": "i'd also like to get an order of large curly fries and a large pink lemonade with that",
+        "input_augmented": "i'd also like to get an order of large curly fries and a large pink lemonade with that\nItems Found: an - number(1), large - side_size(large), curly fries - side_type(curly_fries), a - number(1), large - drink_size(large), pink lemonade - drink_type(pink_lemonade)",
+        "output": "[SideOrder(number=1, size='large', side_type='curly_fries'), DrinkOrder(number=1, size='large', drink_type='pink_lemonade')]",
+        "expected": "[SideOrder(number=1, side_type='curly_fries', size='large'), DrinkOrder(number=1, drink_type='pink_lemonade', size='large')]",
+        "output_NER": "an - number(1), large - side_size(large), curly fries - side_type(curly_fries), a - number(1), large - drink_size(large), pink lemonade - drink_type(pink_lemonade)"
+    },
+    {
+        "input": "for the burger i want mustard and mayo lettuce tomatoes onions bacon jalapenos",
+        "input_augmented": "for the burger i want mustard and mayo lettuce tomatoes onions bacon jalapenos\nItems Found: burger - main_dish_type(ham_burger), mustard - topping(mustard), mayo - topping(mayonnaise), lettuce - topping(lettuce), tomatoes - topping(tomato), onions - topping(onion), bacon - topping(bacon), jalapenos - topping(jalapenos)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='None', toppings=[Topping(name='mustard', qualifier='None', negation=False), Topping(name='mayonnaise', qualifier='None', negation=False), Topping(name='lettuce', qualifier='None', negation=False), Topping(name='tomatoes', qualifier='None', negation=False), Topping(name='onions', qualifier='None', negation=False), Topping(name='bacon', qualifier='None', negation=False), Topping(name='jalapenos', qualifier='None', negation=False)])]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='ham_burger', toppings=[Topping(name='mustard'), Topping(name='mayonnaise'), Topping(name='lettuce'), Topping(name='tomato'), Topping(name='onion'), Topping(name='bacon'), Topping(name='jalapenos')])]",
+        "output_NER": "burger - main_dish_type(ham_burger), mustard - topping(mustard), mayo - topping(mayonnaise), lettuce - topping(lettuce), tomatoes - topping(tomato), onions - topping(onion), bacon - topping(bacon), jalapenos - topping(jalapenos)"
+    },
+    {
+        "input": "i would like a double cheeseburger with lettuce ketchup onions and bacon",
+        "input_augmented": "i would like a double cheeseburger with lettuce ketchup onions and bacon\nItems Found: a - number(1), double cheeseburger - main_dish_type(double_cheese_burger), lettuce - topping(lettuce), ketchup - topping(ketchup), onions - topping(onion), bacon - topping(bacon)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='double_cheeseburger', toppings=[Topping(name='lettuce', qualifier='None', negation=False), Topping(name='ketchup', qualifier='None', negation=False), Topping(name='onions', qualifier='None', negation=False), Topping(name='bacon', qualifier='None', negation=False)])]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='lettuce'), Topping(name='ketchup'), Topping(name='onion'), Topping(name='bacon')])]",
+        "output_NER": "a - number(1), double cheeseburger - main_dish_type(double_cheese_burger), lettuce - topping(lettuce), ketchup - topping(ketchup), onions - topping(onion), bacon - topping(bacon)"
+    },
+    {
+        "input": "i would also like a small curly fries and a medium diet coke",
+        "input_augmented": "i would also like a small curly fries and a medium diet coke\nItems Found: a - number(1), small - side_size(small), curly fries - side_type(curly_fries), a - number(1), medium - drink_size(medium), diet coke - drink_type(diet_coke)",
+        "output": "[SideOrder(number=1, size='small', side_type='curly_fries'), DrinkOrder(number=1, size='medium', drink_type='diet_coke')]",
+        "expected": "[SideOrder(number=1, side_type='curly_fries', size='small'), DrinkOrder(number=1, drink_type='diet_coke', size='medium')]",
+        "output_NER": "a - number(1), small - side_size(small), curly fries - side_type(curly_fries), a - number(1), medium - drink_size(medium), diet coke - drink_type(diet_coke)"
+    },
+    {
+        "input": "i'd like a chicken sandwich with pickles tomatoes lettuce and mayo",
+        "input_augmented": "i'd like a chicken sandwich with pickles tomatoes lettuce and mayo\nItems Found: a - number(1), chicken sandwich - main_dish_type(chicken_sandwich), pickles - topping(pickle), tomatoes - topping(tomato), lettuce - topping(lettuce), mayo - topping(mayonnaise)",
+        "output": "[SandwichOrder(number=1, size='None', base_sandwich='chicken', toppings=[Topping(name='pickles', qualifier='None', negation=False), Topping(name='tomatoes', qualifier='None', negation=False), Topping(name='lettuce', qualifier='None', negation=False), Topping(name='mayonnaise', qualifier='None', negation=False)])]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='chicken_sandwich', toppings=[Topping(name='pickle'), Topping(name='tomato'), Topping(name='lettuce'), Topping(name='mayonnaise')])]",
+        "output_NER": "a - number(1), chicken sandwich - main_dish_type(chicken_sandwich), pickles - topping(pickle), tomatoes - topping(tomato), lettuce - topping(lettuce), mayo - topping(mayonnaise)"
+    },
+    {
+        "input": "with small garlic fries and a small seven up",
+        "input_augmented": "with small garlic fries and a small seven up\nItems Found: small - side_size(small), garlic fries - side_type(garlic_fries), a - number(1), small - drink_size(small), seven up - drink_type(seven_up)",
+        "output": "[SideOrder(number=1, size='small', side_type='sweet_onion_sauce'), SideOrder(number=1, size='small', side_type='garlic_fries'), DrinkOrder(number=1, size='small', drink_type='seven_up')]",
+        "expected": "[SideOrder(number=1, side_type='garlic_fries', size='small'), DrinkOrder(number=1, drink_type='seven_up', size='small')]",
+        "output_NER": "small - side_size(small), garlic fries - side_type(garlic_fries), a - number(1), small - drink_size(small), seven up - drink_type(seven_up)"
+    },
+    {
+        "input": "can i have a cheeseburger with ketchup and onions small fries and a small diet coke",
+        "input_augmented": "can i have a cheeseburger with ketchup and onions small fries and a small diet coke\nItems Found: a - number(1), cheeseburger - main_dish_type(cheese_burger), ketchup - topping(ketchup), onions - topping(onion), small - side_size(small), fries - side_type(french_fries), a - number(1), small - drink_size(small), diet coke - drink_type(diet_coke)",
+        "output": "[BurgerOrder(number=1, main_dish_type='cheeseburger', toppings=[Topping(name='ketchup'), Topping(name='onions')]), SideOrder(number=1, side_type='french_fries', size='small'), DrinkOrder(number=1, drink_type='diet_coke', size='small')]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='ketchup'), Topping(name='onion')]), SideOrder(number=1, side_type='french_fries', size='small'), DrinkOrder(number=1, drink_type='diet_coke', size='small')]",
+        "output_NER": "a - number(1), cheeseburger - main_dish_type(cheese_burger), ketchup - topping(ketchup), onions - topping(onion), small - side_size(small), fries - side_type(french_fries), a - number(1), small - drink_size(small), diet coke - drink_type(diet_coke)"
+    },
+    {
+        "input": "hey i would like a double cheeseburger with onions ketchup mayo and bacon",
+        "input_augmented": "hey i would like a double cheeseburger with onions ketchup mayo and bacon\nItems Found: a - number(1), double cheeseburger - main_dish_type(double_cheese_burger), onions - topping(onion), ketchup - topping(ketchup), mayo - topping(mayonnaise), bacon - topping(bacon)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='double_cheeseburger', toppings=[Topping(name='onions', qualifier='None', negation=False), Topping(name='ketchup', qualifier='None', negation=False), Topping(name='mayonnaise', qualifier='None', negation=False), Topping(name='bacon', qualifier='None', negation=False)])]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='onion'), Topping(name='ketchup'), Topping(name='mayonnaise'), Topping(name='bacon')])]",
+        "output_NER": "a - number(1), double cheeseburger - main_dish_type(double_cheese_burger), onions - topping(onion), ketchup - topping(ketchup), mayo - topping(mayonnaise), bacon - topping(bacon)"
+    },
+    {
+        "input": "also french fries and a large diet coke",
+        "input_augmented": "also french fries and a large diet coke\nItems Found: french fries - side_type(french_fries), a - number(1), large - drink_size(large), diet coke - drink_type(diet_coke)",
+        "output": "[SideOrder(number=1, side_type='french_fries', size='large'), DrinkOrder(number=1, drink_type='diet_coke')]",
+        "expected": "[SideOrder(number=1, side_type='french_fries'), DrinkOrder(number=1, drink_type='diet_coke', size='large')]",
+        "output_NER": "french fries - side_type(french_fries), a - number(1), large - drink_size(large), diet coke - drink_type(diet_coke)"
+    },
+    {
+        "input": "i need four cheeseburgers with lettuce and tomato",
+        "input_augmented": "i need four cheeseburgers with lettuce and tomato\nItems Found: four - number(4), cheeseburgers - main_dish_type(cheese_burger), lettuce - topping(lettuce), tomato - topping(tomato)",
+        "output": "[BurgerOrder(number=4, size='None', main_dish_type='cheese_burger', toppings=[Topping(name='lettuce', qualifier='None', negation=False), Topping(name='tomato', qualifier='None', negation=False)])]",
+        "expected": "[BurgerOrder(number=4, main_dish_type='cheese_burger', toppings=[Topping(name='lettuce'), Topping(name='tomato')])]",
+        "output_NER": "four - number(4), cheeseburgers - main_dish_type(cheese_burger), lettuce - topping(lettuce), tomato - topping(tomato)"
+    },
+    {
+        "input": "one hamburger plain just the meat and bun and five orders of fries",
+        "input_augmented": "one hamburger plain just the meat and bun and five orders of fries\nItems Found: one - number(1), hamburger - main_dish_type(ham_burger), five - number(5), fries - side_type(french_fries)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='oven_roasted_chicken', toppings=[Topping(name='black_olives', qualifier='None', negation=False)]), SideOrder(number=5, size='None', side_type='french_fries')]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='ham_burger'), SideOrder(number=5, side_type='french_fries')]",
+        "output_NER": "one - number(1), hamburger - main_dish_type(ham_burger), five - number(5), fries - side_type(french_fries)"
+    },
+    {
+        "input": "i also need three small cokes and two small coffees thank you",
+        "input_augmented": "i also need three small cokes and two small coffees thank you\nItems Found: three - number(3), small - drink_size(small), cokes - drink_type(coca_cola), two - number(2), small - drink_size(small), coffees - drink_type(coffee)",
+        "output": "[DrinkOrder(number=3, drink_type='coca_cola', size='small'), DrinkOrder(number=2, drink_type='cofee', size='small')]",
+        "expected": "[DrinkOrder(number=3, drink_type='coca_cola', size='small'), DrinkOrder(number=2, drink_type='coffee', size='small')]",
+        "output_NER": "three - number(3), small - drink_size(small), cokes - drink_type(coca_cola), two - number(2), small - drink_size(small), coffees - drink_type(coffee)"
+    },
+    {
+        "input": "can i get a hamburger with onions",
+        "input_augmented": "can i get a hamburger with onions\nItems Found: a - number(1), hamburger - main_dish_type(ham_burger), onions - topping(onion)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='None', toppings=[Topping(name='onions', qualifier='None', negation=False)])]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='ham_burger', toppings=[Topping(name='onion')])]",
+        "output_NER": "a - number(1), hamburger - main_dish_type(ham_burger), onions - topping(onion)"
+    },
+    {
+        "input": "and a small order of french fries",
+        "input_augmented": "and a small order of french fries\nItems Found: a - number(1), small - side_size(small), french fries - side_type(french_fries)",
+        "output": "[SideOrder(number=1, size='small', side_type='french_fries')]",
+        "expected": "[SideOrder(number=1, side_type='french_fries', size='small')]",
+        "output_NER": "a - number(1), small - side_size(small), french fries - side_type(french_fries)"
+    },
+    {
+        "input": "give me a bacon cheeseburger with mustard ketchup and extra onions",
+        "input_augmented": "give me a bacon cheeseburger with mustard ketchup and extra onions\nItems Found: a - number(1), bacon - topping(bacon), cheeseburger - main_dish_type(cheese_burger), mustard - topping(mustard), ketchup - topping(ketchup), extra - quantity(extra), onions - topping(onion)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='cheese_burger', toppings=[Topping(name='onions', qualifier='extra', negation=False), Topping(name='mustard', qualifier='None', negation=False), Topping(name='ketchup', qualifier='None', negation=False), Topping(name='onions', qualifier='None', negation=False)])]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='onion', qualifier='extra'), Topping(name='bacon'), Topping(name='mustard'), Topping(name='ketchup')])]",
+        "output_NER": "a - number(1), bacon - topping(bacon), cheeseburger - main_dish_type(cheese_burger), mustard - topping(mustard), ketchup - topping(ketchup), extra - quantity(extra), onions - topping(onion)"
+    },
+    {
+        "input": "then i'll take an order of large curly fries and one large seven up",
+        "input_augmented": "then i'll take an order of large curly fries and one large seven up\nItems Found: an - number(1), large - side_size(large), curly fries - side_type(curly_fries), one - number(1), large - drink_size(large), seven up - drink_type(seven_up)",
+        "output": "[SideOrder(number=1, size='large', side_type='curly_fries'), DrinkOrder(number=1, size='large', drink_type='seven_up')]",
+        "expected": "[SideOrder(number=1, side_type='curly_fries', size='large'), DrinkOrder(number=1, drink_type='seven_up', size='large')]",
+        "output_NER": "an - number(1), large - side_size(large), curly fries - side_type(curly_fries), one - number(1), large - drink_size(large), seven up - drink_type(seven_up)"
+    },
+    {
+        "input": "hi i want two hamburgers cheddar cheese lettuce tomatoes ketchup onions pickles and mustard on them two french fries and two medium cokes please",
+        "input_augmented": "hi i want two hamburgers cheddar cheese lettuce tomatoes ketchup onions pickles and mustard on them two french fries and two medium cokes please\nItems Found: two - number(2), hamburgers - main_dish_type(ham_burger), cheddar cheese - topping(cheddar), lettuce - topping(lettuce), tomatoes - topping(tomato), ketchup - topping(ketchup), onions - topping(onion), pickles - topping(pickle), mustard - topping(mustard), two - number(2), french fries - side_type(french_fries), two - number(2), medium - drink_size(medium), cokes - drink_type(coca_cola)",
+        "output": "[BurgerOrder(number=2, size='None', main_dish_type='None', toppings=[Topping(name='cheddar_cheese', qualifier='None', negation=False), Topping(name='lettuce', qualifier='None', negation=False), Topping(name='tomatoes', qualifier='None', negation=False), Topping(name='ketchup', qualifier='None', negation=False), Topping(name='onions', qualifier='None', negation=False), Topping(name='pickles', qualifier='None', negation=False), Topping(name='mustard', qualifier='None', negation=False)]), SideOrder(number=2, size='None', side_type='french_fries', size='None'), DrinkOrder(number=2, size='medium', drink_type='coca_cola')]",
+        "expected": "[BurgerOrder(number=2, main_dish_type='ham_burger', toppings=[Topping(name='cheddar'), Topping(name='lettuce'), Topping(name='tomato'), Topping(name='ketchup'), Topping(name='onion'), Topping(name='pickle'), Topping(name='mustard')]), SideOrder(number=2, side_type='french_fries'), DrinkOrder(number=2, drink_type='coca_cola', size='medium')]",
+        "output_NER": "two - number(2), hamburgers - main_dish_type(ham_burger), cheddar cheese - topping(cheddar), lettuce - topping(lettuce), tomatoes - topping(tomato), ketchup - topping(ketchup), onions - topping(onion), pickles - topping(pickle), mustard - topping(mustard), two - number(2), french fries - side_type(french_fries), two - number(2), medium - drink_size(medium), cokes - drink_type(coca_cola)"
+    },
+    {
+        "input": "i just want a vegan burger topped with jalapenos onions and mustard a side of apple slices and a small sugar free lemonade",
+        "input_augmented": "i just want a vegan burger topped with jalapenos onions and mustard a side of apple slices and a small sugar free lemonade\nItems Found: a - number(1), vegan burger - main_dish_type(vegan_burger), jalapenos - topping(jalapenos), onions - topping(onion), mustard - topping(mustard), a - number(1), apple slices - side_type(apple_slices), a - number(1), small - drink_size(small), sugar free lemonade - drink_type(zero_sugar_lemonade)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='vegan_burger', toppings=[Topping(name='jalapenos', qualifier='None', negation=False), Topping(name='onions', qualifier='None', negation=False), Topping(name='mustard', qualifier='None', negation=False)]), SideOrder(number=1, size='None', side_type='apple_slices'), DrinkOrder(number=1, size='small', drink_type='zero_sugar_lemonade')]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='vegan_burger', toppings=[Topping(name='jalapenos'), Topping(name='onion'), Topping(name='mustard')]), SideOrder(number=1, side_type='apple_slices'), DrinkOrder(number=1, drink_type='zero_sugar_lemonade', size='small')]",
+        "output_NER": "a - number(1), vegan burger - main_dish_type(vegan_burger), jalapenos - topping(jalapenos), onions - topping(onion), mustard - topping(mustard), a - number(1), apple slices - side_type(apple_slices), a - number(1), small - drink_size(small), sugar free lemonade - drink_type(zero_sugar_lemonade)"
+    },
+    {
+        "input": "i'd like a double cheeseburger with ketchup and mayo a small curly fry and a large coke please",
+        "input_augmented": "i'd like a double cheeseburger with ketchup and mayo a small curly fry and a large coke please\nItems Found: a - number(1), double cheeseburger - main_dish_type(double_cheese_burger), ketchup - topping(ketchup), mayo - topping(mayonnaise), a - number(1), small - side_size(small), curly fry - side_type(curly_fries), a - number(1), large - drink_size(large), coke - drink_type(coca_cola)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='double_cheeseburger', toppings=[Topping(name='ketchup', qualifier='None', negation=False), Topping(name='mayonnaise', qualifier='None', negation=False)]), SideOrder(number=1, size='small', side_type='curly_fries', qualifier='None'), DrinkOrder(number=1, size='large', drink_type='coke')]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='ketchup'), Topping(name='mayonnaise')]), SideOrder(number=1, side_type='curly_fries', size='small'), DrinkOrder(number=1, drink_type='coca_cola', size='large')]",
+        "output_NER": "a - number(1), double cheeseburger - main_dish_type(double_cheese_burger), ketchup - topping(ketchup), mayo - topping(mayonnaise), a - number(1), small - side_size(small), curly fry - side_type(curly_fries), a - number(1), large - drink_size(large), coke - drink_type(coca_cola)"
+    },
+    {
+        "input": "can i get a vegan burger with cheddar cheese pickles lettuce tomatoes ketchup mustard and mayonnaise",
+        "input_augmented": "can i get a vegan burger with cheddar cheese pickles lettuce tomatoes ketchup mustard and mayonnaise\nItems Found: a - number(1), vegan burger - main_dish_type(vegan_burger), cheddar cheese - topping(cheddar), pickles - topping(pickle), lettuce - topping(lettuce), tomatoes - topping(tomato), ketchup - topping(ketchup), mustard - topping(mustard), mayonnaise - topping(mayonnaise)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='vegan_burger', toppings=[Topping(name='cheddar_cheese', qualifier='None', negation=False), Topping(name='pickles', qualifier='None', negation=False), Topping(name='lettuce', qualifier='None', negation=False), Topping(name='tomatoes', qualifier='None', negation=False), Topping(name='ketchup', qualifier='None', negation=False), Topping(name='mustard', qualifier='None', negation=False), Topping(name='mayonnaise', qualifier='None', negation=False)])]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='vegan_burger', toppings=[Topping(name='cheddar'), Topping(name='pickle'), Topping(name='lettuce'), Topping(name='tomato'), Topping(name='ketchup'), Topping(name='mustard'), Topping(name='mayonnaise')])]",
+        "output_NER": "a - number(1), vegan burger - main_dish_type(vegan_burger), cheddar cheese - topping(cheddar), pickles - topping(pickle), lettuce - topping(lettuce), tomatoes - topping(tomato), ketchup - topping(ketchup), mustard - topping(mustard), mayonnaise - topping(mayonnaise)"
+    },
+    {
+        "input": "i would also like a large diet coke and a small order of french fries",
+        "input_augmented": "i would also like a large diet coke and a small order of french fries\nItems Found: a - number(1), large - drink_size(large), diet coke - drink_type(diet_coke), a - number(1), small - side_size(small), french fries - side_type(french_fries)",
+        "output": "[DrinkOrder(number=1, drink_type='diet_coke', size='large'), SideOrder(number=1, side_type='french_fries', size='small')]",
+        "expected": "[DrinkOrder(number=1, drink_type='diet_coke', size='large'), SideOrder(number=1, side_type='french_fries', size='small')]",
+        "output_NER": "a - number(1), large - drink_size(large), diet coke - drink_type(diet_coke), a - number(1), small - side_size(small), french fries - side_type(french_fries)"
+    },
+    {
+        "input": "double cheeseburger onions bacon and lettuce",
+        "input_augmented": "double cheeseburger onions bacon and lettuce\nItems Found: double cheeseburger - main_dish_type(double_cheese_burger), onions - topping(onion), bacon - topping(bacon), lettuce - topping(lettuce)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='double_cheeseburger', toppings=[Topping(name='onions', qualifier='None', negation=False), Topping(name='bacon', qualifier='None', negation=False), Topping(name='lettuce', qualifier='None', negation=False)]), SideOrder(number=1, size='None', side_type='lays_classic')]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='onion'), Topping(name='bacon'), Topping(name='lettuce')])]",
+        "output_NER": "double cheeseburger - main_dish_type(double_cheese_burger), onions - topping(onion), bacon - topping(bacon), lettuce - topping(lettuce)"
+    },
+    {
+        "input": "large curly fries and a diet coke",
+        "input_augmented": "large curly fries and a diet coke\nItems Found: large - side_size(large), curly fries - side_type(curly_fries), a - number(1), diet coke - drink_type(diet_coke)",
+        "output": "[SideOrder(number=1, size='large', side_type='curly_fries'), DrinkOrder(number=1, drink_type='diet_coke')]",
+        "expected": "[SideOrder(number=1, side_type='curly_fries', size='large'), DrinkOrder(number=1, drink_type='diet_coke')]",
+        "output_NER": "large - side_size(large), curly fries - side_type(curly_fries), a - number(1), diet coke - drink_type(diet_coke)"
+    },
+    {
+        "input": "i would like a chicken sandwich with cheddar cheese tomatoes lettuce and mayonnaise only",
+        "input_augmented": "i would like a chicken sandwich with cheddar cheese tomatoes lettuce and mayonnaise only\nItems Found: a - number(1), chicken sandwich - main_dish_type(chicken_sandwich), cheddar cheese - topping(cheddar), tomatoes - topping(tomato), lettuce - topping(lettuce), mayonnaise - topping(mayonnaise)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='chicken_sandwich', toppings=[Topping(name='cheddar_cheese', qualifier='None', negation=False), Topping(name='tomatoes', qualifier='None', negation=False), Topping(name='lettuce', qualifier='None', negation=False), Topping(name='mayonnaise', qualifier='None', negation=False)])]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='chicken_sandwich', toppings=[Topping(name='cheddar'), Topping(name='tomato'), Topping(name='lettuce'), Topping(name='mayonnaise')])]",
+        "output_NER": "a - number(1), chicken sandwich - main_dish_type(chicken_sandwich), cheddar cheese - topping(cheddar), tomatoes - topping(tomato), lettuce - topping(lettuce), mayonnaise - topping(mayonnaise)"
+    },
+    {
+        "input": "also an order of regular sweet potato fries and regular iced tea",
+        "input_augmented": "also an order of regular sweet potato fries and regular iced tea\nItems Found: an - number(1), sweet potato fries - side_type(sweet_potato_fries), iced tea - drink_type(iced_tea)",
+        "output": "[SideOrder(number=1, side_type='sweet_potato_fries', size='regular'), DrinkOrder(number=1, drink_type='ice_tea')]",
+        "expected": "[SideOrder(number=1, side_type='sweet_potato_fries'), DrinkOrder(number=1, drink_type='iced_tea')]",
+        "output_NER": "an - number(1), sweet potato fries - side_type(sweet_potato_fries), iced tea - drink_type(iced_tea)"
+    },
+    {
+        "input": "chicken sandwich with lettuce and bacon large french fry and a small chocolate shake",
+        "input_augmented": "chicken sandwich with lettuce and bacon large french fry and a small chocolate shake\nItems Found: chicken sandwich - main_dish_type(chicken_sandwich), lettuce - topping(lettuce), bacon - topping(bacon), large - side_size(large), french fry - side_type(french_fries), a - number(1), small - drink_size(small), chocolate shake - drink_type(chocolate_shake)",
+        "output": "[SandwichOrder(number=1, size='None', base_sandwich='chicken_sandwich', toppings=[Topping(name='lettuce', qualifier='None', negation=False), Topping(name='bacon', qualifier='None', negation=False)]), SideOrder(number=1, size='large', side_type='french_fries', qualifier='None'), DrinkOrder(number=1, size='small', drink_type='chocolate_shake', qualifier='None')]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='chicken_sandwich', toppings=[Topping(name='lettuce'), Topping(name='bacon')]), SideOrder(number=1, side_type='french_fries', size='large'), DrinkOrder(number=1, drink_type='chocolate_shake', size='small')]",
+        "output_NER": "chicken sandwich - main_dish_type(chicken_sandwich), lettuce - topping(lettuce), bacon - topping(bacon), large - side_size(large), french fry - side_type(french_fries), a - number(1), small - drink_size(small), chocolate shake - drink_type(chocolate_shake)"
+    },
+    {
+        "input": "i'd like a double cheeseburger with jalapenos onions and pickles",
+        "input_augmented": "i'd like a double cheeseburger with jalapenos onions and pickles\nItems Found: a - number(1), double cheeseburger - main_dish_type(double_cheese_burger), jalapenos - topping(jalapenos), onions - topping(onion), pickles - topping(pickle)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='double_cheeseburger', toppings=[Topping(name='jalapenos', qualifier='None', negation=False), Topping(name='onions', qualifier='None', negation=False), Topping(name='pickles', qualifier='None', negation=False)])]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='jalapenos'), Topping(name='onion'), Topping(name='pickle')])]",
+        "output_NER": "a - number(1), double cheeseburger - main_dish_type(double_cheese_burger), jalapenos - topping(jalapenos), onions - topping(onion), pickles - topping(pickle)"
+    },
+    {
+        "input": "can i also please have a small dr pepper and a side of small sweet potato fries",
+        "input_augmented": "can i also please have a small dr pepper and a side of small sweet potato fries\nItems Found: a - number(1), small - drink_size(small), dr pepper - drink_type(dr_pepper), a - number(1), small - side_size(small), sweet potato fries - side_type(sweet_potato_fries)",
+        "output": "[DrinkOrder(number=1, drink_type='dr_pepper', size='small'), SideOrder(number=1, side_type='sweet_potato_fries', size='small')]",
+        "expected": "[DrinkOrder(number=1, drink_type='dr_pepper', size='small'), SideOrder(number=1, side_type='sweet_potato_fries', size='small')]",
+        "output_NER": "a - number(1), small - drink_size(small), dr pepper - drink_type(dr_pepper), a - number(1), small - side_size(small), sweet potato fries - side_type(sweet_potato_fries)"
+    },
+    {
+        "input": "can you get me a hamburger with pickles and mayo only a small order of fries and a small seven up please",
+        "input_augmented": "can you get me a hamburger with pickles and mayo only a small order of fries and a small seven up please\nItems Found: a - number(1), hamburger - main_dish_type(ham_burger), pickles - topping(pickle), mayo - topping(mayonnaise), a - number(1), small - side_size(small), fries - side_type(french_fries), a - number(1), small - drink_size(small), seven up - drink_type(seven_up)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='hamburger', toppings=[Topping(name='pickles', qualifier='None', negation=False), Topping(name='mayonnaise', qualifier='None', negation=False)]), SideOrder(number=1, size='small', side_type='french_fries', size='None'), DrinkOrder(number=1, size='small', drink_type='seven_up', size='None')]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='ham_burger', toppings=[Topping(name='pickle'), Topping(name='mayonnaise')]), SideOrder(number=1, side_type='french_fries', size='small'), DrinkOrder(number=1, drink_type='seven_up', size='small')]",
+        "output_NER": "a - number(1), hamburger - main_dish_type(ham_burger), pickles - topping(pickle), mayo - topping(mayonnaise), a - number(1), small - side_size(small), fries - side_type(french_fries), a - number(1), small - drink_size(small), seven up - drink_type(seven_up)"
+    },
+    {
+        "input": "i'd like a hamburger with ketchup mustard and pickles with a medium strawberry shake and small curly fries",
+        "input_augmented": "i'd like a hamburger with ketchup mustard and pickles with a medium strawberry shake and small curly fries\nItems Found: a - number(1), hamburger - main_dish_type(ham_burger), ketchup - topping(ketchup), mustard - topping(mustard), pickles - topping(pickle), a - number(1), medium - drink_size(medium), strawberry shake - drink_type(strawberry_shake), small - side_size(small), curly fries - side_type(curly_fries)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='hamburger', toppings=[Topping(name='ketchup', qualifier='None', negation=False), Topping(name='mustard', qualifier='None', negation=False), Topping(name='pickles', qualifier='None', negation=False)]), DrinkOrder(number=1, drink_type='strawberry_shake', size='medium'), SideOrder(number=1, size='small', side_type='curly_fries')]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='ham_burger', toppings=[Topping(name='ketchup'), Topping(name='mustard'), Topping(name='pickle')]), DrinkOrder(number=1, drink_type='strawberry_shake', size='medium'), SideOrder(number=1, side_type='curly_fries', size='small')]",
+        "output_NER": "a - number(1), hamburger - main_dish_type(ham_burger), ketchup - topping(ketchup), mustard - topping(mustard), pickles - topping(pickle), a - number(1), medium - drink_size(medium), strawberry shake - drink_type(strawberry_shake), small - side_size(small), curly fries - side_type(curly_fries)"
+    },
+    {
+        "input": "i'd also like a vegan burger with lettuce onions and ketchup a large diet coke and large curly fries",
+        "input_augmented": "i'd also like a vegan burger with lettuce onions and ketchup a large diet coke and large curly fries\nItems Found: a - number(1), vegan burger - main_dish_type(vegan_burger), lettuce - topping(lettuce), onions - topping(onion), ketchup - topping(ketchup), a - number(1), large - drink_size(large), diet coke - drink_type(diet_coke), large - side_size(large), curly fries - side_type(curly_fries)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='vegan_burger', toppings=[Topping(name='lettuce', qualifier='None', negation=False), Topping(name='onions', qualifier='None', negation=False), Topping(name='ketchup', qualifier='None', negation=False)]), DrinkOrder(number=1, drink_type='diet_coke', size='large'), SideOrder(number=1, size='large', side_type='curly_fries')]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='vegan_burger', toppings=[Topping(name='lettuce'), Topping(name='onion'), Topping(name='ketchup')]), DrinkOrder(number=1, drink_type='diet_coke', size='large'), SideOrder(number=1, side_type='curly_fries', size='large')]",
+        "output_NER": "a - number(1), vegan burger - main_dish_type(vegan_burger), lettuce - topping(lettuce), onions - topping(onion), ketchup - topping(ketchup), a - number(1), large - drink_size(large), diet coke - drink_type(diet_coke), large - side_size(large), curly fries - side_type(curly_fries)"
+    },
+    {
+        "input": "the last combo i'll need is a cheeseburger with only ketchup on it a medium vanilla shake and small french fries",
+        "input_augmented": "the last combo i'll need is a cheeseburger with only ketchup on it a medium vanilla shake and small french fries\nItems Found: a - number(1), cheeseburger - main_dish_type(cheese_burger), ketchup - topping(ketchup), a - number(1), medium - drink_size(medium), vanilla shake - drink_type(vanilla_shake), small - side_size(small), french fries - side_type(french_fries)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='cheeseburger', toppings=[Topping(name='ketchup', qualifier='None', negation=False)]), DrinkOrder(number=1, size='medium', drink_type='vanilla_shake'), SideOrder(number=1, size='small', side_type='french_fries')]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='ketchup')]), DrinkOrder(number=1, drink_type='vanilla_shake', size='medium'), SideOrder(number=1, side_type='french_fries', size='small')]",
+        "output_NER": "a - number(1), cheeseburger - main_dish_type(cheese_burger), ketchup - topping(ketchup), a - number(1), medium - drink_size(medium), vanilla shake - drink_type(vanilla_shake), small - side_size(small), french fries - side_type(french_fries)"
+    },
+    {
+        "input": "i would like to order a cheeseburger with lettuce tomatoes ketchup and a medium coke small garlic fries on the side",
+        "input_augmented": "i would like to order a cheeseburger with lettuce tomatoes ketchup and a medium coke small garlic fries on the side\nItems Found: a - number(1), cheeseburger - main_dish_type(cheese_burger), lettuce - topping(lettuce), tomatoes - topping(tomato), ketchup - topping(ketchup), a - number(1), medium - drink_size(medium), coke - drink_type(coca_cola), small - side_size(small), garlic fries - side_type(garlic_fries)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='cheeseburger', toppings=[Topping(name='lettuce', qualifier='None', negation=False), Topping(name='tomatoes', qualifier='None', negation=False), Topping(name='ketchup', qualifier='None', negation=False)]), DrinkOrder(number=1, size='medium', drink_type='coke', volume='None'), SideOrder(number=1, size='small', side_type='garlic_fries', volume='None')]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='lettuce'), Topping(name='tomato'), Topping(name='ketchup')]), DrinkOrder(number=1, drink_type='coca_cola', size='medium'), SideOrder(number=1, side_type='garlic_fries', size='small')]",
+        "output_NER": "a - number(1), cheeseburger - main_dish_type(cheese_burger), lettuce - topping(lettuce), tomatoes - topping(tomato), ketchup - topping(ketchup), a - number(1), medium - drink_size(medium), coke - drink_type(coca_cola), small - side_size(small), garlic fries - side_type(garlic_fries)"
+    },
+    {
+        "input": "i would like one cheeseburger toppings should include cheddar cheese lettuce tomatoes ketchup mustard and pickles",
+        "input_augmented": "i would like one cheeseburger toppings should include cheddar cheese lettuce tomatoes ketchup mustard and pickles\nItems Found: one - number(1), cheeseburger - main_dish_type(cheese_burger), cheddar cheese - topping(cheddar), lettuce - topping(lettuce), tomatoes - topping(tomato), ketchup - topping(ketchup), mustard - topping(mustard), pickles - topping(pickle)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='cheeseburger', toppings=[Topping(name='cheddar_cheese', qualifier='None', negation=False), Topping(name='lettuce', qualifier='None', negation=False), Topping(name='tomatoes', qualifier='None', negation=False), Topping(name='ketchup', qualifier='None', negation=False), Topping(name='mustard', qualifier='None', negation=False), Topping(name='pickles', qualifier='None', negation=False)])]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='cheddar'), Topping(name='lettuce'), Topping(name='tomato'), Topping(name='ketchup'), Topping(name='mustard'), Topping(name='pickle')])]",
+        "output_NER": "one - number(1), cheeseburger - main_dish_type(cheese_burger), cheddar cheese - topping(cheddar), lettuce - topping(lettuce), tomatoes - topping(tomato), ketchup - topping(ketchup), mustard - topping(mustard), pickles - topping(pickle)"
+    },
+    {
+        "input": "i'd like so like one medium sized diet coke with a side of sweet potato fries small",
+        "input_augmented": "i'd like so like one medium sized diet coke with a side of sweet potato fries small\nItems Found: one - number(1), medium - drink_size(medium), diet coke - drink_type(diet_coke), a - number(1), sweet potato fries - side_type(sweet_potato_fries), small - side_size(small)",
+        "output": "[DrinkOrder(number=1, drink_type='diet_coke', size='medium'), SideOrder(number=1, side_type='sweet_potato_fries', size='small')]",
+        "expected": "[DrinkOrder(number=1, drink_type='diet_coke', size='medium'), SideOrder(number=1, side_type='sweet_potato_fries', size='small')]",
+        "output_NER": "one - number(1), medium - drink_size(medium), diet coke - drink_type(diet_coke), a - number(1), sweet potato fries - side_type(sweet_potato_fries), small - side_size(small)"
+    },
+    {
+        "input": "i'll have a cheeseburger with ketchup onions lettuce and bacon",
+        "input_augmented": "i'll have a cheeseburger with ketchup onions lettuce and bacon\nItems Found: a - number(1), cheeseburger - main_dish_type(cheese_burger), ketchup - topping(ketchup), onions - topping(onion), lettuce - topping(lettuce), bacon - topping(bacon)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='cheeseburger', toppings=[Topping(name='ketchup', qualifier='None', negation=False), Topping(name='onions', qualifier='None', negation=False), Topping(name='lettuce', qualifier='None', negation=False), Topping(name='bacon', qualifier='None', negation=False)])]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='ketchup'), Topping(name='onion'), Topping(name='lettuce'), Topping(name='bacon')])]",
+        "output_NER": "a - number(1), cheeseburger - main_dish_type(cheese_burger), ketchup - topping(ketchup), onions - topping(onion), lettuce - topping(lettuce), bacon - topping(bacon)"
+    },
+    {
+        "input": "i'd also like a small order of garlic fries and a medium iced tea",
+        "input_augmented": "i'd also like a small order of garlic fries and a medium iced tea\nItems Found: a - number(1), small - side_size(small), garlic fries - side_type(garlic_fries), a - number(1), medium - drink_size(medium), iced tea - drink_type(iced_tea)",
+        "output": "[SideOrder(number=1, size='small', side_type='garlic_fries'), DrinkOrder(number=1, size='medium', drink_type='ice_tea')]",
+        "expected": "[SideOrder(number=1, side_type='garlic_fries', size='small'), DrinkOrder(number=1, drink_type='iced_tea', size='medium')]",
+        "output_NER": "a - number(1), small - side_size(small), garlic fries - side_type(garlic_fries), a - number(1), medium - drink_size(medium), iced tea - drink_type(iced_tea)"
+    },
+    {
+        "input": "i'll take a double cheeseburger with onions mustard and ketchup",
+        "input_augmented": "i'll take a double cheeseburger with onions mustard and ketchup\nItems Found: a - number(1), double cheeseburger - main_dish_type(double_cheese_burger), onions - topping(onion), mustard - topping(mustard), ketchup - topping(ketchup)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='double_cheeseburger', toppings=[Topping(name='onions', qualifier='None', negation=False), Topping(name='mustard', qualifier='None', negation=False), Topping(name='ketchup', qualifier='None', negation=False)])]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='onion'), Topping(name='mustard'), Topping(name='ketchup')])]",
+        "output_NER": "a - number(1), double cheeseburger - main_dish_type(double_cheese_burger), onions - topping(onion), mustard - topping(mustard), ketchup - topping(ketchup)"
+    },
+    {
+        "input": "also an order of fries with a large diet coke",
+        "input_augmented": "also an order of fries with a large diet coke\nItems Found: an - number(1), fries - side_type(french_fries), a - number(1), large - drink_size(large), diet coke - drink_type(diet_coke)",
+        "output": "[SideOrder(number=1, side_type='french_fries', size='large'), DrinkOrder(number=1, drink_type='diet_coke')]",
+        "expected": "[SideOrder(number=1, side_type='french_fries'), DrinkOrder(number=1, drink_type='diet_coke', size='large')]",
+        "output_NER": "an - number(1), fries - side_type(french_fries), a - number(1), large - drink_size(large), diet coke - drink_type(diet_coke)"
+    },
+    {
+        "input": "i would like a hamburger with tomatoes pickle lettuce ketchup large coke and a side of small fries",
+        "input_augmented": "i would like a hamburger with tomatoes pickle lettuce ketchup large coke and a side of small fries\nItems Found: a - number(1), hamburger - main_dish_type(ham_burger), tomatoes - topping(tomato), pickle - topping(pickle), lettuce - topping(lettuce), ketchup - topping(ketchup), large - drink_size(large), coke - drink_type(coca_cola), a - number(1), small - side_size(small), fries - side_type(french_fries)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='hamburger', toppings=[Topping(name='tomatoes', qualifier='None', negation=False), Topping(name='pickles', qualifier='None', negation=False), Topping(name='lettuce', qualifier='None', negation=False), Topping(name='ketchup', qualifier='None', negation=False)]), DrinkOrder(number=1, size='None', drink_type='coke', volume='None'), SideOrder(number=1, size='small', side_type='french_fries', volume='None')]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='ham_burger', toppings=[Topping(name='tomato'), Topping(name='pickle'), Topping(name='lettuce'), Topping(name='ketchup')]), DrinkOrder(number=1, drink_type='coca_cola', size='large'), SideOrder(number=1, side_type='french_fries', size='small')]",
+        "output_NER": "a - number(1), hamburger - main_dish_type(ham_burger), tomatoes - topping(tomato), pickle - topping(pickle), lettuce - topping(lettuce), ketchup - topping(ketchup), large - drink_size(large), coke - drink_type(coca_cola), a - number(1), small - side_size(small), fries - side_type(french_fries)"
+    },
+    {
+        "input": "hi i'd like a cheeseburger with extra onions extra lettuce and spread an order of large fries and a medium diet coke thank you",
+        "input_augmented": "hi i'd like a cheeseburger with extra onions extra lettuce and spread an order of large fries and a medium diet coke thank you\nItems Found: a - number(1), cheeseburger - main_dish_type(cheese_burger), extra - quantity(extra), onions - topping(onion), extra - quantity(extra), lettuce - topping(lettuce), spread - topping(spread), an - number(1), large - side_size(large), fries - side_type(french_fries), a - number(1), medium - drink_size(medium), diet coke - drink_type(diet_coke)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='cheeseburger', toppings=[Topping(name='onions', qualifier='extra', negation=False), Topping(name='lettuce', qualifier='extra', negation=False), Topping(name='onions', qualifier='None', negation=False), Topping(name='lettuce', qualifier='None', negation=False), Topping(name='spread', qualifier='None', negation=False)]), SideOrder(number=1, size='large', side_type='french_fries', size_type='None'), DrinkOrder(number=1, size='medium', drink_type='diet_coke', size_type='None')]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='onion', qualifier='extra'), Topping(name='lettuce', qualifier='extra'), Topping(name='spread')]), SideOrder(number=1, side_type='french_fries', size='large'), DrinkOrder(number=1, drink_type='diet_coke', size='medium')]",
+        "output_NER": "a - number(1), cheeseburger - main_dish_type(cheese_burger), extra - quantity(extra), onions - topping(onion), extra - quantity(extra), lettuce - topping(lettuce), spread - topping(spread), an - number(1), large - side_size(large), fries - side_type(french_fries), a - number(1), medium - drink_size(medium), diet coke - drink_type(diet_coke)"
+    },
+    {
+        "input": "can i get the cheeseburger dressed with tomatoes and mayo along with a coke and a side of french fries",
+        "input_augmented": "can i get the cheeseburger dressed with tomatoes and mayo along with a coke and a side of french fries\nItems Found: cheeseburger - main_dish_type(cheese_burger), tomatoes - topping(tomato), mayo - topping(mayonnaise), a - number(1), coke - drink_type(coca_cola), a - number(1), french fries - side_type(french_fries)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='cheeseburger', toppings=[Topping(name='tomatoes', qualifier='None', negation=False), Topping(name='mayonnaise', qualifier='None', negation=False)]), DrinkOrder(number=1, drink_type='coca_cola'), SideOrder(number=1, size='None', side_type='french_fries')]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='tomato'), Topping(name='mayonnaise')]), DrinkOrder(number=1, drink_type='coca_cola'), SideOrder(number=1, side_type='french_fries')]",
+        "output_NER": "cheeseburger - main_dish_type(cheese_burger), tomatoes - topping(tomato), mayo - topping(mayonnaise), a - number(1), coke - drink_type(coca_cola), a - number(1), french fries - side_type(french_fries)"
+    },
+    {
+        "input": "double cheeseburger with cheddar bacon onion pickles jalapenos mustard and mayonnaise with a side of curly fries large and an extra large diet coke",
+        "input_augmented": "double cheeseburger with cheddar bacon onion pickles jalapenos mustard and mayonnaise with a side of curly fries large and an extra large diet coke\nItems Found: double cheeseburger - main_dish_type(double_cheese_burger), cheddar - topping(cheddar), bacon - topping(bacon), onion - topping(onion), pickles - topping(pickle), jalapenos - topping(jalapenos), mustard - topping(mustard), mayonnaise - topping(mayonnaise), a - number(1), curly fries - side_type(curly_fries), large - drink_size(large), an - number(1), extra large - drink_size(extra_large), diet coke - drink_type(diet_coke)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='double_cheeseburger', toppings=[Topping(name='cheddar', qualifier='None', negation=False), Topping(name='bacon', qualifier='None', negation=False), Topping(name='onions', qualifier='None', negation=False), Topping(name='pickles', qualifier='None', negation=False), Topping(name='jalapenos', qualifier='None', negation=False), Topping(name='mustard', qualifier='None', negation=False), Topping(name='mayonnaise', qualifier='None', negation=False)]), SideOrder(number=1, side_type='curly_fries', size='large'), DrinkOrder(number=1, size='extra_large', drink_type='diet_coke')]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='cheddar'), Topping(name='bacon'), Topping(name='onion'), Topping(name='pickle'), Topping(name='jalapenos'), Topping(name='mustard'), Topping(name='mayonnaise')]), SideOrder(number=1, side_type='curly_fries', size='large'), DrinkOrder(number=1, drink_type='diet_coke', size='extra_large')]",
+        "output_NER": "double cheeseburger - main_dish_type(double_cheese_burger), cheddar - topping(cheddar), bacon - topping(bacon), onion - topping(onion), pickles - topping(pickle), jalapenos - topping(jalapenos), mustard - topping(mustard), mayonnaise - topping(mayonnaise), a - number(1), curly fries - side_type(curly_fries), large - drink_size(large), an - number(1), extra large - drink_size(extra_large), diet coke - drink_type(diet_coke)"
+    },
+    {
+        "input": "could i get a chicken sandwich with lettuce tomatoes and ketchup oh and add bacon please",
+        "input_augmented": "could i get a chicken sandwich with lettuce tomatoes and ketchup oh and add bacon please\nItems Found: a - number(1), chicken sandwich - main_dish_type(chicken_sandwich), lettuce - topping(lettuce), tomatoes - topping(tomato), ketchup - topping(ketchup), bacon - topping(bacon)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='chicken_sandwich', toppings=[Topping(name='lettuce', qualifier='None', negation=False), Topping(name='tomatoes', qualifier='None', negation=False), Topping(name='ketchup', qualifier='None', negation=False), Topping(name='bacon', qualifier='None', negation=False)])]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='chicken_sandwich', toppings=[Topping(name='lettuce'), Topping(name='tomato'), Topping(name='ketchup'), Topping(name='bacon')])]",
+        "output_NER": "a - number(1), chicken sandwich - main_dish_type(chicken_sandwich), lettuce - topping(lettuce), tomatoes - topping(tomato), ketchup - topping(ketchup), bacon - topping(bacon)"
+    },
+    {
+        "input": "also a large pink lemonade and a large side of curly fries",
+        "input_augmented": "also a large pink lemonade and a large side of curly fries\nItems Found: a - number(1), large - drink_size(large), pink lemonade - drink_type(pink_lemonade), a - number(1), large - side_size(large), curly fries - side_type(curly_fries)",
+        "output": "[DrinkOrder(number=1, drink_type='pink_lemonade', size='large'), SideOrder(number=1, side_type='curly_fries', size='large')]",
+        "expected": "[DrinkOrder(number=1, drink_type='pink_lemonade', size='large'), SideOrder(number=1, side_type='curly_fries', size='large')]",
+        "output_NER": "a - number(1), large - drink_size(large), pink lemonade - drink_type(pink_lemonade), a - number(1), large - side_size(large), curly fries - side_type(curly_fries)"
+    },
+    {
+        "input": "i'd like one double cheeseburger with everything on it and one hamburger with lettuce tomato and ketchup two large fries one large diet coke and one medium dr pepper",
+        "input_augmented": "i'd like one double cheeseburger with everything on it and one hamburger with lettuce tomato and ketchup two large fries one large diet coke and one medium dr pepper\nItems Found: one - number(1), double cheeseburger - main_dish_type(double_cheese_burger), everything - topping(all_toppings), one - number(1), hamburger - main_dish_type(ham_burger), lettuce - topping(lettuce), tomato - topping(tomato), ketchup - topping(ketchup), two - number(2), large - side_size(large), fries - side_type(french_fries), one - number(1), large - drink_size(large), diet coke - drink_type(diet_coke), one - number(1), medium - drink_size(medium), dr pepper - drink_type(dr_pepper)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='double_cheeseburger', toppings=[Topping(name='O', qualifier='None', negation=False)]), BurgerOrder(number=1, size='None', main_dish_type='hamburger', toppings=[Topping(name='lettuce', qualifier='None', negation=False), Topping(name='tomatoes', qualifier='None', negation=False), Topping(name='ketchup', qualifier='None', negation=False)]), SideOrder(number=2, size='large', side_type='french_fries'), SideOrder(number=1, size='large', side_type='french_fries'), DrinkOrder(number=1, size='large', drink_type='diet_coke'), DrinkOrder(number=1, size='medium', drink_type='dr_pepper')]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='all_toppings')]), BurgerOrder(number=1, main_dish_type='ham_burger', toppings=[Topping(name='lettuce'), Topping(name='tomato'), Topping(name='ketchup')]), SideOrder(number=2, side_type='french_fries', size='large'), DrinkOrder(number=1, drink_type='diet_coke', size='large'), DrinkOrder(number=1, drink_type='dr_pepper', size='medium')]",
+        "output_NER": "one - number(1), double cheeseburger - main_dish_type(double_cheese_burger), everything - topping(all_toppings), one - number(1), hamburger - main_dish_type(ham_burger), lettuce - topping(lettuce), tomato - topping(tomato), ketchup - topping(ketchup), two - number(2), large - side_size(large), fries - side_type(french_fries), one - number(1), large - drink_size(large), diet coke - drink_type(diet_coke), one - number(1), medium - drink_size(medium), dr pepper - drink_type(dr_pepper)"
+    },
+    {
+        "input": "then two dr peppers large",
+        "input_augmented": "then two dr peppers large\nItems Found: two - number(2), dr peppers - drink_type(dr_pepper)",
+        "output": "[DrinkOrder(number=2, drink_type='dr_pepper', size='None')]",
+        "expected": "[DrinkOrder(number=2, drink_type='dr_pepper', size='large')]",
+        "output_NER": "two - number(2), dr peppers - drink_type(dr_pepper)"
+    },
+    {
+        "input": "then an order of fries and curly fries",
+        "input_augmented": "then an order of fries and curly fries\nItems Found: an - number(1), fries - side_type(french_fries), curly fries - side_type(curly_fries)",
+        "output": "[SideOrder(number=1, side_type='french_fries'), SideOrder(number=1, side_type='curly_fries')]",
+        "expected": "[SideOrder(number=1, side_type='french_fries'), SideOrder(number=1, side_type='curly_fries')]",
+        "output_NER": "an - number(1), fries - side_type(french_fries), curly fries - side_type(curly_fries)"
+    },
+    {
+        "input": "i would like a hamburger with cheddar cheese bacon mustard and ketchup a small order of curly fries and a large chocolate shake to drink",
+        "input_augmented": "i would like a hamburger with cheddar cheese bacon mustard and ketchup a small order of curly fries and a large chocolate shake to drink\nItems Found: a - number(1), hamburger - main_dish_type(ham_burger), cheddar cheese - topping(cheddar), bacon - topping(bacon), mustard - topping(mustard), ketchup - topping(ketchup), a - number(1), small - side_size(small), curly fries - side_type(curly_fries), a - number(1), large - drink_size(large), chocolate shake - drink_type(chocolate_shake)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='hamburger', toppings=[Topping(name='cheddar', qualifier='None', negation=False), Topping(name='bacon', qualifier='None', negation=False), Topping(name='mustard', qualifier='None', negation=False), Topping(name='ketchup', qualifier='None', negation=False)]), SideOrder(number=1, size='small', side_type='curly_fries', qualifier='None'), DrinkOrder(number=1, size='large', drink_type='chocolate_shake', qualifier='None')]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='ham_burger', toppings=[Topping(name='cheddar'), Topping(name='bacon'), Topping(name='mustard'), Topping(name='ketchup')]), SideOrder(number=1, side_type='curly_fries', size='small'), DrinkOrder(number=1, drink_type='chocolate_shake', size='large')]",
+        "output_NER": "a - number(1), hamburger - main_dish_type(ham_burger), cheddar cheese - topping(cheddar), bacon - topping(bacon), mustard - topping(mustard), ketchup - topping(ketchup), a - number(1), small - side_size(small), curly fries - side_type(curly_fries), a - number(1), large - drink_size(large), chocolate shake - drink_type(chocolate_shake)"
+    },
+    {
+        "input": "i'd like a double cheeseburger with blue cheese onions pickles lettuce tomatoes jalapenos bacon and ketchup on it",
+        "input_augmented": "i'd like a double cheeseburger with blue cheese onions pickles lettuce tomatoes jalapenos bacon and ketchup on it\nItems Found: a - number(1), double cheeseburger - main_dish_type(double_cheese_burger), blue cheese - topping(blue_cheese), onions - topping(onion), pickles - topping(pickle), lettuce - topping(lettuce), tomatoes - topping(tomato), jalapenos - topping(jalapenos), bacon - topping(bacon), ketchup - topping(ketchup)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='double_cheeseburger', toppings=[Topping(name='blue_cheese', qualifier='None', negation=False), Topping(name='onions', qualifier='None', negation=False), Topping(name='pickles', qualifier='None', negation=False), Topping(name='lettuce', qualifier='None', negation=False), Topping(name='tomatoes', qualifier='None', negation=False), Topping(name='jalapenos', qualifier='None', negation=False), Topping(name='bacon', qualifier='None', negation=False), Topping(name='ketchup', qualifier='None', negation=False)])]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='blue_cheese'), Topping(name='onion'), Topping(name='pickle'), Topping(name='lettuce'), Topping(name='tomato'), Topping(name='jalapenos'), Topping(name='bacon'), Topping(name='ketchup')])]",
+        "output_NER": "a - number(1), double cheeseburger - main_dish_type(double_cheese_burger), blue cheese - topping(blue_cheese), onions - topping(onion), pickles - topping(pickle), lettuce - topping(lettuce), tomatoes - topping(tomato), jalapenos - topping(jalapenos), bacon - topping(bacon), ketchup - topping(ketchup)"
+    },
+    {
+        "input": "i'd also like a large root beer to drink and a large order of sweet potato fries",
+        "input_augmented": "i'd also like a large root beer to drink and a large order of sweet potato fries\nItems Found: a - number(1), large - drink_size(large), root beer - drink_type(root_beer), a - number(1), large - side_size(large), sweet potato fries - side_type(sweet_potato_fries)",
+        "output": "[BurgerOrder(number=1, size='large', main_dish_type='vegan_burger', toppings=[]), DrinkOrder(number=1, drink_type='root_beer', size='large'), SideOrder(number=1, size='large', side_type='sweet_potato_fries')]",
+        "expected": "[DrinkOrder(number=1, drink_type='root_beer', size='large'), SideOrder(number=1, side_type='sweet_potato_fries', size='large')]",
+        "output_NER": "a - number(1), large - drink_size(large), root beer - drink_type(root_beer), a - number(1), large - side_size(large), sweet potato fries - side_type(sweet_potato_fries)"
+    },
+    {
+        "input": "can i have a double cheese burger with bacon and ketchup a large curly fries and a large coke please thanks",
+        "input_augmented": "can i have a double cheese burger with bacon and ketchup a large curly fries and a large coke please thanks\nItems Found: a - number(1), double cheese burger - main_dish_type(double_cheese_burger), bacon - topping(bacon), ketchup - topping(ketchup), a - number(1), large - side_size(large), curly fries - side_type(curly_fries), a - number(1), large - drink_size(large), coke - drink_type(coca_cola)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='cheese_burger', toppings=[Topping(name='bacon', qualifier='None', negation=False), Topping(name='ketchup', qualifier='None', negation=False)]), SideOrder(number=1, size='large', side_type='curly_fries', qualifier='None'), DrinkOrder(number=1, size='large', drink_type='coca_cola')]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='bacon'), Topping(name='ketchup')]), SideOrder(number=1, side_type='curly_fries', size='large'), DrinkOrder(number=1, drink_type='coca_cola', size='large')]",
+        "output_NER": "a - number(1), double cheese burger - main_dish_type(double_cheese_burger), bacon - topping(bacon), ketchup - topping(ketchup), a - number(1), large - side_size(large), curly fries - side_type(curly_fries), a - number(1), large - drink_size(large), coke - drink_type(coca_cola)"
+    },
+    {
+        "input": "hello i'd like a chicken sandwich with extra lettuce bacon and extra pickles",
+        "input_augmented": "hello i'd like a chicken sandwich with extra lettuce bacon and extra pickles\nItems Found: a - number(1), chicken sandwich - main_dish_type(chicken_sandwich), extra - quantity(extra), lettuce - topping(lettuce), bacon - topping(bacon), extra - quantity(extra), pickles - topping(pickle)",
+        "output": "[SandwichOrder(number=1, size='None', base_sandwich='chicken', toppings=[Topping(name='lettuce', qualifier='extra', negation=False), Topping(name='bacon', qualifier='None', negation=False), Topping(name='pickles', qualifier='extra', negation=False), Topping(name='lettuce', qualifier='None', negation=False)])]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='chicken_sandwich', toppings=[Topping(name='lettuce', qualifier='extra'), Topping(name='pickle', qualifier='extra'), Topping(name='bacon')])]",
+        "output_NER": "a - number(1), chicken sandwich - main_dish_type(chicken_sandwich), extra - quantity(extra), lettuce - topping(lettuce), bacon - topping(bacon), extra - quantity(extra), pickles - topping(pickle)"
+    },
+    {
+        "input": "i'd also like a small fry and large root beer",
+        "input_augmented": "i'd also like a small fry and large root beer\nItems Found: a - number(1), small - side_size(small), fry - side_type(french_fries), large - drink_size(large), root beer - drink_type(root_beer)",
+        "output": "[SideOrder(number=1, size='small', side_type='french_fries'), DrinkOrder(number=1, size='large', drink_type='root_beer')]",
+        "expected": "[SideOrder(number=1, side_type='french_fries', size='small'), DrinkOrder(number=1, drink_type='root_beer', size='large')]",
+        "output_NER": "a - number(1), small - side_size(small), fry - side_type(french_fries), large - drink_size(large), root beer - drink_type(root_beer)"
+    },
+    {
+        "input": "i'd like to get a vegan burger with lettuce tomatoes jalapenos onions mustard and mayo",
+        "input_augmented": "i'd like to get a vegan burger with lettuce tomatoes jalapenos onions mustard and mayo\nItems Found: a - number(1), vegan burger - main_dish_type(vegan_burger), lettuce - topping(lettuce), tomatoes - topping(tomato), jalapenos - topping(jalapenos), onions - topping(onion), mustard - topping(mustard), mayo - topping(mayonnaise)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='vegan_burger', toppings=[Topping(name='lettuce', qualifier='None', negation=False), Topping(name='tomatoes', qualifier='None', negation=False), Topping(name='jalapenos', qualifier='None', negation=False), Topping(name='onions', qualifier='None', negation=False), Topping(name='mustard', qualifier='None', negation=False), Topping(name='mayonnaise', qualifier='None', negation=False)])]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='vegan_burger', toppings=[Topping(name='lettuce'), Topping(name='tomato'), Topping(name='jalapenos'), Topping(name='onion'), Topping(name='mustard'), Topping(name='mayonnaise')])]",
+        "output_NER": "a - number(1), vegan burger - main_dish_type(vegan_burger), lettuce - topping(lettuce), tomatoes - topping(tomato), jalapenos - topping(jalapenos), onions - topping(onion), mustard - topping(mustard), mayo - topping(mayonnaise)"
+    },
+    {
+        "input": "with that i want a large vanilla shake and a large order of garlic fries",
+        "input_augmented": "with that i want a large vanilla shake and a large order of garlic fries\nItems Found: a - number(1), large - drink_size(large), vanilla shake - drink_type(vanilla_shake), a - number(1), large - side_size(large), garlic fries - side_type(garlic_fries)",
+        "output": "[DrinkOrder(number=1, drink_type='vanilla_shake', size='large'), SideOrder(number=1, side_type='garlic_fries', size='large')]",
+        "expected": "[DrinkOrder(number=1, drink_type='vanilla_shake', size='large'), SideOrder(number=1, side_type='garlic_fries', size='large')]",
+        "output_NER": "a - number(1), large - drink_size(large), vanilla shake - drink_type(vanilla_shake), a - number(1), large - side_size(large), garlic fries - side_type(garlic_fries)"
+    },
+    {
+        "input": "i would like a cheeseburger with cheddar cheese lettuce tomatoes and pickles and mayonnaise with a side of fries",
+        "input_augmented": "i would like a cheeseburger with cheddar cheese lettuce tomatoes and pickles and mayonnaise with a side of fries\nItems Found: a - number(1), cheeseburger - main_dish_type(cheese_burger), cheddar cheese - topping(cheddar), lettuce - topping(lettuce), tomatoes - topping(tomato), pickles - topping(pickle), mayonnaise - topping(mayonnaise), a - number(1), fries - side_type(french_fries)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='cheeseburger', toppings=[Topping(name='cheddar_cheese', qualifier='None', negation=False), Topping(name='lettuce', qualifier='None', negation=False), Topping(name='tomatoes', qualifier='None', negation=False), Topping(name='pickles', qualifier='None', negation=False), Topping(name='mayonnaise', qualifier='None', negation=False)]), SideOrder(number=1, size='None', side_type='french_fries', size='None')]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='cheddar'), Topping(name='lettuce'), Topping(name='tomato'), Topping(name='pickle'), Topping(name='mayonnaise')]), SideOrder(number=1, side_type='french_fries')]",
+        "output_NER": "a - number(1), cheeseburger - main_dish_type(cheese_burger), cheddar cheese - topping(cheddar), lettuce - topping(lettuce), tomatoes - topping(tomato), pickles - topping(pickle), mayonnaise - topping(mayonnaise), a - number(1), fries - side_type(french_fries)"
+    },
+    {
+        "input": "i'll have an iced tea to drink",
+        "input_augmented": "i'll have an iced tea to drink\nItems Found: an - number(1), iced tea - drink_type(iced_tea)",
+        "output": "[DrinkOrder(number=1, drink_type='ice_tea')]",
+        "expected": "[DrinkOrder(number=1, drink_type='iced_tea')]",
+        "output_NER": "an - number(1), iced tea - drink_type(iced_tea)"
+    },
+    {
+        "input": "veggie burger with lettuce and bacon large curly fry and a small iced tea",
+        "input_augmented": "veggie burger with lettuce and bacon large curly fry and a small iced tea\nItems Found: veggie burger - main_dish_type(vegan_burger), lettuce - topping(lettuce), bacon - topping(bacon), large - side_size(large), curly fry - side_type(curly_fries), a - number(1), small - drink_size(small), iced tea - drink_type(iced_tea)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='veggie_burger', toppings=[Topping(name='lettuce', qualifier='None', negation=False), Topping(name='bacon', qualifier='None', negation=False)]), SideOrder(number=1, size='large', side_type='curly_fries', qualifier='None'), DrinkOrder(number=1, size='small', drink_type='ice_tea', qualifier='None')]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='vegan_burger', toppings=[Topping(name='lettuce'), Topping(name='bacon')]), SideOrder(number=1, side_type='curly_fries', size='large'), DrinkOrder(number=1, drink_type='iced_tea', size='small')]",
+        "output_NER": "veggie burger - main_dish_type(vegan_burger), lettuce - topping(lettuce), bacon - topping(bacon), large - side_size(large), curly fry - side_type(curly_fries), a - number(1), small - drink_size(small), iced tea - drink_type(iced_tea)"
+    },
+    {
+        "input": "i'll go with a chicken sandwich and for toppings i would like mustard lettuce tomatoes and pickles",
+        "input_augmented": "i'll go with a chicken sandwich and for toppings i would like mustard lettuce tomatoes and pickles\nItems Found: a - number(1), chicken sandwich - main_dish_type(chicken_sandwich), mustard - topping(mustard), lettuce - topping(lettuce), tomatoes - topping(tomato), pickles - topping(pickle)",
+        "output": "[SandwichOrder(number=1, size='None', base_sandwich='chicken', toppings=[Topping(name='mustard', qualifier='None', negation=False), Topping(name='lettuce', qualifier='None', negation=False), Topping(name='tomatoes', qualifier='None', negation=False), Topping(name='pickles', qualifier='None', negation=False)])]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='chicken_sandwich', toppings=[Topping(name='mustard'), Topping(name='lettuce'), Topping(name='tomato'), Topping(name='pickle')])]",
+        "output_NER": "a - number(1), chicken sandwich - main_dish_type(chicken_sandwich), mustard - topping(mustard), lettuce - topping(lettuce), tomatoes - topping(tomato), pickles - topping(pickle)"
+    },
+    {
+        "input": "for my drink i'd like a large dr pepper",
+        "input_augmented": "for my drink i'd like a large dr pepper\nItems Found: a - number(1), large - drink_size(large), dr pepper - drink_type(dr_pepper)",
+        "output": "[DrinkOrder(number=1, size='large', drink_type='dr_pepper')]",
+        "expected": "[DrinkOrder(number=1, drink_type='dr_pepper', size='large')]",
+        "output_NER": "a - number(1), large - drink_size(large), dr pepper - drink_type(dr_pepper)"
+    },
+    {
+        "input": "for my side item i'll take a large order of garlic fries",
+        "input_augmented": "for my side item i'll take a large order of garlic fries\nItems Found: a - number(1), large - side_size(large), garlic fries - side_type(garlic_fries)",
+        "output": "[SideOrder(number=1, size='large', side_type='garlic_fries')]",
+        "expected": "[SideOrder(number=1, side_type='garlic_fries', size='large')]",
+        "output_NER": "a - number(1), large - side_size(large), garlic fries - side_type(garlic_fries)"
+    },
+    {
+        "input": "i want a cheeseburger with cheddar cheese and bacon",
+        "input_augmented": "i want a cheeseburger with cheddar cheese and bacon\nItems Found: a - number(1), cheeseburger - main_dish_type(cheese_burger), cheddar cheese - topping(cheddar), bacon - topping(bacon)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='cheeseburger', toppings=[Topping(name='cheddar_cheese', qualifier='None', negation=False), Topping(name='bacon', qualifier='None', negation=False)])]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='cheddar'), Topping(name='bacon')])]",
+        "output_NER": "a - number(1), cheeseburger - main_dish_type(cheese_burger), cheddar cheese - topping(cheddar), bacon - topping(bacon)"
+    },
+    {
+        "input": "i also need one large fries and a medium coke",
+        "input_augmented": "i also need one large fries and a medium coke\nItems Found: one - number(1), large - side_size(large), fries - side_type(french_fries), a - number(1), medium - drink_size(medium), coke - drink_type(coca_cola)",
+        "output": "[SideOrder(number=1, size='large', side_type='french_fries'), DrinkOrder(number=1, size='medium', drink_type='coke')]",
+        "expected": "[SideOrder(number=1, side_type='french_fries', size='large'), DrinkOrder(number=1, drink_type='coca_cola', size='medium')]",
+        "output_NER": "one - number(1), large - side_size(large), fries - side_type(french_fries), a - number(1), medium - drink_size(medium), coke - drink_type(coca_cola)"
+    },
+    {
+        "input": "can i have a double cheeseburger with pickles and blue cheese a large garlic fries and a small strawberry shake",
+        "input_augmented": "can i have a double cheeseburger with pickles and blue cheese a large garlic fries and a small strawberry shake\nItems Found: a - number(1), double cheeseburger - main_dish_type(double_cheese_burger), pickles - topping(pickle), blue cheese - topping(blue_cheese), a - number(1), large - side_size(large), garlic fries - side_type(garlic_fries), a - number(1), small - drink_size(small), strawberry shake - drink_type(strawberry_shake)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='cheeseburger', toppings=[Topping(name='pickles', qualifier='None', negation=False), Topping(name='blue_cheese', qualifier='None', negation=False)]), SideOrder(number=1, size='large', side_type='sweet_onion_sauce'), SideOrder(number=1, size='large', side_type='garlic_fries'), DrinkOrder(number=1, size='small', drink_type='strawberry_shake')]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='double_cheese_burger', toppings=[Topping(name='pickle'), Topping(name='blue_cheese')]), SideOrder(number=1, side_type='garlic_fries', size='large'), DrinkOrder(number=1, drink_type='strawberry_shake', size='small')]",
+        "output_NER": "a - number(1), double cheeseburger - main_dish_type(double_cheese_burger), pickles - topping(pickle), blue cheese - topping(blue_cheese), a - number(1), large - side_size(large), garlic fries - side_type(garlic_fries), a - number(1), small - drink_size(small), strawberry shake - drink_type(strawberry_shake)"
+    },
+    {
+        "input": "can i get a hamburger with blue cheese lettuce and tomatoes please",
+        "input_augmented": "can i get a hamburger with blue cheese lettuce and tomatoes please\nItems Found: a - number(1), hamburger - main_dish_type(ham_burger), blue cheese - topping(blue_cheese), lettuce - topping(lettuce), tomatoes - topping(tomato)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='ham_burger', toppings=[Topping(name='blue_cheese', qualifier='None', negation=False), Topping(name='lettuce', qualifier='None', negation=False), Topping(name='tomatoes', qualifier='None', negation=False)])]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='ham_burger', toppings=[Topping(name='blue_cheese'), Topping(name='lettuce'), Topping(name='tomato')])]",
+        "output_NER": "a - number(1), hamburger - main_dish_type(ham_burger), blue cheese - topping(blue_cheese), lettuce - topping(lettuce), tomatoes - topping(tomato)"
+    },
+    {
+        "input": "i'll also have a small order of sweet potato fries and a large diet coke with that",
+        "input_augmented": "i'll also have a small order of sweet potato fries and a large diet coke with that\nItems Found: a - number(1), small - side_size(small), sweet potato fries - side_type(sweet_potato_fries), a - number(1), large - drink_size(large), diet coke - drink_type(diet_coke)",
+        "output": "[SideOrder(number=1, size='small', side_type='sweet_potato_fries'), DrinkOrder(number=1, size='large', drink_type='diet_coke')]",
+        "expected": "[SideOrder(number=1, side_type='sweet_potato_fries', size='small'), DrinkOrder(number=1, drink_type='diet_coke', size='large')]",
+        "output_NER": "a - number(1), small - side_size(small), sweet potato fries - side_type(sweet_potato_fries), a - number(1), large - drink_size(large), diet coke - drink_type(diet_coke)"
+    },
+    {
+        "input": "could i please get one cheeseburger with cheddar lettuce tomato and onions and one vegan burger with ketchup and mayonnaise",
+        "input_augmented": "could i please get one cheeseburger with cheddar lettuce tomato and onions and one vegan burger with ketchup and mayonnaise\nItems Found: one - number(1), cheeseburger - main_dish_type(cheese_burger), cheddar - topping(cheddar), lettuce - topping(lettuce), tomato - topping(tomato), onions - topping(onion), one - number(1), vegan burger - main_dish_type(vegan_burger), ketchup - topping(ketchup), mayonnaise - topping(mayonnaise)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='cheese_burger', toppings=[Topping(name='cheddar', qualifier='None', negation=False), Topping(name='lettuce', qualifier='None', negation=False), Topping(name='tomato', qualifier='None', negation=False), Topping(name='onions', qualifier='None', negation=False)]), BurgerOrder(number=1, size='None', main_dish_type='vegan_burger', toppings=[Topping(name='ketchup', qualifier='None', negation=False), Topping(name='mayonnaise', qualifier='None', negation=False)])]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='cheese_burger', toppings=[Topping(name='cheddar'), Topping(name='lettuce'), Topping(name='tomato'), Topping(name='onion')]), BurgerOrder(number=1, main_dish_type='vegan_burger', toppings=[Topping(name='ketchup'), Topping(name='mayonnaise')])]",
+        "output_NER": "one - number(1), cheeseburger - main_dish_type(cheese_burger), cheddar - topping(cheddar), lettuce - topping(lettuce), tomato - topping(tomato), onions - topping(onion), one - number(1), vegan burger - main_dish_type(vegan_burger), ketchup - topping(ketchup), mayonnaise - topping(mayonnaise)"
+    },
+    {
+        "input": "and could i also get two medium diet cokes one small fry and one small curly fry",
+        "input_augmented": "and could i also get two medium diet cokes one small fry and one small curly fry\nItems Found: two - number(2), medium - drink_size(medium), diet cokes - drink_type(diet_coke), one - number(1), small - side_size(small), fry - side_type(french_fries), one - number(1), small - side_size(small), curly fry - side_type(curly_fries)",
+        "output": "[DrinkOrder(number=2, drink_type='diet_coke', size='medium'), DrinkOrder(number=1, drink_type='fry', size='small'), SideOrder(number=1, side_type='french_fries', size='small'), SideOrder(number=1, side_type='french_fries', size='small')]",
+        "expected": "[DrinkOrder(number=2, drink_type='diet_coke', size='medium'), SideOrder(number=1, side_type='french_fries', size='small'), SideOrder(number=1, side_type='curly_fries', size='small')]",
+        "output_NER": "two - number(2), medium - drink_size(medium), diet cokes - drink_type(diet_coke), one - number(1), small - side_size(small), fry - side_type(french_fries), one - number(1), small - side_size(small), curly fry - side_type(curly_fries)"
+    },
+    {
+        "input": "i'd like to try out your vegan burger please can you put lettuce and mayonnaise and mustard on that",
+        "input_augmented": "i'd like to try out your vegan burger please can you put lettuce and mayonnaise and mustard on that\nItems Found: vegan burger - main_dish_type(vegan_burger), lettuce - topping(lettuce), mayonnaise - topping(mayonnaise), mustard - topping(mustard)",
+        "output": "[BurgerOrder(number=1, size='None', main_dish_type='vegan_burger', toppings=[Topping(name='lettuce', qualifier='None', negation=False), Topping(name='mayonnaise', qualifier='None', negation=False), Topping(name='mustard', qualifier='None', negation=False)])]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='vegan_burger', toppings=[Topping(name='lettuce'), Topping(name='mayonnaise'), Topping(name='mustard')])]",
+        "output_NER": "vegan burger - main_dish_type(vegan_burger), lettuce - topping(lettuce), mayonnaise - topping(mayonnaise), mustard - topping(mustard)"
+    },
+    {
+        "input": "i want a sugar free lemonade to drink also and a side of sweet potato fries",
+        "input_augmented": "i want a sugar free lemonade to drink also and a side of sweet potato fries\nItems Found: a - number(1), sugar free lemonade - drink_type(zero_sugar_lemonade), a - number(1), sweet potato fries - side_type(sweet_potato_fries)",
+        "output": "[DrinkOrder(number=1, drink_type='zero_sugar_lemonade'), SideOrder(number=1, side_type='sweet_potato_fries')]",
+        "expected": "[DrinkOrder(number=1, drink_type='zero_sugar_lemonade'), SideOrder(number=1, side_type='sweet_potato_fries')]",
+        "output_NER": "a - number(1), sugar free lemonade - drink_type(zero_sugar_lemonade), a - number(1), sweet potato fries - side_type(sweet_potato_fries)"
+    },
+    {
+        "input": "i like to order a hamburger with tomatoes cheddar cheese lettuce ketchup and ice tea and french fries on the side",
+        "input_augmented": "i like to order a hamburger with tomatoes cheddar cheese lettuce ketchup and ice tea and french fries on the side\nItems Found: a - number(1), hamburger - main_dish_type(ham_burger), tomatoes - topping(tomato), cheddar cheese - topping(cheddar), lettuce - topping(lettuce), ketchup - topping(ketchup), ice tea - drink_type(iced_tea), french fries - side_type(french_fries)",
+        "output": "[BurgerOrder(number=1, main_dish_type='hamburger', toppings=[Topping(name='tomatoes', qualifier='None', negation=False), Topping(name='cheddar_cheese', qualifier='None', negation=False), Topping(name='lettuce', qualifier='None', negation=False), Topping(name='ketchup', qualifier='None', negation=False)]), DrinkOrder(number=1, drink_type='ice_tea'), SideOrder(number=1, side_type='french_fries')]",
+        "expected": "[BurgerOrder(number=1, main_dish_type='ham_burger', toppings=[Topping(name='tomato'), Topping(name='cheddar'), Topping(name='lettuce'), Topping(name='ketchup')]), DrinkOrder(number=1, drink_type='iced_tea'), SideOrder(number=1, side_type='french_fries')]",
+        "output_NER": "a - number(1), hamburger - main_dish_type(ham_burger), tomatoes - topping(tomato), cheddar cheese - topping(cheddar), lettuce - topping(lettuce), ketchup - topping(ketchup), ice tea - drink_type(iced_tea), french fries - side_type(french_fries)"
+    }
+]
