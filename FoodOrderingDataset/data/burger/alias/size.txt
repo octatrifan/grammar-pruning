@@ -1,0 +1,4 @@
+small	SIZE(small)
+medium	SIZE(medium)
+extra large	SIZE(extra_large)
+large	SIZE(large)
