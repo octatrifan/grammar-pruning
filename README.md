@@ -7,6 +7,9 @@ This repository contains the implementation for the paper:
 ## 📜 Overview
 Grammar pruning is a novel approach for **real-time, task-oriented semantic parsing** in resource-constrained environments. Unlike traditional constrained decoding, grammar pruning dynamically restricts the model’s output space by leveraging a **rule-based Named-Entity Recognition (NER) module** to extract relevant entities from user input. This technique ensures **structured, accurate, and low-latency** natural language understanding, making it ideal for edge AI applications.
 
+![Untitled (3)](https://github.com/user-attachments/assets/b679f8de-d1af-4d13-8ea5-2a77e0fefb1a)
+
+
 ## 🏗 Methodology
 1. **Named-Entity Recognition (NER)**: Extracts menu items from user input and maps them to predefined categories.
 2. **Grammar Pruning**: Dynamically constrains model output based on detected entities, preventing hallucinations and enforcing valid schema.
