@@ -1,0 +1,363 @@
+{
+    "AddToPlaylist": {
+        "playlist": [
+            "the refugee playlist",
+            "nu metal",
+            "songs to sing in the car",
+            "wild country",
+            "evening commute",
+            "white noise",
+            "epic gaming",
+            "el mejor rock en espanol",
+            "jazz classics",
+            "just dance to afterclub",
+            "edna st vincent millay",
+            "gold edition",
+            "electro sur",
+            "indie hipster",
+            "rock save the queen",
+            "chill",
+            "crate diggers anonymous",
+            "i love neo soul",
+            "this is mozart",
+            "dinnertime acoustics",
+            "fresh finds fire emoji",
+            "evening acoustic",
+            "we everywhere",
+            "soundscapes for gaming",
+            "post-grunge",
+            "dance workout"
+        ],
+        "playlist_owner": [
+            "dorothea s",
+            "my",
+            "betsy s"
+        ],
+        "entity_name": [
+            "stairway to heaven",
+            "beautiful world",
+            "star light star bright"
+        ],
+        "artist": [
+            "george thorogood",
+            "coldplay",
+            "matt garrison",
+            "patti page",
+            "frank ferrer",
+            "troy van leeuwen",
+            "jency anthony",
+            "odesza",
+            "rob tyner",
+            "gackt camui",
+            "andreas johnson",
+            "fabri fibra"
+        ],
+        "music_item": [
+            "pangaea",
+            "the blurred crusade",
+            "mary wells sings",
+            "heart of the world",
+            "even serpents",
+            "hanging on"
+        ]
+    },
+    "PlayMusic": {
+        "artist": [
+            "evil jared hasselhoff",
+            "the beatles",
+            "soko",
+            "frank beard",
+            "vlada divljan",
+            "wellman braud",
+            "coldplay",
+            "cinder block",
+            "richard kruspe",
+            "jawad ahmad",
+            "rob mills",
+            "odesza",
+            "arjen anthony lucassen",
+            "gackt camui",
+            "chris cunningham",
+            "panda bear",
+            "clark kent"
+        ],
+        "sort": [
+            "newest",
+            "latest",
+            "last"
+        ],
+        "year": [
+            "1975",
+            "1987",
+            "1974",
+            "twenties"
+        ],
+        "music_item": [
+            "a moment apart",
+            "sugar baby",
+            "ep",
+            "i get ideas",
+            "this is colour",
+            "movement",
+            "asleep in the deep",
+            "album",
+            "tiny tim ep"
+        ],
+        "playlist": [
+            "tgif"
+        ],
+        "service": [
+            "spotify",
+            "itunes",
+            "iheart"
+        ],
+        "genre": [
+            "jungle",
+            "theme",
+            "symphonic rock"
+        ],
+        "album": [
+            "the red room sessions",
+            "the golden archipelago"
+        ]
+    },
+    "BookRestaurant": {
+        "spatial_relation": [
+            "distant",
+            "close",
+            "around"
+        ],
+        "city": [
+            "chicago",
+            "laneville",
+            "juliff",
+            "bowlegs",
+            "london",
+            "virginia city",
+            "denver",
+            "foley"
+        ],
+        "time": [
+            "monday"
+        ],
+        "party_size_number": [
+            "three",
+            "nine",
+            "seven",
+            "four",
+            "eight",
+            "five",
+            "9",
+            "7"
+        ],
+        "restaurant_type": [
+            "internet restaurant",
+            "tea house",
+            "food truck",
+            "steakhouse",
+            "brasserie",
+            "restaurant"
+        ],
+        "served_dish": [
+            "fettucine",
+            "sashimi",
+            "gougere"
+        ],
+        "country": [
+            "seychelles",
+            "panama",
+            "norway",
+            "samoa"
+        ],
+        "restaurant_name": [
+            "coon chicken inn",
+            "grecian coffee house"
+        ],
+        "timeRange": [
+            "apr 7th 2024",
+            "1 am"
+        ],
+        "state": [
+            "ma"
+        ],
+        "cuisine": [
+            "churrascaria",
+            "gluten free"
+        ]
+    },
+    "SearchCreativeWork": {
+        "object_type": [
+            "television show",
+            "tv series",
+            "video game",
+            "saga",
+            "game",
+            "movie",
+            "picture",
+            "soundtrack",
+            "book",
+            "song",
+            "tv show"
+        ],
+        "object_name": [
+            "family dog",
+            "heart of gold",
+            "operetta for the theatre organ",
+            "magic hour",
+            "living in america",
+            "set sail the prairie",
+            "espn major league soccer",
+            "heavenly sword",
+            "balance and timing",
+            "shaun the sheep",
+            "twin husbands",
+            "ruthless",
+            "pax warrior",
+            "the young warriors",
+            "love will tear us apart",
+            "young sheldon"
+        ]
+    },
+    "SearchScreeningEvent": {
+        "movie_name": [
+            "romulus and the sabines",
+            "interstellar",
+            "holiday heart",
+            "goodbye mothers",
+            "dear old girl",
+            "the clutching hand",
+            "the trouble with girls",
+            "paranormal activity 3",
+            "now and forever"
+        ],
+        "location_name": [
+            "amco entertainment",
+            "moviehouse",
+            "harkins theatres",
+            "plitt theatres",
+            "cooper foundation",
+            "southern theatres",
+            "imax corporation"
+        ],
+        "movie_type": [
+            "films",
+            "animated movies",
+            "movies"
+        ],
+        "spatial_relation": [
+            "nearby",
+            "in the neighbourhood",
+            "nearest",
+            "in the neighborhood",
+            "closest",
+            "local"
+        ],
+        "timeRange": [
+            "ten"
+        ]
+    },
+    "RateBook": {
+        "object_name": [
+            "lie tree",
+            "the improvisatore",
+            "suribachi",
+            "charlie peace",
+            "taste of blackberries",
+            "history by contract"
+        ],
+        "rating_value": [
+            "three",
+            "5",
+            "four",
+            "4",
+            "zero",
+            "two",
+            "five",
+            "3"
+        ],
+        "rating_unit": [
+            "points",
+            "stars"
+        ],
+        "object_type": [
+            "textbook",
+            "album",
+            "book"
+        ],
+        "best_rating": [
+            "6",
+            "six"
+        ],
+        "object_part_of_series_type": [
+            "chronicle"
+        ]
+    },
+    "GetWeather": {
+        "city": [
+            "faraway",
+            "leisure knoll",
+            "wyomissing hills",
+            "amy",
+            "getzville",
+            "varnado",
+            "lago vista",
+            "lost creek",
+            "spencer",
+            "niceville",
+            "grand coteau",
+            "waverly city",
+            "oakdale"
+        ],
+        "geographic_poi": [
+            "stelvio national park"
+        ],
+        "timeRange": [
+            "october fourteenth 2022",
+            "next year",
+            "10 pm",
+            "sunset",
+            "this winter",
+            "twenty one minutes",
+            "1 hour",
+            "six pm",
+            "purple heart day",
+            "one am",
+            "march 13th",
+            "12 am"
+        ],
+        "condition_description": [
+            "humidity",
+            "foggy",
+            "snow",
+            "wind",
+            "snowfall"
+        ],
+        "state": [
+            "wv",
+            "ak",
+            "texas",
+            "ok",
+            "ut",
+            "hi",
+            "georgia",
+            "california",
+            "south carolina",
+            "delaware",
+            "minnesota",
+            "fm"
+        ],
+        "country": [
+            "canada",
+            "samoa",
+            "british virgin islands",
+            "bahrain",
+            "brazil"
+        ],
+        "condition_temperature": [
+            "freezing",
+            "chillier",
+            "chilly",
+            "hotter"
+        ]
+    }
+}

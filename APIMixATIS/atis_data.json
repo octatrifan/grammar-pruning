@@ -1,0 +1,728 @@
+[
+    {
+        "input": "list california airports , list la and how many canadian airlines flights use aircraft 320",
+        "output": [
+            "atis_airport(state='california')",
+            "atis_city(city='la')",
+            "atis_quantity(airline='canadian airlines', aircraft='320')"
+        ]
+    },
+    {
+        "input": "i need a ticket from nashville to seattle and then flight numbers from chicago to seattle on continental",
+        "output": [
+            "atis_airfare(departure_city='nashville', destination_city='seattle')",
+            "atis_flight_no(departure_city='chicago', destination_city='seattle', airline='continental')"
+        ]
+    },
+    {
+        "input": "what cities does northwest fly to",
+        "output": [
+            "atis_city(airline='northwest')"
+        ]
+    },
+    {
+        "input": "what cities does northwest fly to and list the distance in miles from dallas to san francisco",
+        "output": [
+            "atis_city(airline='northwest')",
+            "atis_distance(departure_city='dallas', destination_city='san francisco')"
+        ]
+    },
+    {
+        "input": "tell me about the m80 aircraft , and then how many canadian airlines flights use aircraft dh8",
+        "output": [
+            "atis_aircraft(aircraft='m80')",
+            "atis_quantity(aircraft='dh8', airline='canadian airlines')"
+        ]
+    },
+    {
+        "input": "what day of the week do flights from nashville to tacoma fly on and also flight number from houston to dallas",
+        "output": [
+            "atis_day_name(departure_city='nashville', destination_city='tacoma')",
+            "atis_flight_no(departure_city='houston', destination_city='dallas')"
+        ]
+    },
+    {
+        "input": "Is there limousine service in los angeles",
+        "output": [
+            "atis_ground_service(transport_type='limousine', city='los angeles')"
+        ]
+    },
+    {
+        "input": "what cities does northwest fly to and how many canadian airlines flights use j31",
+        "output": [
+            "atis_city(airline='northwest')",
+            "atis_quantity(airline='canadian airlines', aircraft='j31')"
+        ]
+    },
+    {
+        "input": "what class is fare code q",
+        "output": [
+            "atis_abbreviation(fare_code='q')"
+        ]
+    },
+    {
+        "input": "what meals are served on flight AA665 and also how many canadian airlines flights use j31",
+        "output": [
+            "atis_meal(flight_number='AA665', meal_type='meals')",
+            "atis_quantity(airline='canadian airlines', aircraft='j31')"
+        ]
+    },
+    {
+        "input": "list flights between pittsburgh and milwaukee and how many canadian airlines flights use j31",
+        "output": [
+            "atis_flight(departure_city='pittsburgh', destination_city='milwaukee')",
+            "atis_quantity(airline='canadian airlines', aircraft='j31')"
+        ]
+    },
+    {
+        "input": "what is the capacity of the 73s , what day of the week do flights from nashville to tacoma fly on and then what are the departure times from detroit to new york",
+        "output": [
+            "atis_capacity(aircraft='73s')",
+            "atis_day_name(departure_city='nashville', destination_city='tacoma')",
+            "atis_flight_time(departure_city='detroit', destination_city='new york', flight_time='departure')"
+        ]
+    },
+    {
+        "input": "determine the type of aircraft used on a flight from cleveland to dallas that leaves before noon , how much does it cost to fly from columbus to st. louis round trip on twa and also how much is the limousine service in boston",
+        "output": [
+            "atis_aircraft(departure_city='cleveland', destination_city='dallas', relative_departure_time='before', departure_period='noon')",
+            "atis_airfare(departure_city='columbus', destination_city='st. louis', airline_code='twa')",
+            "atis_ground_fare(transport_type='limousine', city='boston')"
+        ]
+    },
+    {
+        "input": "list california airports , which flights travel from cleveland to indianapolis on april fifth and also what are the fares for ground transportation in denver",
+        "output": [
+            "atis_airport(state='california')",
+            "atis_flight(departure_city='cleveland', destination_city='indianapolis', departure_month='april', departure_day_number='fifth')",
+            "atis_ground_fare(city='denver')"
+        ]
+    },
+    {
+        "input": "what does fare code f mean , i need a ticket from nashville to seattle and then which airport is closest to ontario",
+        "output": [
+            "atis_abbreviation(fare_code='f')",
+            "atis_airfare(departure_city='nashville', destination_city='seattle')",
+            "atis_airport(modifier='closest', city='ontario')"
+        ]
+    },
+    {
+        "input": "list the distance in miles from boston to dallas , flight number from dallas to houston and how much is a limousine service in los angeles",
+        "output": [
+            "atis_distance(departure_city='boston', destination_city='dallas')",
+            "atis_flight_no(departure_city='dallas', destination_city='houston')",
+            "atis_ground_fare(transport_type='limousine', city='los angeles')"
+        ]
+    },
+    {
+        "input": "how much is coach flight from pittsburgh to atlanta , what is the seating capacity on the aircraft 733 and also list the cities from which northwest flies",
+        "output": [
+            "atis_airfare(class='coach', departure_city='pittsburgh', destination_city='atlanta')",
+            "atis_capacity(aircraft='733')",
+            "atis_city(airline='northwest')"
+        ]
+    },
+    {
+        "input": "what ground transportation is available in milwaukee",
+        "output": [
+            "atis_ground_service(city='milwaukee')"
+        ]
+    },
+    {
+        "input": "list airports in la and also please list ground transportation in new york",
+        "output": [
+            "atis_airport(city='la')",
+            "atis_ground_service(city='new york')"
+        ]
+    },
+    {
+        "input": "what airline is aa and then how many canadian airlines flights use j31",
+        "output": [
+            "atis_airline(airline_code='aa')",
+            "atis_quantity(airline='canadian airlines', aircraft='j31')"
+        ]
+    },
+    {
+        "input": "what is seating capacity on the aircraft 73s",
+        "output": [
+            "atis_capacity(aircraft='73s')"
+        ]
+    },
+    {
+        "input": "what meals are available on LH468",
+        "output": [
+            "atis_meal(flight_number='LH468', meal_type='meals')"
+        ]
+    },
+    {
+        "input": "i need information on flights from toronto to san diego",
+        "output": [
+            "atis_airfare(departure_city='toronto', destination_city='san diego')"
+        ]
+    },
+    {
+        "input": "how much does it cost for limousine service in san diego",
+        "output": [
+            "atis_ground_fare(transport_type='limousine', city='san diego')"
+        ]
+    },
+    {
+        "input": "is there a fare from pittsburgh to cleveland under 200 dollars and then how far is san francisco from los angeles",
+        "output": [
+            "atis_airfare(departure_city='pittsburgh', destination_city='cleveland', relative_cost='under', fare='200 dollars')",
+            "atis_distance(departure_city='san francisco', destination_city='los angeles')"
+        ]
+    },
+    {
+        "input": "what types of ground transportation are available in denver and also what meals are served on flight BA665",
+        "output": [
+            "atis_ground_service(city='denver')",
+            "atis_meal(flight_number='BA665', meal_type='meals')"
+        ]
+    },
+    {
+        "input": "which airline is BA and also how many canadian airlines flights use ca31",
+        "output": [
+            "atis_airline(airline_code='BA')",
+            "atis_quantity(airline='canadian airlines', aircraft='ca31')"
+        ]
+    },
+    {
+        "input": "list the arizona airport and then list la",
+        "output": [
+            "atis_airport(state='arizona')",
+            "atis_city(city='la')"
+        ]
+    },
+    {
+        "input": "list seating capacities of delta flights from seattle to salt lake city and then what meals are there on flight TK382",
+        "output": [
+            "atis_capacity(airline='delta', departure_city='seattle', destination_city='salt lake city')",
+            "atis_meal(flight_number='TK382', meal_type='meals')"
+        ]
+    },
+    {
+        "input": "tell me about the type of aircraft called an m80 , what airline is aa and then how far is toronto from san francisco",
+        "output": [
+            "atis_aircraft(aircraft='m80')",
+            "atis_airline(airline_code='aa')",
+            "atis_distance(departure_city='toronto', destination_city='san francisco')"
+        ]
+    },
+    {
+        "input": "what day of the week do flights from nashville to tacoma fly on and then how many british airways flights use aircraft 320",
+        "output": [
+            "atis_day_name(departure_city='nashville', destination_city='tacoma')",
+            "atis_quantity(airline='british airways', aircraft='320')"
+        ]
+    },
+    {
+        "input": "list airports in arizona",
+        "output": [
+            "atis_airport(state='arizona')"
+        ]
+    },
+    {
+        "input": "what airline is us and also i need the flight numbers of flights leaving from cleveland and arriving at dallas",
+        "output": [
+            "atis_airline(airline_code='us')",
+            "atis_flight_no(departure_city='cleveland', destination_city='dallas')"
+        ]
+    },
+    {
+        "input": "what type of aircraft are flying from cleveland to dallas before noon , what airlines fly between washington and columbus and also is there ground transportation available in salt lake city",
+        "output": [
+            "atis_aircraft(departure_city='cleveland', destination_city='dallas', relative_departure_time='before', departure_period='noon')",
+            "atis_airline(departure_city='washington', destination_city='columbus')",
+            "atis_ground_service(city='salt lake city')"
+        ]
+    },
+    {
+        "input": "what are the departure flight times from detroit to westchester and also how many canadian airlines flights use aircraft dh8",
+        "output": [
+            "atis_flight_time(flight_time='departure', departure_city='detroit', destination_city='westchester')",
+            "atis_quantity(airline='canadian airlines', aircraft='dh8')"
+        ]
+    },
+    {
+        "input": "list first class airfare from indianapolis to memphis , what day of the week do flights from nashville to tacoma fly on and how many canadian airlines flights use aircraft dh8",
+        "output": [
+            "atis_airfare(class='first class', departure_city='indianapolis', destination_city='memphis')",
+            "atis_day_name(departure_city='nashville', destination_city='tacoma')",
+            "atis_quantity(airline='canadian airlines', aircraft='dh8')"
+        ]
+    },
+    {
+        "input": "what airline is hp and then what days of the week do flights from san jose to nashville fly on",
+        "output": [
+            "atis_airline(airline_code='hp')",
+            "atis_day_name(departure_city='san jose', destination_city='nashville')"
+        ]
+    },
+    {
+        "input": "list california airports , show me ground transportation in fort worth and what meals are there on flight TK382 on tuesday morning",
+        "output": [
+            "atis_airport(state='california')",
+            "atis_ground_service(city='fort worth')",
+            "atis_meal(meal_type='meals', flight_number='TK382', departure_day='tuesday', departure_period='morning')"
+        ]
+    },
+    {
+        "input": "list seating capacities of delta flights from seattle to salt lake city and also list the alaska airlines flights arriving in burbank",
+        "output": [
+            "atis_capacity(airline='delta', departure_city='seattle', destination_city='salt lake city')",
+            "atis_flight(airline='alaska airlines', destination_city='burbank')"
+        ]
+    },
+    {
+        "input": "what is the seating capacity of an m80 and also list the distance in miles from toronto to ottawa",
+        "output": [
+            "atis_capacity(aircraft='m80')",
+            "atis_distance(departure_city='toronto', destination_city='ottawa')"
+        ]
+    },
+    {
+        "input": "what does ua mean and are snacks served on tower air",
+        "output": [
+            "atis_abbreviation(airline_code='ua')",
+            "atis_meal(meal_description='snacks', airline='tower air')"
+        ]
+    },
+    {
+        "input": "list airfares for first class from detroit to st. petersburg , what day of the week do flights from nashville to tacoma fly on",
+        "output": [
+            "atis_airfare(class='first class', departure_city='detroit', destination_city='st. petersburg')",
+            "atis_day_name(departure_city='nashville', destination_city='tacoma')"
+        ]
+    },
+    {
+        "input": "how many passengers can fly on a 757 , what day of the week do flights from nashville to tacoma fly on and how much is a limousine service in bucharest",
+        "output": [
+            "atis_capacity(aircraft='757')",
+            "atis_day_name(departure_city='nashville', destination_city='tacoma')",
+            "atis_ground_fare(transport_type='limousine', city='bucharest')"
+        ]
+    },
+    {
+        "input": "how far is los angeles from new york and then what ground transportation is available in dallas",
+        "output": [
+            "atis_distance(departure_city='los angeles', destination_city='new york')",
+            "atis_ground_service(city='dallas')"
+        ]
+    },
+    {
+        "input": "what does fare code f mean , what are the fares for ground transportation in denver and what ground transportation is available in washington",
+        "output": [
+            "atis_abbreviation(fare_code='f')",
+            "atis_ground_fare(city='denver')",
+            "atis_ground_service(city='washington')"
+        ]
+    },
+    {
+        "input": "how many canadian airlines flights use aircraft dh8",
+        "output": [
+            "atis_quantity(airline='canadian airlines', aircraft='dh8')"
+        ]
+    },
+    {
+        "input": "what does q mean and also what airline is as",
+        "output": [
+            "atis_abbreviation(fare_code='q')",
+            "atis_airline(airline_code='as')"
+        ]
+    },
+    {
+        "input": "how many flights does alaska airlines have to burbank and also how many canadian airlines flights use j31",
+        "output": [
+            "atis_flight(airline='alaska airlines', destination_city='burbank')",
+            "atis_quantity(airline='canadian airlines', aircraft='j31')"
+        ]
+    },
+    {
+        "input": "what is the seating capacity on the aircraft m80 , what days of the week do flights from san jose to nashville fly on and i need to rent a car at tampa",
+        "output": [
+            "atis_capacity(aircraft='m80')",
+            "atis_day_name(departure_city='san jose', destination_city='nashville')",
+            "atis_ground_service(transport_type='car', city='tampa')"
+        ]
+    },
+    {
+        "input": "list the cities from which northwest flies , how far is san francisco from toronto and then what are the departure times from detroit to westchester",
+        "output": [
+            "atis_city(airline='northwest')",
+            "atis_distance(departure_city='san francisco', destination_city='toronto')",
+            "atis_flight_time(flight_time='departure', departure_city='detroit', destination_city='westchester')"
+        ]
+    },
+    {
+        "input": "what type of aircraft is used for the american flight leaving at 4:19pm , list the cities from which northwest flies and also what are the departure times from michigan to westchester",
+        "output": [
+            "atis_aircraft(airline='american', departure_time='4:19pm')",
+            "atis_city(airline='northwest')",
+            "atis_flight_time(flight_time='departure', departure_city='michigan', destination_city='westchester')"
+        ]
+    },
+    {
+        "input": "what airline is hp and what are the arrival times from detroit to michigan",
+        "output": [
+            "atis_airline(airline_code='hp')",
+            "atis_flight_time(flight_time='arrival', departure_city='detroit', destination_city='michigan')"
+        ]
+    },
+    {
+        "input": "what is the seating capacity of the 757 , list the cities from which northwest flies and then i need the flight numbers of flights leaving from cleveland and arriving at dallas",
+        "output": [
+            "atis_capacity(aircraft='757')",
+            "atis_city(airline='northwest')",
+            "atis_flight_no(departure_city='cleveland', destination_city='dallas')"
+        ]
+    },
+    {
+        "input": "i would like to have the airline that flies from toronto to st. louis and also is there ground transportation in new york",
+        "output": [
+            "atis_airline(departure_city='toronto', destination_city='st. louis')",
+            "atis_ground_service(city='new york')"
+        ]
+    },
+    {
+        "input": "tell me all the airports in the new york area and also what are the departure times from la to san francisco",
+        "output": [
+            "atis_airport(city='new york')",
+            "atis_flight_time(flight_time='departure', departure_city='la', destination_city='san francisco')"
+        ]
+    },
+    {
+        "input": "what are the fares for flights between boston and washington, i need flight numbers for those flights departing on thursday before 8 am from oakland going to salt lake city and ground transportation for las vegas",
+        "output": [
+            "atis_airfare(departure_city='boston', destination_city='washington')",
+            "atis_flight_no(departure_city='oakland', destination_city='salt lake city', relative_departure_time='before', departure_time='8 am', departure_day='thursday')",
+            "atis_ground_service(city='las vegas')"
+        ]
+    },
+    {
+        "input": "flight numbers on american airlines from phoenix to milwaukee and then how much is a limousine service in michigan",
+        "output": [
+            "atis_flight_no(airline='american airlines', departure_city='phoenix', destination_city='milwaukee')",
+            "atis_ground_fare(transport_type='limousine', city='michigan')"
+        ]
+    },
+    {
+        "input": "which airlines fly between toronto and san diego and also what cities does spirit fly to",
+        "output": [
+            "atis_airline(departure_city='toronto', destination_city='san diego')",
+            "atis_city(airline='spirit')"
+        ]
+    },
+    {
+        "input": "what is the seating capacity for be1 , what days of the week do flights from san jose to nashville fly on and also are snacks served on tower air",
+        "output": [
+            "atis_capacity(aircraft='be1')",
+            "atis_day_name(departure_city='san jose', destination_city='nashville')",
+            "atis_meal(airline='tower air', meal_description='snacks')"
+        ]
+    },
+    {
+        "input": "what is the distance from baltimore to san francisco take and also list limousine rates for the city of boston",
+        "output": [
+            "atis_distance(departure_city='baltimore', destination_city='san francisco')",
+            "atis_ground_fare(transport_type='limousine', city='boston')"
+        ]
+    },
+    {
+        "input": "what airline is hp , what is the seating capacity of the 733 and what types of ground transportation are available in denver",
+        "output": [
+            "atis_airline(airline_code='hp')",
+            "atis_capacity(aircraft='733')",
+            "atis_ground_service(city='denver')"
+        ]
+    },
+    {
+        "input": "tell me about the m80 aircraft and how many passengers can fly on a 757",
+        "output": [
+            "atis_aircraft(aircraft='m80')",
+            "atis_capacity(aircraft='757')"
+        ]
+    },
+    {
+        "input": "what is the seating capacity of a 757 and also flight number from dallas to houston",
+        "output": [
+            "atis_capacity(aircraft='757')",
+            "atis_flight_no(departure_city='dallas', destination_city='houston')"
+        ]
+    },
+    {
+        "input": "list california airports , list the flights from memphis to cleveland and also what meals are served on AA811",
+        "output": [
+            "atis_airport(state='california')",
+            "atis_flight(departure_city='memphis', destination_city='cleveland')",
+            "atis_meal(flight_number='AA811', meal_type='meals')"
+        ]
+    },
+    {
+        "input": "i need flight numbers for those flights departing on thursday before 8 am from oakland going to salt lake city and also how many canadian airlines flights use aircraft dh8",
+        "output": [
+            "atis_flight_no(departure_day='thursday', relative_departure_time='before', departure_time='8 am', departure_city='oakland', destination_city='salt lake city')",
+            "atis_quantity(airline='canadian airlines', aircraft='dh8')"
+        ]
+    },
+    {
+        "input": "what does fare code qo mean , list airlines that fly from seattle to salt lake city and then flight numbers from chicago to seattle",
+        "output": [
+            "atis_abbreviation(fare_code='qo')",
+            "atis_airline(departure_city='seattle', destination_city='salt lake city')",
+            "atis_flight_no(departure_city='chicago', destination_city='seattle')"
+        ]
+    },
+    {
+        "input": "tell me about the m81 aircraft and also flight numbers on british airways from phoenix to milwaukee",
+        "output": [
+            "atis_aircraft(aircraft='m81')",
+            "atis_flight_no(airline='british airways', departure_city='phoenix', destination_city='milwaukee')"
+        ]
+    },
+    {
+        "input": "what is fare code m , what cities does northeast fly out of and then what day of the week do flights from nashville to tacoma fly on",
+        "output": [
+            "atis_abbreviation(fare_code='m')",
+            "atis_city(airline='northeast')",
+            "atis_day_name(departure_city='nashville', destination_city='tacoma')"
+        ]
+    },
+    {
+        "input": "get saturday fares from washington to montreal , and then flight numbers from chicago to seattle",
+        "output": [
+            "atis_airfare(departure_day='saturday', departure_city='washington', destination_city='montreal')",
+            "atis_flight_no(departure_city='chicago', destination_city='seattle')"
+        ]
+    },
+    {
+        "input": "list the cities from which eastwest flies and also what day of the week do flights from nashville to tacoma fly on",
+        "output": [
+            "atis_city(airline='eastwest')",
+            "atis_day_name(departure_city='nashville', destination_city='tacoma')"
+        ]
+    },
+    {
+        "input": "how many passengers can fly on a 757 and then is ground transportation available in st. louis",
+        "output": [
+            "atis_capacity(aircraft='757')",
+            "atis_ground_service(city='st. louis')"
+        ]
+    },
+    {
+        "input": "what is a d9s , what is seating capacity on the aircraft 73s and also show me flights from montreal to long beach",
+        "output": [
+            "atis_abbreviation(aircraft='d9s')",
+            "atis_capacity(aircraft='73s')",
+            "atis_flight(departure_city='montreal', destination_city='long beach')"
+        ]
+    },
+    {
+        "input": "list airports in la and then what is the seating capacity on the aircraft 733",
+        "output": [
+            "atis_airport(city='la')",
+            "atis_capacity(aircraft='733')"
+        ]
+    },
+    {
+        "input": "i need a ticket from nashville tennessee to seattle and i need to rent a car at tampa",
+        "output": [
+            "atis_airfare(departure_city='nashville', destination_city='seattle')",
+            "atis_ground_service(transport_type='car', city='tampa')"
+        ]
+    },
+    {
+        "input": "can you tell me what cities does lufthansa fly to",
+        "output": [
+             "atis_city(airline='lufthansa')"
+        ]
+    },
+  {
+    "input": "how many lufthansa flights use aircraft re89",
+    "output": [
+      "atis_quantity(aircraft='re89', airline='lufthansa')"
+    ]
+  },
+  {
+    "input": "please tell me what day of the week do flights from los angeles to new york fly on and also flight number from nashville to tacoma",
+    "output": [
+      "atis_day_name(departure_city='los angeles', destination_city='new york')",
+      "atis_flight_no(departure_city='nashville', destination_city='tacoma')"
+    ]
+  },
+  {
+    "input": "are there any limousine services in new york",
+    "output": [
+      "atis_ground_service(transport_type='limousine', city='new york')"
+    ]
+  },
+  {
+    "input": "what cities does lufthansa fly to and how many lufthansa flights use br31",
+    "output": [
+      "atis_city(airline='lufthansa')",
+      "atis_quantity(airline='lufthansa', aircraft='br31')"
+    ]
+  },
+  {
+    "input": "can you tell me what class is fare code l",
+    "output": [
+      "atis_abbreviation(fare_code='l')"
+    ]
+  },
+  {
+    "input": "can you tell me what meals are served on flight BA123",
+    "output": [
+      "atis_meal(flight_number='BA123', meal_type='meals')"
+    ]
+  },
+  {
+    "input": "please list flights between los angeles and san jose and how many spirit flights use j32",
+    "output": [
+      "atis_flight(departure_city='los angeles', destination_city='san jose')",
+      "atis_quantity(airline='spirit', aircraft='j32')"
+    ]
+  },
+  {
+    "input": "can you tell me how much is coach flight from los angeles to san jose , what is the seating capacity on the aircraft 747 and also list the cities from which spirit flies",
+    "output": [
+      "atis_airfare(class='coach', departure_city='los angeles', destination_city='san jose')",
+      "atis_capacity(aircraft='747')",
+      "atis_city(airline='spirit')"
+    ]
+  },
+  {
+    "input": "what ground transportation is available in burbank",
+    "output": [
+      "atis_ground_service(city='burbank')"
+    ]
+  },
+  {
+    "input": "can you tell me what airline is sr and then how many delta flights use j33",
+    "output": [
+      "atis_airline(airline_code='sr')",
+      "atis_quantity(airline='delta', aircraft='j33')"
+    ]
+  },
+  {
+    "input": "what is seating capacity on the aircraft 747",
+    "output": [
+      "atis_capacity(aircraft='747')"
+    ]
+  },
+  {
+    "input": "what meals are available on BA354",
+    "output": [
+      "atis_meal(flight_number='BA354', meal_type='meals')"
+    ]
+  },
+  {
+    "input": "is there a fare from los angeles to chicago under 300 pounds",
+    "output": [
+      "atis_airfare(departure_city='los angeles', destination_city='chicago', relative_cost='under', fare='300 pounds')"
+    ]
+  },
+    {
+    "input": "can you find me an airfare from chicago to tacoma under 100 australian dollars",
+    "output": [
+      "atis_airfare(departure_city='chicago', destination_city='tacoma', relative_cost='under', fare='100 australian dollars')"
+    ]
+  },
+  {
+    "input": "can you tell me what types of ground transportation are available in portland and also what drinks are served on flight BA121",
+    "output": [
+      "atis_ground_service(city='portland')",
+      "atis_meal(flight_number='BA121', meal_type='drinks')"
+    ]
+  },
+  {
+    "input": "can you tell me which airline is DA and also how many american airlines flights use ca32",
+    "output": [
+      "atis_airline(airline_code='DA')",
+      "atis_quantity(airline='american airlines', aircraft='ca32')"
+    ]
+  },
+  {
+    "input": "list the oregon airport and then list portland",
+    "output": [
+      "atis_airport(state='oregon')",
+      "atis_city(city='portland')"
+    ]
+  },
+  {
+    "input": "can you tell me what day of the week do flights from nashville to portland fly",
+    "output": [
+      "atis_day_name(departure_city='nashville', destination_city='portland')"
+    ]
+  },
+    {
+        "input": "list airports in texas",
+        "output": [
+            "atis_airport(state='texas')"
+        ]
+    },
+  {
+    "input": "can you tell me what airline is pr and also i need the flight numbers of flights leaving from cleveland and arriving at boston",
+    "output": [
+      "atis_airline(airline_code='pr')",
+      "atis_flight_no(departure_city='cleveland', destination_city='boston')"
+    ]
+  },
+  {
+    "input": "tell me what are the departure flight times from detroit to manchester and also how many spirit flights use aircraft dh9",
+    "output": [
+      "atis_flight_time(flight_time='departure', departure_city='detroit', destination_city='manchester')",
+      "atis_quantity(airline='spirit', aircraft='dh9')"
+    ]
+  },
+    {
+        "input": "please list first class airfare from indianapolis to las vegas , what day of the week do flights from nashville to tacoma fly on and how many wizzair flights use aircraft dh8",
+        "output": [
+            "atis_airfare(class='first class', departure_city='indianapolis', destination_city='las vegas')",
+            "atis_day_name(departure_city='nashville', destination_city='tacoma')",
+            "atis_quantity(airline='wizzair', aircraft='dh8')"
+        ]
+    },
+  {
+    "input": "can you tell me what airline is rp and then what days of the week do flights from san jose to dallas fly on",
+    "output": [
+      "atis_airline(airline_code='rp')",
+      "atis_day_name(departure_city='san jose', destination_city='dallas')"
+    ]
+  },
+  {
+    "input": "please list florida airports , show me ground transportation in porto and what meals are there on flight TK12 in the evening please",
+    "output": [
+      "atis_airport(state='florida')",
+      "atis_ground_service(city='porto')",
+      "atis_meal(meal_type='meals', flight_number='TK12', departure_period='evening')"
+    ]
+  },
+  {
+    "input": "can you tell me what does uat mean and are snacks served on wizzair",
+    "output": [
+      "atis_abbreviation(airline_code='uat')",
+      "atis_meal(meal_description='snacks', airline='wizzair')"
+    ]
+  },
+  {
+    "input": "list airfares for first class from detroit to moscow , what day of the week do flights from moscow to tacoma fly on",
+    "output": [
+      "atis_airfare(class='first class', departure_city='detroit', destination_city='moscow')",
+      "atis_day_name(departure_city='moscow', destination_city='tacoma')"
+    ]
+  },
+  {
+    "input": "how far is los angeles from moscow",
+    "output": [
+      "atis_distance(departure_city='los angeles', destination_city='moscow')"
+    ]
+  },
+    {
+        "input": "can you tell me what does fare code g mean , what are the fares for ground transportation in moscow and what ground transportation is available in berlin",
+        "output": [
+            "atis_abbreviation(fare_code='g')",
+            "atis_ground_fare(city='moscow')",
+            "atis_ground_service(city='berlin')"
+        ]
+    }
+]

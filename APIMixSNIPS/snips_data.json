@@ -1,0 +1,719 @@
+[
+  {
+    "input": "add this to the soundscapes for gaming playlist and then play the beatles music that is newest",
+    "output": [
+      "AddToPlaylist(playlist='soundscapes for gaming')",
+      "PlayMusic(artist='the beatles', sort='newest')"
+    ]
+  },
+  {
+    "input": "i want to eat close to bowlegs on monday and then i want to play the video game espn major league soccer",
+    "output": [
+      "BookRestaurant(spatial_relation='close', city='bowlegs', time='monday')",
+      "SearchCreativeWork(object_type='video game', object_name='espn major league soccer')"
+    ]
+  },
+  {
+    "input": "i want to hear any tune from the twenties and then what time is holiday heart showing at the moviehouse",
+    "output": [
+      "PlayMusic(year='twenties')",
+      "SearchScreeningEvent(movie_name='holiday heart', location_name='moviehouse')"
+    ]
+  },
+  {
+    "input": "add this track to my dinnertime acoustics playlist and i rate shadow of suribachi at five stars",
+    "output": [
+      "AddToPlaylist(playlist_owner='my', playlist='dinnertime acoustics')",
+      "RateBook(object_name='shadow of suribachi', rating_value='five', rating_unit='stars')"
+    ]
+  },
+  {
+    "input": "please make me reservations somewhere for eight people in foley",
+    "output": [
+      "BookRestaurant(party_size_number='eight', city='foley')"
+    ]
+  },
+  {
+    "input": "i d like to eat at an internet restaurant with a party of four and also play jawad ahmad",
+    "output": [
+      "BookRestaurant(restaurant_type='internet restaurant', party_size_number='four')",
+      "PlayMusic(artist='jawad ahmad')"
+    ]
+  },
+  {
+    "input": "find a reservation at a restaurant that serves gougere in laneville with a party of nine and which animated movies are playing in the neighbourhood and when",
+    "output": [
+      "BookRestaurant(served_dish='gougere', city='laneville', party_size_number='nine', restaurant_type='restaurant')",
+      "SearchScreeningEvent(movie_type='animated movies', spatial_relation='in the neighbourhood')"
+    ]
+  },
+  {
+    "input": "add this to the soundscapes for gaming playlist , the book history by contract is rated five stars",
+    "output": [
+      "AddToPlaylist(playlist='soundscapes for gaming')",
+      "RateBook(rating_value='five', rating_unit='stars', object_name='history by contract', object_type='book')"
+    ]
+  },
+  {
+    "input": "i d like to put stairway to heaven onto songs to sing in the car , book a brasserie in denver for four people and also what is the niceville forecast",
+    "output": [
+      "AddToPlaylist(entity_name='stairway to heaven', playlist='songs to sing in the car')",
+      "BookRestaurant(restaurant_type='brasserie', party_size_number='four', city='denver')",
+      "GetWeather(city='niceville')"
+    ]
+  },
+  {
+    "input": "add fabri fibra to evening acoustic and then i d like make a booking for a brasserie in virginia city",
+    "output": [
+      "AddToPlaylist(artist='fabri fibra', playlist='evening acoustic')",
+      "BookRestaurant(restaurant_type='brasserie', city='virginia city')"
+    ]
+  },
+  {
+    "input": "for my playlist chill add beautiful world and then what will the weather be in stelvio national park in 1 hour",
+    "output": [
+      "AddToPlaylist(playlist_owner='my', playlist='chill', entity_name='beautiful world')",
+      "GetWeather(geographic_poi='stelvio national park', timeRange='1 hour')"
+    ]
+  },
+  {
+    "input": "add this in my playlist dance workout and also food truck in panama for five",
+    "output": [
+      "AddToPlaylist(playlist_owner='my', playlist='dance workout')",
+      "BookRestaurant(restaurant_type='food truck', country='panama', party_size_number='five')"
+    ]
+  },
+  {
+    "input": "list movies times at harkins theatres",
+    "output": [
+      "SearchScreeningEvent(location_name='harkins theatres', movie_type='movies')"
+    ]
+  },
+  {
+    "input": "show me the schedule of films in the neighbourhood",
+    "output": [
+      "SearchScreeningEvent(movie_type='films',spatial_relation='in the neighbourhood')"
+    ]
+  },
+  {
+    "input": "add this to my wild country playlist and also is it going to snow next year in wv",
+    "output": [
+      "AddToPlaylist(playlist_owner='my', playlist='wild country')",
+      "GetWeather(condition_description='snow', timeRange='next year', state='wv')"
+    ]
+  },
+  {
+    "input": "how is the weather in getzville minnesota and also play the last wellman braud album relaesd",
+    "output": [
+      "GetWeather(city='getzville', state='minnesota')",
+      "PlayMusic(artist='wellman braud', music_item='album', sort='last')"
+    ]
+  },
+  {
+    "input": "i would give french poets and novelists a best rating of 6 and a value of three",
+    "output": [
+      "RateBook(best_rating='6', rating_value='three')"
+    ]
+  },
+  {
+    "input": "add star light star bright to my jazz classics playlist , what will the weather be in waverly city brazil on purple heart day and then what movies are showing in the neighborhood",
+    "output": [
+      "AddToPlaylist(entity_name='star light star bright', playlist_owner='my', playlist='jazz classics')",
+      "GetWeather(city='waverly city', country='brazil', timeRange='purple heart day')",
+      "SearchScreeningEvent(movie_type='movies', spatial_relation='in the neighborhood')"
+    ]
+  },
+  {
+    "input": "what will the weather be in lago vista on october fourteenth 2022 and then rate the lie tree five",
+    "output": [
+      "GetWeather(city='lago vista', timeRange='october fourteenth 2022')",
+      "RateBook(object_name='lie tree', rating_value='five')"
+    ]
+  },
+  {
+    "input": "add pangaea to my gold edition playlist and then what is the niceville forecast in fm",
+    "output": [
+      "AddToPlaylist(music_item = 'pangaea', playlist_owner='my', playlist='gold edition')",
+      "GetWeather(city='niceville', state='fm')"
+    ]
+  },
+  {
+    "input": "give the current book five stars out of 6 and find love will tear us apart",
+    "output": [
+      "RateBook(rating_value='five', rating_unit='stars', best_rating='6', object_type='book')",
+      "SearchCreativeWork(object_name='love will tear us apart')"
+    ]
+  },
+  {
+    "input": "add hanging on to my just dance to afterclub playlist and then show weather while sunset in south carolina",
+    "output": [
+      "AddToPlaylist(music_item='hanging on', playlist_owner='my', playlist='just dance to afterclub')",
+      "GetWeather(timeRange='sunset', state='south carolina')"
+    ]
+  },
+  {
+    "input": "give the current album a five, what will the humidity be in varnado georgia at one am and please play the newest music by evil jared hasselhoff",
+    "output": [
+      "GetWeather(condition_description='humidity', city='varnado', state='georgia', timeRange='one am')",
+      "PlayMusic(sort='newest', artist='evil jared hasselhoff')",
+      "RateBook(object_type='album', rating_value='five')"
+    ]
+  },
+  {
+    "input": "put some frank ferrer into my edna st vincent millay playlist and this textbook gets a two",
+    "output": [
+      "AddToPlaylist(artist='frank ferrer', playlist_owner='my', playlist='edna st vincent millay')",
+      "RateBook(object_type='textbook', rating_value='two')"
+    ]
+  },
+  {
+    "input": "play playlist tgif on itunes and then find the tv series shaun the sheep",
+    "output": [
+      "PlayMusic(playlist='tgif', service='itunes')",
+      "SearchCreativeWork(object_type='tv series', object_name='shaun the sheep')"
+    ]
+  },
+  {
+    "input": "play sugar baby by frank beard and can you find me the magic hour song",
+    "output": [
+      "PlayMusic(music_item='sugar baby', artist='frank beard')",
+      "SearchCreativeWork(object_name='magic hour', object_type='song')"
+    ]
+  },
+  {
+    "input": "add mary wells sings to the electro sur playlist and play this is colour by panda bear",
+    "output": [
+      "AddToPlaylist(music_item='mary wells sings', playlist='electro sur')",
+      "PlayMusic(music_item='this is colour', artist='panda bear')"
+    ]
+  },
+  {
+    "input": "I want a Booking for coon chicken inn restaurant for 1 am and also find now and forever",
+    "output": [
+      "BookRestaurant(restaurant_name='coon chicken inn', restaurant_type='restaurant', timeRange='1 am')",
+      "SearchScreeningEvent(movie_name='now and forever')"
+    ]
+  },
+  {
+    "input": "what is the forecast for foggy conditions here twenty one minutes , shw the picture twin husbands and what are the movies times nearby",
+    "output": [
+      "GetWeather(condition_description='foggy', timeRange='twenty one minutes')",
+      "SearchCreativeWork(object_type='picture', object_name='twin husbands')",
+      "SearchScreeningEvent(movie_type='movies', spatial_relation='nearby')"
+    ]
+  },
+  {
+    "input": "play me a cinder block movement and this textbook gets a two",
+    "output": [
+      "PlayMusic(artist='cinder block', music_item='movement')",
+      "RateBook(object_type='textbook', rating_value='two')"
+    ]
+  },
+  {
+    "input": "rate this album 5 points",
+    "output": [
+      "RateBook(object_type='album', rating_value='5', rating_unit='points')"
+    ]
+  },
+  {
+    "input": "play some theme songs from 1974 and then rate the current chronicle series 3 out of 6 points",
+    "output": [
+      "PlayMusic(genre='theme', year='1974')",
+      "RateBook(object_part_of_series_type='chronicle', rating_value='3', best_rating='6', rating_unit='points')"
+    ]
+  },
+  {
+    "input": "add the blurred crusade to crate diggers anonymous and play the track asleep in the deep",
+    "output": [
+      "AddToPlaylist(playlist='crate diggers anonymous', music_item='the blurred crusade')",
+      "PlayMusic(music_item='asleep in the deep')"
+    ]
+  },
+  {
+    "input": "I want to make booking for a brasserie in samoa for four people , will there be snowfall at six pm in leisure knoll california and find the schedule for nearby animated movies",
+    "output": [
+      "BookRestaurant(restaurant_type='brasserie', party_size_number='four', country='samoa')",
+      "GetWeather(condition_description='snowfall', timeRange='six pm', city='leisure knoll', state='california')",
+      "SearchScreeningEvent(spatial_relation='nearby', movie_type='animated movies')"
+    ]
+  },
+  {
+    "input": "add rob tyner to betsy s we everywhere and then rate a taste of blackberries a three",
+    "output": [
+      "AddToPlaylist(artist='rob tyner', playlist_owner='betsy s', playlist='we everywhere')",
+      "RateBook(object_name='taste of blackberries', rating_value='three')"
+    ]
+  },
+  {
+    "input": "play a moment apart by odesza from spotify and then the chronicle charlie peace earns 4 stars from me",
+    "output": [
+      "PlayMusic(music_item='a moment apart', artist='odesza', service='spotify')",
+      "RateBook(object_part_of_series_type='chronicle', object_name='charlie peace', rating_value='4', rating_unit='stars')"
+    ]
+  },
+  {
+    "input": "add in the heart of the world to the epic gaming playlist and what time is goodbye mothers playing",
+    "output": [
+      "AddToPlaylist(music_item='heart of the world', playlist='epic gaming')",
+      "SearchScreeningEvent(movie_name='goodbye mothers')"
+    ]
+  },
+  {
+    "input": "will it be hotter in wyomissing hills , rate this textbook a zero and what animated movies are playing at the closest theatre",
+    "output": [
+      "GetWeather(condition_temperature='hotter', city='wyomissing hills')",
+      "RateBook(object_type='textbook', rating_value='zero')",
+      "SearchScreeningEvent(movie_type='animated movies', spatial_relation='closest')"
+    ]
+  },
+  {
+    "input": "the chronicle charlie peace earns 4 stars from me and also find the movies schedule nearby",
+    "output": [
+      "RateBook(object_part_of_series_type='chronicle', object_name='charlie peace', rating_value='4', rating_unit='stars')",
+      "SearchScreeningEvent(movie_type='movies', spatial_relation='nearby')"
+    ]
+  },
+  {
+    "input": "i want to hear any tune from the twenties and then give the current book five stars out of 6",
+    "output": [
+      "PlayMusic(year='twenties')",
+      "RateBook(rating_value='five', rating_unit='stars', best_rating='6', object_type='book')"
+    ]
+  },
+  {
+    "input": "add gackt camui track to the white noise playlist and also find a saga called set sail the prairie",
+    "output": [
+      "AddToPlaylist(artist='gackt camui', playlist='white noise')",
+      "SearchCreativeWork(object_type='saga', object_name='set sail the prairie')"
+    ]
+  },
+  {
+    "input": "make booking a restaurant distant and also will it be chilly in oakdale ok",
+    "output": [
+      "BookRestaurant(restaurant_type='restaurant', spatial_relation='distant')",
+      "GetWeather(condition_temperature='chilly', city='oakdale', state='ok')"
+    ]
+  },
+  {
+    "input": "add george thorogood to el mejor rock en espanol and then reserve a table at grecian coffee house for 7 on apr 7th 2024",
+    "output": [
+      "AddToPlaylist(artist='george thorogood', playlist='el mejor rock en espanol')",
+      "BookRestaurant(restaurant_name='grecian coffee house', party_size_number='7', timeRange='apr 7th 2024')"
+    ]
+  },
+  {
+    "input": "weather next year in canada , play ep by arjen anthony lucassen and then when is dear old girl playing at the cooper foundation",
+    "output": [
+      "GetWeather(timeRange='next year', country='canada')",
+      "PlayMusic(music_item='ep', artist='arjen anthony lucassen')",
+      "SearchScreeningEvent(movie_name='dear old girl', location_name='cooper foundation')"
+    ]
+  },
+  {
+    "input": "what is the weather forecast in delaware and play the i get ideas as performed by richard kruspe",
+    "output": [
+      "GetWeather(state='delaware')",
+      "PlayMusic(music_item='i get ideas', artist='richard kruspe')"
+    ]
+  },
+  {
+    "input": "put some frank ferrer into my edna st vincent millay playlist , reserve a spot at the food truck in ma and what time is southern theatres showing interstellar",
+    "output": [
+      "AddToPlaylist(artist='frank ferrer', playlist_owner='my', playlist='edna st vincent millay')",
+      "BookRestaurant(restaurant_type='food truck', state='ma')",
+      "SearchScreeningEvent(location_name='southern theatres', movie_name='interstellar')"
+    ]
+  },
+  {
+    "input": "i need a table for 9 , turn on spotify to tiny tim ep and also show me the movie operetta for the theatre organ",
+    "output": [
+      "BookRestaurant(party_size_number='9')",
+      "PlayMusic(music_item='tiny tim ep', service='spotify')",
+      "SearchCreativeWork(object_name='operetta for the theatre organ', object_type='movie')"
+    ]
+  },
+  {
+    "input": "i want to make booking for a table around london of ealing that is highly rated in a gluten free bar , what will the weather be in grand coteau ut at six pm and then search for the television show young sheldon",
+    "output": [
+      "BookRestaurant(spatial_relation='around', cuisine='gluten free', city='london')",
+      "GetWeather(city='grand coteau', state='ut', timeRange='six pm')",
+      "SearchCreativeWork(object_type='television show', object_name='young sheldon')"
+    ]
+  },
+  {
+    "input": "i want to bring four people to a place that s close to norway that serves churrascaria cuisine and also show me heavenly sword",
+    "output": [
+      "BookRestaurant(party_size_number='four', spatial_relation='close', country='norway', cuisine='churrascaria')",
+      "SearchCreativeWork(object_name='heavenly sword')"
+    ]
+  },
+  {
+    "input": "reserve a table today at a steakhouse for eight that serves sashimi , show me the new showings for animated movies in the neighborhood",
+    "output": [
+      "BookRestaurant(restaurant_type='steakhouse', party_size_number='eight', served_dish='sashimi')",
+      "SearchScreeningEvent(movie_type='animated movies', spatial_relation='in the neighborhood')"
+    ]
+  },
+  {
+    "input": "Weather for this winter here and then find a soundtrack called pax warrior",
+    "output": [
+      "GetWeather(timeRange='this winter')",
+      "SearchCreativeWork(object_type='soundtrack', object_name='pax warrior')"
+    ]
+  },
+  {
+    "input": "play i get ideas as performed by richard kruspe and also tell me what films are playing at plitt theatres",
+    "output": [
+      "PlayMusic(music_item='i get ideas', artist='richard kruspe')",
+      "SearchScreeningEvent(movie_type='films', location_name='plitt theatres')"
+    ]
+  },
+  {
+    "input": "i d like for you to put odesza to my evening commute playlist , will it snow in amy and then find a tv show called ruthless",
+    "output": [
+      "AddToPlaylist(artist='odesza', playlist_owner='my', playlist='evening commute')",
+      "GetWeather(condition_description='snow', city='amy')",
+      "SearchCreativeWork(object_type='tv show', object_name='ruthless')"
+    ]
+  },
+  {
+    "input": "please search the young warriors game",
+    "output": [
+      "SearchCreativeWork(object_name='the young warriors', object_type='game')"
+    ]
+  },
+  {
+    "input": "add patti page to i love neo soul and find a video game called family dog",
+    "output": [
+      "AddToPlaylist(artist='patti page', playlist='i love neo soul')",
+      "SearchCreativeWork(object_type='video game', object_name='family dog')"
+    ]
+  },
+  {
+    "input": "can you tell me the weather forecast for samoa and what films are at the nearest cinema",
+    "output": [
+      "GetWeather(country='samoa')",
+      "SearchScreeningEvent(movie_type='films', spatial_relation='nearest')"
+    ]
+  },
+  {
+    "input": "add andreas johnson to my rock save the queen playlist, please add jency anthony to my playlist this is mozart and find me the balance and timing book",
+    "output": [
+      "AddToPlaylist(artist='andreas johnson', playlist_owner='my', playlist='rock save the queen')",
+      "AddToPlaylist(artist='jency anthony', playlist_owner='my', playlist='this is mozart')\",",
+      "SearchCreativeWork(object_name='balance and timing', object_type='book')"
+    ]
+  },
+  {
+    "input": "add this to the refugee playlist",
+    "output": [
+      "AddToPlaylist(playlist='the refugee playlist')"
+    ]
+  },
+  {
+    "input": "add coldplay to my post-grunge playlist and then what is the local movie schedule",
+    "output": [
+      "AddToPlaylist(artist='coldplay', playlist_owner='my', playlist='post-grunge')",
+      "SearchScreeningEvent(spatial_relation='local')"
+    ]
+  },
+  {
+    "input": "will there be alot of wind on march 13th in lost creek bahrain and play rob mills the golden archipelago",
+    "output": [
+      "GetWeather(condition_description='wind', timeRange='march 13th', city='lost creek', country='bahrain')",
+      "PlayMusic(artist='rob mills', album='the golden archipelago')"
+    ]
+  },
+  {
+    "input": "is it going to be chillier at 10 pm in texas and play some symphonic rock",
+    "output": [
+      "GetWeather(condition_temperature='chillier', timeRange='10 pm', state='texas')",
+      "PlayMusic(genre='symphonic rock')"
+    ]
+  },
+  {
+    "input": "add troy van leeuwen to my nu metal list and play the last sound track by soko from 1975",
+    "output": [
+      "AddToPlaylist(artist='troy van leeuwen', playlist_owner='my', playlist='nu metal')",
+      "PlayMusic(artist='soko', sort='last', year='1975')"
+    ]
+  },
+  {
+    "input": "play artist vlada divljan also rate this book titled the improvisatore five stars",
+    "output": [
+      "PlayMusic(artist='vlada divljan')",
+      "RateBook(object_name='the improvisatore', rating_value='five', rating_unit='stars', object_type='book')"
+    ]
+  },
+  {
+    "input": "can you make reservations at a tea house that serves fettucine and rate the current book a three",
+    "output": [
+      "BookRestaurant(restaurant_type='tea house', served_dish='fettucine')",
+      "RateBook(rating_value='three', object_type='book')"
+    ]
+  },
+  {
+    "input": "add even serpents shine to dorothea s indie hipster playlist and also what time is the clutching hand playing at amco entertainment",
+    "output": [
+      "AddToPlaylist(music_item='even serpents', playlist_owner='dorothea s', playlist='indie hipster')",
+      "SearchScreeningEvent(movie_name='the clutching hand', location_name='amco entertainment')"
+    ]
+  },
+  {
+    "input": "play some jungle music on iheart , and then where can i find paranormal activity 3 playing",
+    "output": [
+      "PlayMusic(genre='jungle', service='iheart')",
+      "SearchScreeningEvent(movie_name='paranormal activity 3')"
+    ]
+  },
+  {
+    "input": "can you get me reservations for a restaurant in seychelles and then i want to go see the trouble with girls",
+    "output": [
+      "BookRestaurant(restaurant_type='restaurant', country='seychelles')",
+      "SearchScreeningEvent(movie_name='the trouble with girls')"
+    ]
+  },
+  {
+    "input": "play music from clark kent in the year 1987 and play the tv series heart of gold",
+    "output": [
+      "PlayMusic(artist='clark kent', year='1987')",
+      "SearchCreativeWork(object_type='tv series', object_name='heart of gold')"
+    ]
+  },
+  {
+    "input": "i want a matt garrison tune in my fresh finds fire emoji playlist , show me the weather forecast for the city of spencer and also can i have the movie schedule for imax corporation",
+    "output": [
+      "AddToPlaylist(artist='matt garrison', playlist_owner='my', playlist='fresh finds fire emoji')",
+      "GetWeather(city='spencer')",
+      "SearchScreeningEvent(location_name='imax corporation')"
+    ]
+  },
+  {
+    "input": "what will the weather be at 12 am in hi , play music from clark kent in the year 1987 and then is romulus and the sabines playing at the nearest cinema at ten",
+    "output": [
+      "GetWeather(timeRange='12 am', state='hi')",
+      "PlayMusic(artist='clark kent', year='1987')",
+      "SearchScreeningEvent(movie_name='romulus and the sabines', spatial_relation='nearest', timeRange='ten')"
+    ]
+  },
+  {
+    "input": "what is the freezing forecast for british virgin islands and find a movie called living in america",
+    "output": [
+      "GetWeather(condition_temperature='freezing', country='british virgin islands')",
+      "SearchCreativeWork(object_type='movie', object_name='living in america')"
+    ]
+  },
+  {
+    "input": "play i get ideas as performed by richard kruspe and find a saga called set sail the prairie",
+    "output": [
+      "PlayMusic(music_item='i get ideas', artist='richard kruspe')",
+      "SearchCreativeWork(object_type='saga', object_name='set sail the prairie')"
+    ]
+  },
+  {
+    "input": "find a tv show called ruthless",
+    "output": [
+      "SearchCreativeWork(object_type='tv show', object_name='ruthless')"
+    ]
+  },
+  {
+    "input": "what is the humidity like in faraway ak and also rate the current novel four out of 6 points",
+    "output": [
+      "GetWeather(condition_description='humidity', city='faraway', state='ak')",
+      "RateBook(rating_value='four', best_rating='6', rating_unit='points')"
+    ]
+  },
+  {
+    "input": "play the red room sessions from chris cunningham and then give 4 points to this novel",
+    "output": [
+      "PlayMusic(album='the red room sessions', artist='chris cunningham')",
+      "RateBook(rating_value='4', rating_unit='points')"
+    ]
+  },
+  {
+    "input": "play vlada divljan on spotify and rate charlie peace five stars",
+    "output": [
+      "PlayMusic(artist='vlada divljan', service='spotify')",
+      "RateBook(object_name='charlie peace', rating_value='five', rating_unit='stars')"
+    ]
+  },
+  {
+    "input": "make a booking a steakhouse in samoa for eight people",
+    "output": [
+      "BookRestaurant(restaurant_type='steakhouse', country='samoa', party_size_number='eight')"
+    ]
+  },
+  {
+    "input": "show movies at the nearest cinema and weather forecast for niceville",
+    "output": [
+      "SearchScreeningEvent(spatial_relation='nearest', movie_type='movies')",
+      "GetWeather(city='niceville')"
+    ]
+  },
+  {
+    "input": "add even serpents to crate diggers anonymous playlist",
+    "output": [
+      "AddToPlaylist(music_item='even serpents', playlist='crate diggers anonymous')"
+    ]
+  },
+  {
+    "input": "Reserve a brasserie in denver for nine people serving gougere",
+    "output": [
+      "BookRestaurant(restaurant_type='brasserie', city='denver', party_size_number='nine', served_dish='gougere')"
+    ]
+  },
+  {
+    "input": "find a video game called family dog",
+    "output": [
+      "SearchCreativeWork(object_type='video game', object_name='family dog')"
+    ]
+  },
+  {
+    "input": "weather forecast for foggy conditions in lost creek at sunset",
+    "output": [
+      "GetWeather(condition_description='foggy', city='lost creek', timeRange='sunset')"
+    ]
+  },
+  {
+    "input": "add frank ferrer to my playlist rock save the queen",
+    "output": [
+      "AddToPlaylist(artist='frank ferrer', playlist_owner='my', playlist='rock save the queen')"
+    ]
+  },
+  {
+    "input": "play some theme songs from 1975",
+    "output": [
+      "PlayMusic(genre='theme', year='1975')"
+    ]
+  },
+  {
+    "input": "search the saga set sail the prairie",
+    "output": [
+      "SearchCreativeWork(object_type='saga', object_name='set sail the prairie')"
+    ]
+  },
+  {
+    "input": "weather forecast next year in leisure knoll california",
+    "output": [
+      "GetWeather(city='leisure knoll', state='california', timeRange='next year')"
+    ]
+  },
+  {
+    "input": "play panda bear on iheart and find animated movies nearby",
+    "output": [
+      "PlayMusic(artist='panda bear', service='iheart')",
+      "SearchScreeningEvent(movie_type='animated movies', spatial_relation='nearby')"
+    ]
+  },
+  {
+    "input": "make reservations at grecian coffee house for seven on apr 7th 2024",
+    "output": [
+      "BookRestaurant(restaurant_name='grecian coffee house', party_size_number='seven', timeRange='apr 7th 2024')"
+    ]
+  },
+  {
+    "input": "play jungle music from 1974",
+    "output": [
+      "PlayMusic(genre='jungle', year='1974')"
+    ]
+  },
+  {
+    "input": "rate this textbook a two out of six",
+    "output": [
+      "RateBook(object_type='textbook', rating_value='two', best_rating='six')"
+    ]
+  },
+  {
+    "input": "search for films at harkins theatres",
+    "output": [
+      "SearchScreeningEvent(movie_type='films', location_name='harkins theatres')"
+    ]
+  },
+  {
+    "input": "play the latest music by gackt camui",
+    "output": [
+      "PlayMusic(artist='gackt camui', sort='latest')"
+    ]
+  },
+  {
+    "input": "find a restaurant distant from chicago serving sashimi",
+    "output": [
+      "BookRestaurant(spatial_relation='distant', city='chicago', served_dish='sashimi', restaurant_type='restaurant')"
+    ]
+  },
+  {
+    "input": "rate the lie tree five stars and add beautiful world to my chill playlist",
+    "output": [
+      "RateBook(object_name='lie tree', rating_value='five', rating_unit='stars')",
+      "AddToPlaylist(entity_name='beautiful world', playlist_owner='my', playlist='chill')"
+    ]
+  },
+  {
+    "input": "show me the humidity forecast for grand coteau",
+    "output": [
+      "GetWeather(condition_description='humidity', city='grand coteau')"
+    ]
+  },
+  {
+    "input": "find the tv show shaun the sheep",
+    "output": [
+      "SearchCreativeWork(object_type='tv show', object_name='shaun the sheep')"
+    ]
+  },
+  {
+    "input": "play music by coldplay, i want to eat at a steakhouse in denver for four, and rate history by contract five stars",
+    "output": [
+      "PlayMusic(artist='coldplay')",
+      "BookRestaurant(restaurant_type='steakhouse', city='denver', party_size_number='four')",
+      "RateBook(object_name='history by contract', rating_value='five', rating_unit='stars')"
+    ]
+  },
+  {
+    "input": "add star light star bright to my chill playlist, show films at harkins theatres, and what's the weather in grand coteau",
+    "output": [
+      "AddToPlaylist(entity_name='star light star bright', playlist_owner='my', playlist='chill')",
+      "SearchScreeningEvent(movie_type='films', location_name='harkins theatres')",
+      "GetWeather(city='grand coteau')"
+    ]
+  },
+  {
+    "input": "find the video game family dog, play jungle music on iheart, and rate charlie peace a four",
+    "output": [
+      "SearchCreativeWork(object_type='video game', object_name='family dog')",
+      "PlayMusic(genre='jungle', service='iheart')",
+      "RateBook(object_name='charlie peace', rating_value='four')"
+    ]
+  },
+  {
+    "input": "make a booking for a brasserie in virginia city for eight, what's the humidity in lost creek, and play music from the twenties",
+    "output": [
+      "BookRestaurant(restaurant_type='brasserie', city='virginia city', party_size_number='eight')",
+      "GetWeather(condition_description='humidity', city='lost creek')",
+      "PlayMusic(year='twenties')"
+    ]
+  },
+  {
+    "input": "play odesza's album, add george thorogood to my wild country playlist, and find animated movies nearby",
+    "output": [
+      "PlayMusic(artist='odesza', music_item='album')",
+      "AddToPlaylist(artist='george thorogood', playlist_owner='my', playlist='wild country')",
+      "SearchScreeningEvent(movie_type='animated movies', spatial_relation='nearby')"
+    ]
+  },
+  {
+    "input": "i want to go to a tea house serving fettucine for three in juliff, rate lie tree five stars, and weather forecast for stelvio national park in 1 hour",
+    "output": [
+      "BookRestaurant(restaurant_type='tea house', served_dish='fettucine', party_size_number='three', city='juliff')",
+      "RateBook(object_name='lie tree', rating_value='five', rating_unit='stars')",
+      "GetWeather(geographic_poi='stelvio national park', timeRange='1 hour')"
+    ]
+  },
+  {
+    "input": "add fabri fibra to my playlist evening acoustic, play newest music by the beatles, and find the nearest cinema showing holiday heart",
+    "output": [
+      "AddToPlaylist(artist='fabri fibra', playlist_owner='my', playlist='evening acoustic')",
+      "PlayMusic(artist='the beatles', sort='newest')",
+      "SearchScreeningEvent(movie_name='holiday heart', spatial_relation='nearest')"
+    ]
+  }
+]

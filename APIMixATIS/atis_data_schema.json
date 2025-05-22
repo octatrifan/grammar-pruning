@@ -1,0 +1,367 @@
+{
+    "atis_airport": {
+        "state": [
+            "california",
+            "oregon",
+            "texas",
+            "arizona",
+            "florida"
+        ],
+        "modifier": [
+            "closest"
+        ],
+        "city": [
+            "la",
+            "ontario",
+            "new york"
+        ]
+    },
+    "atis_city": {
+        "city": [
+            "portland",
+            "la"
+        ],
+        "airline": [
+            "spirit",
+            "lufthansa",
+            "eastwest",
+            "northeast",
+            "northwest"
+        ]
+    },
+    "atis_quantity": {
+        "airline": [
+            "british airways",
+            "spirit",
+            "canadian airlines",
+            "delta",
+            "lufthansa",
+            "american airlines",
+            "wizzair"
+        ],
+        "aircraft": [
+            "j32",
+            "br31",
+            "re89",
+            "j31",
+            "ca32",
+            "320",
+            "dh8",
+            "dh9",
+            "ca31",
+            "j33"
+        ]
+    },
+    "atis_airfare": {
+        "departure_city": [
+            "indianapolis",
+            "boston",
+            "los angeles",
+            "detroit",
+            "chicago",
+            "pittsburgh",
+            "toronto",
+            "nashville",
+            "washington",
+            "columbus"
+        ],
+        "destination_city": [
+            "seattle",
+            "cleveland",
+            "moscow",
+            "las vegas",
+            "st. petersburg",
+            "st. louis",
+            "chicago",
+            "atlanta",
+            "washington",
+            "memphis",
+            "san jose",
+            "san diego",
+            "tacoma",
+            "montreal"
+        ],
+        "airline_code": [
+            "twa"
+        ],
+        "class": [
+            "first class",
+            "coach"
+        ],
+        "relative_cost": [
+            "under"
+        ],
+        "fare": [
+            "200 dollars",
+            "300 pounds",
+            "100 australian dollars"
+        ],
+        "departure_day": [
+            "saturday"
+        ]
+    },
+    "atis_flight_no": {
+        "departure_city": [
+            "houston",
+            "dallas",
+            "cleveland",
+            "phoenix",
+            "chicago",
+            "oakland",
+            "nashville"
+        ],
+        "destination_city": [
+            "houston",
+            "seattle",
+            "dallas",
+            "boston",
+            "salt lake city",
+            "milwaukee",
+            "tacoma"
+        ],
+        "airline": [
+            "continental",
+            "american airlines",
+            "british airways"
+        ],
+        "relative_departure_time": [
+            "before"
+        ],
+        "departure_time": [
+            "8 am"
+        ],
+        "departure_day": [
+            "thursday"
+        ]
+    },
+    "atis_distance": {
+        "departure_city": [
+            "dallas",
+            "boston",
+            "san francisco",
+            "los angeles",
+            "toronto",
+            "baltimore"
+        ],
+        "destination_city": [
+            "dallas",
+            "san francisco",
+            "los angeles",
+            "moscow",
+            "new york",
+            "ottawa",
+            "toronto"
+        ]
+    },
+    "atis_aircraft": {
+        "aircraft": [
+            "m81",
+            "m80"
+        ],
+        "departure_city": [
+            "cleveland"
+        ],
+        "destination_city": [
+            "dallas"
+        ],
+        "relative_departure_time": [
+            "before"
+        ],
+        "departure_period": [
+            "noon"
+        ],
+        "airline": [
+            "american"
+        ],
+        "departure_time": [
+            "4:19pm"
+        ]
+    },
+    "atis_day_name": {
+        "departure_city": [
+            "san jose",
+            "los angeles",
+            "moscow",
+            "nashville"
+        ],
+        "destination_city": [
+            "portland",
+            "dallas",
+            "new york",
+            "nashville",
+            "tacoma"
+        ]
+    },
+    "atis_ground_service": {
+        "transport_type": [
+            "car",
+            "limousine"
+        ],
+        "city": [
+            "portland",
+            "dallas",
+            "burbank",
+            "porto",
+            "los angeles",
+            "new york",
+            "las vegas",
+            "berlin",
+            "st. louis",
+            "salt lake city",
+            "fort worth",
+            "denver",
+            "milwaukee",
+            "washington",
+            "tampa"
+        ]
+    },
+    "atis_abbreviation": {
+        "fare_code": [
+            "qo",
+            "m",
+            "l",
+            "f",
+            "g",
+            "q"
+        ],
+        "airline_code": [
+            "uat",
+            "ua"
+        ],
+        "aircraft": [
+            "d9s"
+        ]
+    },
+    "atis_meal": {
+        "flight_number": [
+            "BA665",
+            "AA811",
+            "BA123",
+            "BA354",
+            "BA121",
+            "LH468",
+            "AA665",
+            "TK382",
+            "TK12"
+        ],
+        "meal_type": [
+            "meals",
+            "drinks"
+        ],
+        "departure_day": [
+            "tuesday"
+        ],
+        "departure_period": [
+            "evening",
+            "morning"
+        ],
+        "meal_description": [
+            "snacks"
+        ],
+        "airline": [
+            "wizzair",
+            "tower air"
+        ]
+    },
+    "atis_flight": {
+        "departure_city": [
+            "cleveland",
+            "los angeles",
+            "pittsburgh",
+            "memphis",
+            "montreal"
+        ],
+        "destination_city": [
+            "indianapolis",
+            "burbank",
+            "cleveland",
+            "long beach",
+            "milwaukee",
+            "san jose"
+        ],
+        "departure_month": [
+            "april"
+        ],
+        "departure_day_number": [
+            "fifth"
+        ],
+        "airline": [
+            "alaska airlines"
+        ]
+    },
+    "atis_capacity": {
+        "aircraft": [
+            "757",
+            "73s",
+            "733",
+            "m80",
+            "747",
+            "be1"
+        ],
+        "airline": [
+            "delta"
+        ],
+        "departure_city": [
+            "seattle"
+        ],
+        "destination_city": [
+            "salt lake city"
+        ]
+    },
+    "atis_flight_time": {
+        "departure_city": [
+            "la",
+            "michigan",
+            "detroit"
+        ],
+        "destination_city": [
+            "san francisco",
+            "westchester",
+            "manchester",
+            "new york",
+            "michigan"
+        ],
+        "flight_time": [
+            "departure",
+            "arrival"
+        ]
+    },
+    "atis_ground_fare": {
+        "transport_type": [
+            "limousine"
+        ],
+        "city": [
+            "boston",
+            "bucharest",
+            "los angeles",
+            "moscow",
+            "denver",
+            "michigan",
+            "san diego"
+        ]
+    },
+    "atis_airline": {
+        "airline_code": [
+            "aa",
+            "as",
+            "BA",
+            "us",
+            "sr",
+            "hp",
+            "pr",
+            "rp",
+            "DA"
+        ],
+        "departure_city": [
+            "seattle",
+            "washington",
+            "toronto"
+        ],
+        "destination_city": [
+            "st. louis",
+            "salt lake city",
+            "san diego",
+            "columbus"
+        ]
+    }
+}
