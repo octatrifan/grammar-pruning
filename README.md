@@ -32,7 +32,7 @@ We provide meticulously adapted versions of three prominent semantic parsing ben
 
 * 🍕 [FoodOrderingDataset](https://github.com/amazon-science/food-ordering-semantic-parsing-dataset)
 * 🎤 **API**[MixSNIPS](https://github.com/VinAIResearch/MISCA/tree/main/data/mixsnips)
-* ✈️ **API**[MixATIS](https://github.com/VinAIResearch/MISCA/tree/main/data/mixsnips)
+* ✈️ **API**[MixATIS](https://github.com/VinAIResearch/MISCA/tree/main/data/mixatis)
 
 Datasets are formatted as Python API calls for seamless parsing and easy validation. Schemas for each datasets are included.
 
